@@ -1,1 +1,7 @@
-{}
+{
+  "spellcheckLanguages": [
+    "en-GB",
+    "es-AR"
+  ],
+  "promptDelete": false
+}
