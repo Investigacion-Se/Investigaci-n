@@ -10,3 +10,5 @@ Para eso usaré obsidian, y pdfs, donde en obsidian todo sería archivos markdow
 #### Temas
 ---
 * [[Variational integrator]]
+* [[Vulkan]]
+* [[Game engine]]
