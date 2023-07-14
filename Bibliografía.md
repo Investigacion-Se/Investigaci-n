@@ -7,6 +7,7 @@ const paginas = dv.pages().where(pagina => {
 	return pagina.file.folder != "_templates";
 });
 
+let tabla = [];
 for (let carpeta of paginas.groupBy(pagina => pagina.file.folder)) {
 
 	let indice = undefined;
@@ -28,7 +29,7 @@ for (let carpeta of paginas.groupBy(pagina => pagina.file.folder)) {
 	let link_a_carpeta = "";
 	if (indice !== undefined) {
 		link_a_carpeta = String(indice);
-		link_a_carpeta = `[[${link_a_carpeta}|?]]`;
+		link_a_carpeta = ` [[${link_a_carpeta}|?]]`;
 	}
 	
 	let header = carpeta.rows[0].file.folder + link_a_carpeta;

@@ -4,3 +4,13 @@ biblio: [
 	https://en.wikipedia.org/wiki/Variational_integrator,
 ]
 ---
+
+
+
+
+
+
+
+
+
+![[Variational integrator/Índice#Archivos]]

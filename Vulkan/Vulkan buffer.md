@@ -4,3 +4,13 @@ biblio: [
 	https://vulkano.rs/buffer_creation/buffer_creation.html	
 ]
 ---
+
+
+
+
+
+
+
+
+
+![[Vulkan/Índice#Archivos]]
