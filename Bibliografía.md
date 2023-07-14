@@ -1,3 +1,6 @@
+## Carpetas
+---
+Lista de todas las carpetas siendo investigadas, con tods los links que usan. Cualquier cosa ver el [[README|read me]].
 
 ```dataviewjs
 // Conseguimos todos los archivos que no estan en el root, porque los que estan en el root tienen una carpeta
