@@ -3,5 +3,6 @@
     "en-GB",
     "es-AR"
   ],
-  "promptDelete": false
+  "promptDelete": false,
+  "alwaysUpdateLinks": true
 }
