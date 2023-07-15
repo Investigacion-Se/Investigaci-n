@@ -14,3 +14,4 @@ Para eso usaré obsidian, y pdfs, donde en obsidian todo sería archivos markdow
 * [[Continuous decomposition of a function/Índice|Continuous decomposition of a function]]
 * [[Runge-Kutta methods/Índice|Runge-Kutta methods]]
 * [[Lagrangain mechanics/Índice|Lagrangian mechanics]]
+* [[Animation/Índice|Animation]]

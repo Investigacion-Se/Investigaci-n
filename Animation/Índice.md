@@ -3,7 +3,7 @@ dia: 2023-07-15
 ---
 ### Que se va a investigar
 ---
-Se va intentar investigar como es este nuevo paradigma para encontrar las ecuaciones de movimiento, y la resolución de colisiones.
+Vamos a ver como producir las mejores animaciones, con el menor esfuerzo posible y la mayor expresividad posible. Esto nos va a llevar a aprender sobre muchas cosas como inverse kinematic, rigging y otras cosas
 
 
 ### Bibliografía
@@ -11,7 +11,7 @@ Se va intentar investigar como es este nuevo paradigma para encontrar las ecuaci
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Lagrangain mechanics"';
+let carpeta = '"Animation"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -47,7 +47,7 @@ if (pagina_actual) {
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Lagrangain mechanics"';
+let carpeta = '"Animation"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
