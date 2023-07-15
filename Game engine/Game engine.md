@@ -5,27 +5,13 @@ biblio: [
 	https://book.avr-rust.com/005.3-creating-an-executable-entry-point.html,
 ]
 ---
-### 
 
 
 
 
 
-#### Biblio
----
-```dataviewjs
-const pagina_actual = dv.current();
 
-if (pagina_actual) {
-	const pagina = pagina_actual.file.frontmatter;
-	if (!pagina.biblio || pagina.biblio.length === 0) {
-		dv.paragraph("No hay bibliografia");
-	} else {
-		let links = [];
-		for (let link of pagina.biblio) {
-			links.push(link);
-		}
-		dv.list(links)
-	}
-}
-```
+
+
+
+![[Game engine/Índice#Archivos]]

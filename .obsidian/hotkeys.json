@@ -25,5 +25,22 @@
       ],
       "key": "C"
     }
-  ]
+  ],
+  "templater-obsidian:_templates/Índice - Template.md": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "I"
+    }
+  ],
+  "templater-obsidian:_templates/Nota - Template.md": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "N"
+    }
+  ],
+  "templater-obsidian:create-new-note-from-template": []
 }
