@@ -1,7 +1,13 @@
 ---
 dia: 2023-07-14
 ---
+### Que se va a investigar
+---
+Comprender como descomponer una función, posiblemente diferencial, de forma continua, es decir que para recrearla, se tenga que calcular a partir de una integral de su descomposición.
+
+
 ### Bibliografía
+---
 ```dataviewjs
 const pagina_actual = dv.current();
 

@@ -13,4 +13,4 @@ biblio: [
 
 
 
-![[Implicit Runge-Kutta methods/Índice#Archivos]]
+![[Runge-Kutta methods/Índice#Archivos]]

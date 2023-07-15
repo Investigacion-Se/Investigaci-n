@@ -1,11 +1,17 @@
 ---
-dia: 2023-07-14
+dia: 2023-07-15
 ---
+### Que se va a investigar
+---
+Se va intentar investigar como es este nuevo paradigma para encontrar las ecuaciones de movimiento, y la resolución de colisicones.
+
+
 ### Bibliografía
+---
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Implicit Runge-Kutta methods"';
+let carpeta = '"Lagrangain mechanics"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -41,7 +47,7 @@ if (pagina_actual) {
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Implicit Runge-Kutta methods"';
+let carpeta = '"Lagrangain mechanics"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

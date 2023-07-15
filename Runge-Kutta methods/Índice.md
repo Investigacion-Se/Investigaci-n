@@ -3,7 +3,7 @@ dia: 2023-07-14
 ---
 ### Que se va a investigar
 ---
-Entender la estructura de un motor de juegos, para poder expandirla o modificarla
+Encontrar un método parecido a la integración del trapecio, pero con un orden de precisión mayor, y ver los métodos de autocorrección que tendrían.
 
 
 ### Bibliografía
@@ -11,7 +11,7 @@ Entender la estructura de un motor de juegos, para poder expandirla o modificarl
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Game engine"';
+let carpeta = '"Runge-Kutta methods"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -47,7 +47,7 @@ if (pagina_actual) {
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Game engine"';
+let carpeta = '"Runge-Kutta methods"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

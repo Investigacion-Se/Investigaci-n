@@ -1,7 +1,13 @@
 ---
 dia: 2023-07-14
 ---
+### Que se va a investigar
+---
+Simplemente entender su funcionamiento, y poder tener un lugar donde encontrar como se hacen las cosas más simples
+
+
 ### Bibliografía
+---
 ```dataviewjs
 const pagina_actual = dv.current();
 

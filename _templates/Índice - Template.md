@@ -1,7 +1,13 @@
 ---
 dia: <% tp.file.creation_date("YYYY-MM-DD") %>
 ---
+### Que se va a investigar
+---
+
+
+
 ### Bibliografía
+---
 ```dataviewjs
 const pagina_actual = dv.current();
 

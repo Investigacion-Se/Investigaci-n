@@ -1,7 +1,13 @@
 ---
 dia: 2023-07-14
 ---
+### Que se va a investigar
+---
+En el mismo sentido que [[Runge-Kutta methods/Índice|Runge-Kutta methods]] vamos a ver como resolver el [[Lagrangain mechanics/Índice|Lagrangian mechanics]] de forma numérica, con sistemas de corrección.
+
+
 ### Bibliografía
+---
 ```dataviewjs
 const pagina_actual = dv.current();
 
