@@ -20,9 +20,16 @@ const paginas = dv.pages()
 		let index = posicion_orden(pagina);
 
 		return index == -1 ? 4 : index;
+	})
+	.groupBy(pagina => {
+		if (!pagina.file.folder) return "";
+		return String(pagina.file.folder);
+	})
+	.flatMap(carpetas => {
+		return carpetas.rows;
 	});
 
-dv.table(["Archivo", "Etapa"], paginas
+dv.table(["Archivo", "Carpeta", "Etapa"], paginas
 	.map(pagina => {
 		const nombre = pagina.file.name;
 		const path = String(pagina.file.path);
@@ -33,8 +40,10 @@ dv.table(["Archivo", "Etapa"], paginas
 		if (pagina.file.frontmatter.etapa) {
 			etapa = String(pagina.file.frontmatter.etapa);
 		}
+
+		const carpeta = String(pagina.file.folder);
 	
-		return [archivo, etapa];
+		return [archivo, carpeta, etapa];
 	})
 );
 ```
