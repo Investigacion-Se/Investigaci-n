@@ -16,3 +16,4 @@ Para eso usaré obsidian, y pdfs, donde en obsidian todo sería archivos markdow
 * [[Lagrangain mechanics/Índice|Lagrangian mechanics]]
 * [[Animation/Índice|Animation]]
 * [[Game mechanics/Índice|Game mechanics]]
+* [[Worldbuilding/Índice|Worldbuilding]]
