@@ -4,6 +4,7 @@ biblio: [
 	https://www.youtube.com/watch?v=KPoeNZZ6H4s,
 	https://www.youtube.com/watch?v=jfKTmEWJESw,
 ]
+etapa: sin-empezar
 ---
 
 
