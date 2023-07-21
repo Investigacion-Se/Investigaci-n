@@ -18,3 +18,4 @@ Para eso usaré obsidian, y pdfs, donde en obsidian todo sería archivos markdow
 | [[Game mechanics/Índice\|Game mechanics]] | No empezado |
 | [[Worldbuilding/Índice\|Worldbuilding]] | No empezado |
 | [[Motion canvas/Índice\|Motion canvas]] | No empezado |
+| [[Asynchronous/Índice\|Asynchronous]] | No empezado |
