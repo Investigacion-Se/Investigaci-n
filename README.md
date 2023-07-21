@@ -6,14 +6,15 @@ Para eso usaré obsidian, y pdfs, donde en obsidian todo sería archivos markdow
 
 :)
 
-#### Temas
----
-* [[Variational integrator/Índice|Variational integrator]]
-* [[Vulkan/Índice||Vulkan]]
-* [[Game engine/Índice|Game engine]]
-* [[Continuous decomposition of a function/Índice|Continuous decomposition of a function]]
-* [[Runge-Kutta methods/Índice|Runge-Kutta methods]]
-* [[Lagrangain mechanics/Índice|Lagrangian mechanics]]
-* [[Animation/Índice|Animation]]
-* [[Game mechanics/Índice|Game mechanics]]
-* [[Worldbuilding/Índice|Worldbuilding]]
+| Temas | Estado |
+| --- | --- |
+| [[Variational integrator/Índice\|Variational integrator]] | No empezado |
+| [[Vulkan/Índice\|Vulkan]] | No empezado |
+| [[Game engine/Índice\|Game engine]] | No empezado |
+| [[Continuous decomposition of a function/Índice\|Continuous decomposition of a function]] | No empezado |
+| [[Runge-Kutta methods/Índice\|Runge-Kutta methods]] | Empezado |
+| [[Lagrangain mechanics/Índice\|Lagrangian mechanics]] | No empezado |
+| [[Animation/Índice\|Animation]] | No empezado |
+| [[Game mechanics/Índice\|Game mechanics]] | No empezado |
+| [[Worldbuilding/Índice\|Worldbuilding]] | No empezado |
+| [[Motion canvas/Índice\|Motion canvas]] | No empezado |
