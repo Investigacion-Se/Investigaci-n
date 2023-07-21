@@ -13,9 +13,4 @@ Entonces el método de Runge-Kutta (de orden $s$) tiene la siguiente expresión,
 
 
 
-
-
-
-
-
 ![[Runge-Kutta methods/Índice#Archivos]]
