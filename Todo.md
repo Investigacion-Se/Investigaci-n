@@ -12,7 +12,7 @@ function posicion_orden(pagina) {
 const paginas = dv.pages()
 	.where(pagina => {
 		if (!pagina.file.folder) return false;
-		if (pagina.file.folder == "_templates") return false;
+		if (pagina.file.folder.contains("_templates")) return false;
 	
 		return pagina.file.frontmatter.etapa;
 	})
