@@ -8,17 +8,17 @@ Para eso usaré obsidian, y pdfs, donde en obsidian todo sería archivos markdow
 
 | Temas | Estado |
 | --- | --- |
-| [[Animation/Índice\|Animation]] | No empezado |
-| [[Asynchronous/Índice\|Asynchronous]] | No empezado |
-| [[Blender/Índice\|Blender]] | No empezado |
-| [[Continuous decomposition of a function/Índice\|Continuous decomposition of a function]] | No empezado |
-| [[Game engine/Índice\|Game engine]] | No empezado |
-| [[Game mechanics/Índice\|Game mechanics]] | No empezado |
-| [[Lagrangain mechanics/Índice\|Lagrangian mechanics]] | No empezado |
-| [[Motion canvas/Índice\|Motion canvas]] | No empezado |
-| [[Networking/Índice\|Networking]] | Empezado |
-| [[Procedural generation/Índice\|Procedural generation]] | Empezado |
-| [[Runge-Kutta methods/Índice\|Runge-Kutta methods]] | Empezado |
-| [[Variational integrator/Índice\|Variational integrator]] | No empezado |
-| [[Vulkan/Índice\|Vulkan]] | No empezado |
-| [[Worldbuilding/Índice\|Worldbuilding]] | No empezado |
+| Animation | No empezado |
+| Asynchronous | No empezado |
+| Blender | No empezado |
+| Continuous decomposition of a function | No empezado |
+| Game engine | No empezado |
+| Game mechanics | No empezado |
+| Lagrangian mechanics | No empezado |
+| Motion canvas | No empezado |
+| Networking | Empezado |
+| Procedural generation | Empezado |
+| Runge-Kutta methods | Empezado |
+| Variational integrator | No empezado |
+| Vulkan | No empezado |
+| Worldbuilding | No empezado |
