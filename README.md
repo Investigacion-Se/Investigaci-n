@@ -10,6 +10,7 @@ Para eso usaré obsidian, y pdfs, donde en obsidian todo sería archivos markdow
 | --- | --- |
 | [[Animation/Índice\|Animation]] | No empezado |
 | [[Asynchronous/Índice\|Asynchronous]] | No empezado |
+| [[Blender/Índice\|Blender]] | No empezado |
 | [[Continuous decomposition of a function/Índice\|Continuous decomposition of a function]] | No empezado |
 | [[Game engine/Índice\|Game engine]] | No empezado |
 | [[Game mechanics/Índice\|Game mechanics]] | No empezado |

@@ -1,9 +1,11 @@
 ---
-dia: <% tp.file.creation_date("YYYY-MM-DD") %>
+dia: 2023-07-27
 ---
 ### Que se va a investigar
 ---
-<% tp.file.cursor() %>
+La idea es aprender la idea general de usar blender.
+
+
 
 
 ### Bibliografía
@@ -11,7 +13,7 @@ dia: <% tp.file.creation_date("YYYY-MM-DD") %>
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"<% tp.file.folder() %>"';
+let carpeta = '"Blender"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -47,7 +49,7 @@ if (pagina_actual) {
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"<% tp.file.folder() %>"';
+let carpeta = '"Blender"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
