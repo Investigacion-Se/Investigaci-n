@@ -22,3 +22,4 @@ Para eso usaré obsidian, y pdfs, donde en obsidian todo sería archivos markdow
 | Variational integrator | No empezado |
 | Vulkan | No empezado |
 | Worldbuilding | No empezado |
+| XML | No empezado |
