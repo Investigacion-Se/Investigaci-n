@@ -3,7 +3,7 @@ dia: 2023-07-27
 biblio: [
 	https://www.youtube.com/watch?v=8K4AShjq-MU
 ]
-etapa: sin-empezar
+etapa: ampliar
 ---
 Tenemos las siguientes categorías
 * [[General]]

@@ -14,6 +14,7 @@ Para eso usaré obsidian, y pdfs, donde en obsidian todo sería archivos markdow
 | Continuous decomposition of a function | No empezado |
 | Game engine | No empezado |
 | Game mechanics | No empezado |
+| Geofiction | No empezado |
 | Lagrangian mechanics | No empezado |
 | Motion canvas | No empezado |
 | Networking | Empezado |
