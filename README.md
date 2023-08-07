@@ -20,6 +20,7 @@ Para eso usaré obsidian, y pdfs, donde en obsidian todo sería archivos markdow
 | Networking | Empezado |
 | Procedural generation | Empezado |
 | Runge-Kutta methods | Empezado |
+| Storytelling | No empezado |
 | Variational integrator | No empezado |
 | Vulkan | No empezado |
 | Worldbuilding | No empezado |

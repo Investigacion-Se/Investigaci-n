@@ -1,8 +1,5 @@
 {
-  "spellcheckLanguages": [
-    "en-GB",
-    "es-AR"
-  ],
+  "spellcheckLanguages": null,
   "promptDelete": false,
   "alwaysUpdateLinks": true,
   "newFileLocation": "current"

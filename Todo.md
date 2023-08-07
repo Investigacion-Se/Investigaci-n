@@ -1,4 +1,4 @@
-Acá voy a poner todos los archivos, y tener un lugar donde visualizar los archivos que tengo que hacer. Va a estar ordenado, primero como `sin-empezar`, `empezado`, `ampliar` y `terminado`
+Acá voy a poner todos los archivos, y tener un lugar donde visualizar los archivos que tengo que hacer. Va a estar ordenado, primero como `sin-empezx|ar`, `empezado`, `ampliar` y `terminado`
 
 ```dataviewjs
 const orden = ["sin-empezar", "empezado", "ampliar", "terminado"];
