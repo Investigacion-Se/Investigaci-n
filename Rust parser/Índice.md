@@ -1,12 +1,9 @@
 ---
-dia: <% tp.file.creation_date("YYYY-MM-DD") %>
+dia: 2023-08-24
 ---
 ### Que se va a investigar
 ---
-<%* 
-	await tp.file.rename("Índice");
-_%>
-<% tp.file.cursor() %>
+	Intención de ver como poder parsear el código de rust para usarlo en las macros
 
 
 ### Bibliografía
@@ -14,7 +11,7 @@ _%>
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"<% tp.file.folder() %>"';
+let carpeta = '"Rust parser"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -50,7 +47,7 @@ if (pagina_actual) {
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"<% tp.file.folder() %>"';
+let carpeta = '"Rust parser"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
