@@ -3,7 +3,7 @@ dia: 2023-08-24
 ---
 ### Que se va a investigar
 ---
-	Intención de ver como poder parsear el código de rust para usarlo en las macros
+Intención de ver como poder parsear el código de rust para usarlo en las macros
 
 
 ### Bibliografía
