@@ -40,6 +40,9 @@ if (pagina_actual) {
 }
 ```
 
+### Referencia
+---
+* https://docs.rs/typed-html/latest/typed_html/
 
 
 ### Archivos
