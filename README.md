@@ -11,6 +11,7 @@ Para eso usaré obsidian, y pdfs, donde en obsidian todo sería archivos markdow
 | Animation | No empezado |
 | Asynchronous | No empezado |
 | Blender | No empezado |
+| Conlang | No empezado |
 | Continuous decomposition of a function | No empezado |
 | Game engine | No empezado |
 | Game mechanics | No empezado |

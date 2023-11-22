@@ -50,5 +50,21 @@
       ],
       "key": "Tab"
     }
+  ],
+  "templater-obsidian:_templates/Crear referencia.md": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "R"
+    }
+  ],
+  "templater-obsidian:_templates/Crear índice.md": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "I"
+    }
   ]
 }
