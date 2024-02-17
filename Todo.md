@@ -75,7 +75,7 @@ const paginas = dv.pages()
 		return carpetas.rows;
 	});
 
-dv.table(["Archivo", "Carpeta", "Etapa"], paginas
+dv.table(["Archivo", "Tema", "Etapa"], paginas
 	.map(pagina => {
 		const nombre = pagina.file.name;
 		const path = String(pagina.file.path);
