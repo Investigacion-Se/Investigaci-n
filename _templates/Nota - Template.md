@@ -29,14 +29,32 @@
 	
 	let carpeta = tp.file.folder(true);
 	let tema = carpeta.split("/")[0];
-	let indice = dv.pages("#Índice").find(indice => indice.file.folder == tema);
+	let indice = dv.pages("#Índice").find(indice => indice.file.folder == tema).file.path;
 
-	tR += `tema: [[${indice.file.path}|${tema}]]\n`;
+	tR += `tema: "[[${indice}|${tema}]]"\n`;
 	tR += "---";
 %>
-
-
-
-
-### Archivos
+### Definición
 ---
+<% tp.file.cursor() %>
+
+
+
+```dataviewjs 
+const paginaActual = dv.current();
+let archivos = dv.pages(`"${paginaActual.file.folder}" and -#Índice`)
+	.where(pagina => pagina.file.path != paginaActual.file.path);
+
+dv.header(3, "Archivos");
+dv.span("---");
+
+archivos = (archivos.length > 0) 
+	? archivos.map(archivo => {
+			let nombre = archivo.file.name;
+			let path = archivo.file.path;
+			return `[[${path}|${nombre}]]`;
+		}) 
+	: ["No hay más archivos"];
+
+dv.list(archivos);	
+```

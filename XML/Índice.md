@@ -42,18 +42,13 @@ if (pagina_actual) {
 }
 ```
 
-
-
 ### Archivos
 ---
 ```dataviewjs
 const pagina_actual = dv.current();
-
-let carpeta = '"XML"';
-
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
-	const paginas = dv.pages(carpeta)
+	const paginas = dv.pages(`"${pagina_actual.file.folder}"`)
 		.where(pagina => {
 			return pagina.file.name != nombre_pagina;
 		});
