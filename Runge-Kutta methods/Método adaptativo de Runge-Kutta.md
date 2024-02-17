@@ -1,15 +1,15 @@
 ---
 dia: 2024-02-17
 biblio:
-  - https://es.wikipedia.org/wiki/Integraci%C3%B3n_num%C3%A9rica
+ - https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods#Adaptive_Runge%E2%80%93Kutta_methods
 etapa: terminado
 tema: "[[Runge-Kutta methods/Índice.md|Runge-Kutta methods]]"
 ---
 ### Definición
 ---
-El término de cuadratura numérica es más o menos sinónimo de [[Integración numérica|integración numérica]], especialmente si se aplica a integrales de una dimensión.
+Los métodos adaptativos son diseñados para producir una estimación el [[Error de truncamiento|error de truncamiento local]] de un paso simple [[Método de Runge-Kutta|Runge-Kutta]]. 
 
-También se lo relaciona con el [[Tablero de Butcher|tablero de Butcher]] ![[Tablero de Butcher#Definición]]
+
 
 ### Archivos
 ---

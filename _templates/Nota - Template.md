@@ -40,13 +40,12 @@
 
 
 
+### Archivos
+---
 ```dataviewjs 
 const paginaActual = dv.current();
 let archivos = dv.pages(`"${paginaActual.file.folder}" and -#Índice`)
 	.where(pagina => pagina.file.path != paginaActual.file.path);
-
-dv.header(3, "Archivos");
-dv.span("---");
 
 archivos = (archivos.length > 0) 
 	? archivos.map(archivo => {
