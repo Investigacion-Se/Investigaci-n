@@ -1,6 +1,14 @@
-<%* tR += "---"; %>
-dia: <% tp.file.creation_date("YYYY-MM-DD") %>
-<%* tR += "---"; %>
+
+<%* 
+	tR += "---\n"; 
+
+	let dia = tp.file.creation_date("YYYY-MM-DD");
+	tR += `dia: ${tp.file.creation_date("YYYY-MM-DD")}\n`;
+
+	tR += "tags: \n - Índice\n";
+
+	tR += "---";
+%>
 ### Que se va a investigar
 ---
 <% tp.file.cursor() %>
@@ -45,12 +53,9 @@ if (pagina_actual) {
 ---
 ```dataviewjs
 const pagina_actual = dv.current();
-
-let carpeta = '"<% tp.file.folder() %>"';
-
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
-	const paginas = dv.pages(carpeta)
+	const paginas = dv.pages(`"${pagina_actual.file.folder}"`)
 		.where(pagina => {
 			return pagina.file.name != nombre_pagina;
 		});
