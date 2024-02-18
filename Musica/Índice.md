@@ -1,5 +1,7 @@
 ---
 dia: 2023-12-02
+tags:
+  - Índice
 ---
 ### Que se va a investigar
 ---

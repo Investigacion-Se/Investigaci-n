@@ -1,9 +1,8 @@
 ---
 dia: 2024-02-18
 biblio:
-  - https://www.youtube.com/@DerekElliott
-  - https://www.youtube.com/@TheDucky3D
-etapa: sin-empezar
+ - https://youtu.be/ZerJnivvBn4?si=1uxW8VkFzWsCUGKS
+etapa: empezado
 tema: "[[Blender/Índice.md|Blender]]"
 ---
 ### Definición

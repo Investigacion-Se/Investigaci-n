@@ -1,8 +1,7 @@
 ---
 dia: 2024-02-18
 biblio:
-  - https://www.youtube.com/@DerekElliott
-  - https://www.youtube.com/@TheDucky3D
+ - https://www.youtube.com/@polygonrunway
 etapa: sin-empezar
 tema: "[[Blender/Índice.md|Blender]]"
 ---
