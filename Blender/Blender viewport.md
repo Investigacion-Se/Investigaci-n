@@ -1,20 +1,16 @@
 ---
-dia: 2024-02-18
+dia: 2024-02-20
 biblio:
-  - https://youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z&si=Sv76fBmOtY8fOcqJ
-etapa: sin-empezar
+etapa: ampliar
 tema: "[[Blender/Índice.md|Blender]]"
 ---
 ### Definición
 ---
-
-* [[Blender viewport]]
-
-
-#### Hotkey
----
-![[Blender hotkey#General]]
-
+Tenemos diferentes forma de visualizar el contenido que estamos viendo, y estas se llaman viewports
+* Viewport shading:
+	* Ligero y optimizado para visualizar mientras se esta trabajando
+* Viewport rendered
+	* Muestra la [[Renderización|renderización]] final
 
 
 

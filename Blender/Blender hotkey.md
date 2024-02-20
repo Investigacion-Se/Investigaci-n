@@ -1,21 +1,28 @@
 ---
-dia: 2024-02-18
-biblio:
-  - https://youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z&si=Sv76fBmOtY8fOcqJ
-etapa: sin-empezar
+dia: 2024-02-20
+biblio: 
+etapa: ampliar
 tema: "[[Blender/Índice.md|Blender]]"
 ---
 ### Definición
 ---
 
-* [[Blender viewport]]
-
-
-#### Hotkey
+#### General
 ---
-![[Blender hotkey#General]]
-
-
+* Shift + a: [[Blender add|Add]]
+* Shift + middle mouse: move the view
+* g: move object 
+	* esc o click derecho: cancelar
+	* click izquierdo: aceptar
+	* x, y, z: mueve en ese eje
+	* middle mouse: snap al eje más cercano
+* f12: renderizar
+* numpad 0 :ir a la vista de la camara 
+* n: propiedades
+	* Selecionando la camara
+		* View
+			* View lock: 
+				* Camara to view: vincula el movimiento con la camara
 
 
 ### Archivos

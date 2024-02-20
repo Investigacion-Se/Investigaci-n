@@ -1,20 +1,13 @@
 ---
-dia: 2024-02-18
+dia: 2024-02-20
 biblio:
-  - https://youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z&si=Sv76fBmOtY8fOcqJ
-etapa: sin-empezar
+etapa: empezado
 tema: "[[Blender/Índice.md|Blender]]"
 ---
 ### Definición
 ---
-
-* [[Blender viewport]]
-
-
-#### Hotkey
----
-![[Blender hotkey#General]]
-
+Tenemos las opciones
+* Mesh, que agrega [[Primivitas|primitivas]]
 
 
 
