@@ -36,6 +36,27 @@ $mod+<key> exec <app>
 ---
 Inicialmente i3 no pone ningún wallpaper, por lo que necesitamos una herramienta para que lo haga, en este caso usaremos `feh`, y agregaremos 
 
+```shell
+exec --no-startup-id feh --bg-scale ~/path/to/wallpaper.png
+```
+
+Y recargamos la configuración
+
+#### Mover la barra de status
+---
+Hay una sección que dice 
+```shell
+bar {
+	# codigo
+}
+```
+
+Podemos agregar dentro de esas llaves la linea
+```shell
+position top
+```
+
+Moviendo la barra hacia arriba
 
 
 

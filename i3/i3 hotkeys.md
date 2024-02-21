@@ -18,6 +18,10 @@ Se una $mod como la tecla líder que se haya elegido en la [[Instalación de i3|
 * $mod + shift + r: recompila la [[Customizar i3|customización]] hecha
 	* En caso de algún error, aparecerá un mensaje
 * $mod + r: resize mode
+* $mod + j: hacer focus a la ventana que este a la izquierda
+* $mod + k: hacer focus a la ventana que este abajo
+* $mod + l: hacer focus a la ventana que este arriba
+* $mod + ñ/: : hacer focus a la ventana que este a la derecha
 
 
 
