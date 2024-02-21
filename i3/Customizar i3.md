@@ -34,7 +34,7 @@ $mod+<key> exec <app>
 
 #### Custom wallpaper
 ---
-Inicialmente i3 no pone ningún wallpaper, por lo que necesitamos una herramienta para que lo haga, en este caso usaremos `feh`, y agregaremos 
+Inicialmente i3 no pone ningún wallpaper, por lo que necesitamos una herramienta para que lo haga, en este caso usaremos `feh` que se tiene que installar con (`sudo dnf install feh`), y agregaremos 
 
 ```shell
 exec --no-startup-id feh --bg-scale ~/path/to/wallpaper.png
@@ -57,6 +57,8 @@ position top
 ```
 
 Moviendo la barra hacia arriba
+
+#### Cambiar 
 
 
 

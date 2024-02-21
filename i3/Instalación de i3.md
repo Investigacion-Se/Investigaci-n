@@ -9,7 +9,7 @@ tema: "[[i3/Índice.md|i3]]"
 ---
 En la instalación para fedora, tenemos q instalar 
 ```bash
-sudo dnf install i3 i3status dmenu i3lock xbacklight feh conky
+sudo dnf install i3 i3status dmenu i3lock xbacklight 
 ```
 
 Después al loggear de nuevo, buscando la forma de conseguir opciones, podemos habilitar i3, y ahí iniciar
