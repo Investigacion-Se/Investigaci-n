@@ -1,35 +1,11 @@
-<%* 
-	tR += "---\n"; 
-
-	let tema = await tp.system.prompt("Temática:");
-	let path = `${tema}/Índice`;
-
-	try {
-		await this.app.vault.createFolder(tema);
-		await tp.file.move(path);
-	} catch {
-		new Notice("El tema ya esta creado, abriendo el tema ya existente...");
-		let archivoActual = app.workspace.getActiveFile();
-
-		let archivoExistente = this.app.vault.getAbstractFileByPath(`${path}.md`);
-		if (archivoExistente) {
-			await app.workspace.getLeaf("tab").openFile(archivoExistente);
-		}
-		
-		await app.vault.trash(archivoActual, true);
-		return;
-	}
-
-	let dia = tp.file.creation_date("YYYY-MM-DD");
-	tR += `dia: ${dia}\n`;
-
-	tR += "tags: \n - Índice\n";
-
-	tR += "---";
-%>
+---
+dia: 2024-02-21
+tags: 
+ - Índice
+---
 ### Que se va a investigar
 ---
-<% tp.file.cursor() %>
+
 
 
 ### Bibliografía
@@ -37,7 +13,7 @@
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"<% tp.file.folder() %>"';
+let carpeta = '"i3"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

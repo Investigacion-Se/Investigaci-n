@@ -26,7 +26,6 @@
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [
-    "_templates/Crear índice.md",
     "_templates/Crear referencia.md"
   ],
   "startup_templates": [],

@@ -3,5 +3,7 @@
   "table-editor-obsidian",
   "cm-editor-syntax-highlight-obsidian",
   "obsidian-git",
-  "templater-obsidian"
+  "templater-obsidian",
+  "quickadd",
+  "cmdr"
 ]
