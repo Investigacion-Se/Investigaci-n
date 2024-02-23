@@ -1,21 +1,12 @@
 ---
-dia: 2024-02-18
+dia: 2024-02-23
 biblio:
- - https://www.youtube.com/watch?v=8K4AShjq-MU
-etapa: terminado
-tema: "[[Blender/Índice.md|Blender]]"
+ - https://youtube.com/playlist?list=PLVnntJRoP85JHGX7rGDu6LaF3fmDDbqyd&si=tfuoQ_uIqBsCzAGX
+etapa: sin-empezar
+tema: "[[Bevy/Índice.md|Bevy]]"
 ---
 ### Definición
 ---
-Tenemos las siguientes categorías
-* [[Blender/General]]
-* [[Hard surface modelling]]
-* [[Motion graphics]]
-* [[Character animation]]
-* [[Procedural shading]]
-* [[Modelling]]
-* [[Environment]]
-* [[Geometry Nodes]]
 
 
 
