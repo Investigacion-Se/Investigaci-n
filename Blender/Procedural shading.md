@@ -1,8 +1,9 @@
 ---
 dia: 2024-02-18
 biblio:
- - https://www.youtube.com/@RyanKingArt
- - https://www.youtube.com/playlist?list=PLNShHVjao84dtGx6VxFhkeSDPX1gt4NuS
+  - https://www.youtube.com/@RyanKingArt
+  - https://www.youtube.com/playlist?list=PLNShHVjao84dtGx6VxFhkeSDPX1gt4NuS
+  - https://youtu.be/ZerJnivvBn4?si=ea8IzLOiSLckBoaW
 etapa: sin-empezar
 tema: "[[Blender/Índice.md|Blender]]"
 ---
