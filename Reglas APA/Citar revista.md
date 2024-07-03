@@ -1,8 +1,8 @@
 ---
 dia: 2024-07-03
 biblio:
- - https://normas-apa.org/referencias/citar-revista/
-etapa: terminado
+  - https://normas-apa.org/referencias/citar-revista/
+etapa: sin-empezar
 tema: "[[Reglas APA/Investigar reglas APA.md|Reglas APA]]"
 ---
 ### Definición
