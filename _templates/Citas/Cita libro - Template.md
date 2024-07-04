@@ -5,12 +5,14 @@
 	
 	tR += "---\n"; 
 
-	let dia = tp.file.creation_date("YYYY-MM-DD");
+	const dia = tp.file.creation_date("YYYY-MM-DD");
 	tR += `dia: ${dia}\n`;
 	tR += "tipoCita = Libro\n";
+
+	const numReferencia = tp.user.obtenerNumReferencias(tp.file.title);
 	// Obtener numero de referencia por el nombre del archivo
 	// hacerlo un script
-	tR += `numRerefencia: 1\n`;
+	tR += `numRerefencia: ${numReferencia}\n`;
 	
 	tp.user.citarLibro(tp, tR);
 

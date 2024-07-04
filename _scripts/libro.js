@@ -30,8 +30,4 @@ function describirLibro(tp, archivo) {
     };
 }
 
-function citaFormatoLibro(tp, archivo) {
-
-}
-
-module.exports = { citarLibro, describirLibro, citaFormatoLibro };
+module.exports = { citarLibro, describirLibro };
