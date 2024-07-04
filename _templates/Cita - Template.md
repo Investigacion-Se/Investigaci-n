@@ -5,21 +5,23 @@
 	tR += `dia: ${dia}\n`;
 
 	let titulo = tp.file.title;
-	let [tipoCita, numReferencia] = titulo.split("-")
+	let [numReferencia, tipoCita] = titulo.split("-")
 		.map(texto => texto.trim());
 	
-	tR += `tipoCita = ${tipoCita}\n`;
+	tR += `tipoCita: ${tipoCita}\n`;
 	tR += `numRerefencia: ${parseInt(numReferencia, 10)}\n`;
 
 	try {
 		switch (tipoCita) {
 			case "Libro": await tp.user.citarLibro(tp, tR); break;
 			case "Youtube": await tp.user.citarYoutube(tp, tR); break;
-			default: return await tp.user.salir("El tipo de cita no existe todavia");
+			default: throw new Error("El tipo de cita no existe todavia");
 		}
-	} catch ({ nombre, mensaje }) {
-		return await tp.user.salir(mensaje);
+	} catch ({ name, message }) {
+		return await tp.user.salir(tp, message);
 	}
+
+	
 
 	tR += "---";
 %>

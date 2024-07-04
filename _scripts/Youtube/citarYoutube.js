@@ -7,7 +7,7 @@ async function citarYoutube(tp, tR) {
         );
         tR += `nombreVideo: ${nombreVideo}\n`;
     } catch (_) {
-        throw new TypeError("No se ingresa nombre del video");
+        throw new Error("No se ingresa nombre del video");
     }
 
     try {
@@ -16,7 +16,7 @@ async function citarYoutube(tp, tR) {
         );
         tR += `nombreCanal: ${nombreCanal}\n`;
     } catch (_) {
-        throw new TypeError("No se ingresó nombre del canal");
+        throw new Error("No se ingresó nombre del canal");
     }
 
     try {
@@ -27,19 +27,19 @@ async function citarYoutube(tp, tR) {
         let fechaVideo = moment(fechaVideoTexto);
 
         if (!fechaVideo.isValid()) {
-            let formato = tp.system.propmt(
+            let formato = await tp.system.propmt(
                 `Ingrese el formato para la fecha ${fechaVideoTexto}`,
             )
 
             fechaVideo = moment(fechaVideoTexto, formato);
             if (!(formato && fechaVideo.isValida())) {
-                throw new TypeError("No se ingresó un formato de fecha válido");
+                throw new Error("No se ingresó un formato de fecha válido");
             }
         }
 
         tR += `fecha: ${fechaVideo.format("YYYY-MM-DD")}\n`;
     } catch (_) {
-        throw new TypeError("No se ingresó la fecha del video de forma correcta");
+        throw new Error("No se ingresó la fecha del video de forma correcta");
     }
 
     try {
@@ -48,7 +48,7 @@ async function citarYoutube(tp, tR) {
         );
         tR += `url: ${url}\n`;
     } catch (_) {
-        throw new TypeError("No se ingresó el url del video");
+        throw new Error("No se ingresó el url del video");
     }
 }
 
