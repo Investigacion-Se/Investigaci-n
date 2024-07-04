@@ -17,12 +17,14 @@ async function citarYoutube(tp, tR) {
         throw new TypeError("No se ingresó nombre del video");
     }
 
+    
+
 }
 
 function describirYoutube(tp, archivo) {
     return {
         numReferencia: archivo.numReferencia,
-        nombreAutor: "Nombre del autor",
+        nombreAutor: archivo.nombreCanal,
         nombreObra: archivo.nombreVideo,
         extra: ""
     };
