@@ -28,7 +28,7 @@
 	const valores = [CITA_RAPIDA, NUEVA_CITA]
 		.concat(referencias.map(ref => ref.numReferencia));
 	
-	const citar = await tp.system.suggester(opciones, valores,
+	let citar = await tp.system.suggester(opciones, valores,
 		false, "Agregar una cita (si no hay nada que citar, apretar ESC)", 13
 	);
 
@@ -43,10 +43,16 @@
 			if (notaRapida) notasRapidas.push(notaRapida);
 
 		} else if (citar === NUEVA_CITA) {
-			
+			let numReferencia = tp.user.generarNumReferencia(dv);
+			tp.user.generarCita(tp, numReferencia);
+			numReferencias.push(numReferencia);
 		} else {
 			numReferencias.push(citar);
 		}
+
+		citar = await tp.system.suggester(opciones, valores,
+			false, "Agregar una cita (si no hay nada que citar, apretar ESC)", 13
+		);
 	}
 
 	tR += "referencias: \n";
