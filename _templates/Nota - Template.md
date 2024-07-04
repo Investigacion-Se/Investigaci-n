@@ -98,9 +98,14 @@ _%>
 #### Referencias
 ---
 ```dataviewjs
-const archivoActual = dv.current();
+let referenciasArchivo = dv.current().referencias;
+if (!referenciasArchivo)
+	referenciasArchivo = [];
 
-for (let referencia of archivoActual.referencias) {
-	dv.el("p", `[${referencia}] archivo`);
+let referencias = dv.pages('"_referencias"')
+	.filter(ref => refrerenciasArchivo.find(ref.numRerefencia));
+
+for (let referencia of referencias) {
+	
 }
 ```

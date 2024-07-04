@@ -10,6 +10,7 @@
 	tR += "tipoCita = Libro\n";
 	// Obtener numero de referencia por el nombre del archivo
 	// hacerlo un script
+	tR += `numRerefencia: 1\n`;
 	
 	tp.user.citarLibro(tp, tR);
 
