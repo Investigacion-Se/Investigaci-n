@@ -1,59 +1,50 @@
-<%* 
-	let titulo = tp.file.title;
-	if (titulo.startsWith("Untitle")) {
-		titulo = await tp.system.prompt("Nota de:");
-		await tp.file.rename(titulo);
-	}
-	tR += "---\n";
-	let dia = tp.file.creation_date("YYYY-MM-DD");
-	tR += `dia: ${dia}\n`
+---
+dia: 2024-07-03
+etapa: terminado
+tema: 
+referencias:
+  - "1"
+  - "2"
+  - "3"
+---
+```dataviewjs
+const archivoActual = dv.current();
+const etapa = archivoActual.etapa;
 
-	tR += "biblio:\n";
+let estadoCallout = "missing";
+let texto = "Hubo un error, el estado todavia no se agregó";
+switch (etapa) {
+	case "sin-empezar": estadoCallout = "info"; 
+		texto = "Esta nota todavía no se inició";
+		break;
+	case "empezado": estadoCallout = "help"; 
+		texto = "Todavía no esta terminado, puede modificarse";
+		break;
+	case "ampliar": estadoCallout = "todo"; 
+		texto = "Se puede ampliar el contenido";
+		break;
+	case "terminado": estadoCallout = "done"; 
+		texto = "Esta nota esta completa";
+		break;
+}
 
-	let contador = 1;
-	let link = await tp.system.prompt("Biblio: ");
-	while (link) {
-		contador++;
-		tR += ` - ${link}\n`;
-		link = await tp.system.prompt("Biblio n°" + contador + ": ");
-	}
- 
-	let etapas = ["sin-empezar", "empezado", "ampliar", "terminado"];
-	let etapa = await tp.system.suggester(etapa => {
-			etapa = etapa.replaceAll("-", " ");
-			return `${etapa.charAt(0).toUpperCase()}${etapa.slice(1)}`;
-		}, etapas, false, "En que etapa del proceso se encuentra");
-	tR += `etapa: ${etapa}\n`;
-
-	const dv = this.app.plugins.plugins["dataview"].api;
-	
-	let carpeta = tp.file.folder(true);
-	let tema = carpeta.split("/")[0];
-	let indice = dv.pages("#Índice").find(indice => indice.file.folder == tema).file.path;
-
-	tR += `tema: "[[${indice}|${tema}]]"\n`;
-	tR += "---";
-%>
+dv.el("p", ` > [!${estadoCallout}]+ Estado de la nota\n > ${texto}`);
+```
 ### Definición
 ---
-<% tp.file.cursor() %>
 
 
 
-### Archivos
+
+
+
+
+#### Referencias
 ---
-```dataviewjs 
-const paginaActual = dv.current();
-let archivos = dv.pages(`"${paginaActual.file.folder}" and -#Índice`)
-	.where(pagina => pagina.file.path != paginaActual.file.path);
+```dataviewjs
+const archivoActual = dv.current();
 
-archivos = (archivos.length > 0) 
-	? archivos.map(archivo => {
-			let nombre = archivo.file.name;
-			let path = archivo.file.path;
-			return `[[${path}|${nombre}]]`;
-		}) 
-	: ["No hay más archivos"];
-
-dv.list(archivos);	
+for (let referencia of archivoActual.referencias) {
+	dv.el("p", `[${referencia}] archivo`);
+}
 ```

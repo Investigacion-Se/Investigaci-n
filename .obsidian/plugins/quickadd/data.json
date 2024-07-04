@@ -1,34 +1,5 @@
 {
-  "choices": [
-    {
-      "id": "7a18e631-0e33-4fae-b1ff-2423a6bde3f7",
-      "name": "Agregar tema",
-      "type": "Template",
-      "command": true,
-      "templatePath": "_templates/Índice - Template.md",
-      "fileNameFormat": {
-        "enabled": true,
-        "format": "Untitle"
-      },
-      "folder": {
-        "enabled": true,
-        "folders": [],
-        "chooseWhenCreatingNote": false,
-        "createInSameFolderAsActiveFile": false,
-        "chooseFromSubfolders": false
-      },
-      "appendLink": false,
-      "openFileInNewTab": {
-        "enabled": false,
-        "direction": "vertical",
-        "focus": true
-      },
-      "openFile": true,
-      "openFileInMode": "default",
-      "fileExistsMode": "Nothing",
-      "setFileExistsBehavior": true
-    }
-  ],
+  "choices": [],
   "macros": [],
   "inputPrompt": "single-line",
   "devMode": false,

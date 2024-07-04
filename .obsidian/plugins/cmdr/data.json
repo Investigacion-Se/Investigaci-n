@@ -4,14 +4,7 @@
   "debug": false,
   "editorMenu": [],
   "fileMenu": [],
-  "leftRibbon": [
-    {
-      "id": "quickadd:choice:7a18e631-0e33-4fae-b1ff-2423a6bde3f7",
-      "icon": "book-open",
-      "name": "QuickAdd: Agregar tema",
-      "mode": "any"
-    }
-  ],
+  "leftRibbon": [],
   "rightRibbon": [],
   "titleBar": [],
   "statusBar": [],
