@@ -50,13 +50,4 @@ async function citarYoutube(tp, tR) {
     }
 }
 
-function describirYoutube(tp, archivo) {
-    return {
-        numReferencia: archivo.numReferencia,
-        nombreAutor: archivo.nombreCanal,
-        nombreObra: archivo.nombreVideo,
-        extra: ""
-    };
-}
-
-module.exports = { citarYoutube, describirYoutube };
+module.exports = { citarYoutube };

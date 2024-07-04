@@ -17,8 +17,4 @@ function describirCita(tp, archivo) {
     }
 }
 
-function descripcionTexto(desc) {
-    return `[${desc.numReferencia}] ${desc.nombreObra} de ${nombreObra}, ${desc.extra}`;
-}
-
-module.exports = { describirCita, descripcionTexto };
+module.exports = { describirCita };

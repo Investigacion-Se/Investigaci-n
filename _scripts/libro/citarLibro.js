@@ -25,13 +25,4 @@ async function citarLibro(tp, tR) {
 	tR += `citaCapitulo: ${!citaCapitulo ? false : true}\n`;
 }
 
-function describirLibro(tp, archivo) {
-    return {
-        numReferencia: archivo.numReferencia,
-        nombreAutor: "Nombre del autor",
-        nombreObra: "Nombre de la obra",
-        extra: "Más datos"
-    };
-}
-
-module.exports = { citarLibro, describirLibro };
+module.exports = { citarLibro };

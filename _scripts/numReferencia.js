@@ -12,8 +12,4 @@ function generarNumReferencia(dv) {
     return nuevoNumReferencia + 1;
 }
 
-function obtenerNumRerefencia(titulo) {
-    return int(titulo.split("-")[0].trim());
-}
-
-module.exports = { generarNumReferencia, obtenerNumRerefencia };
+module.exports = { generarNumReferencia };
