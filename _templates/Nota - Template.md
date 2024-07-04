@@ -34,10 +34,12 @@
 			return [ desc ];
 		});
 
-	const opciones = ["Citar de forma rápida", "Nueva cita"]
-		.concat(referencias.map(ref => tp.user.descripcionTexto(ref)));
-	const valores = [CITA_RAPIDA, NUEVA_CITA]
-		.concat(referencias.map(ref => ref.numReferencia));
+	let opciones = ["Citar de forma rápida", "Nueva cita"];
+	let valores = [CITA_RAPIDA, NUEVA_CITA];
+	if (referencias.length > 0) {
+		opciones = opciones.concat(referencias.map(ref => tp.user.descripcionTexto(ref)));
+		valores = valores.concat(referencias.map(ref => ref.numReferencia));
+	}
 	
 	let citar = await tp.system.suggester(opciones, valores,
 		false, "Agregar una cita (si no hay nada que citar, apretar ESC)", 13
@@ -47,7 +49,7 @@
 	let notasRapidas = []
 	while (citar) {
 		if (citar === CITA_RAPIDA) {
-			const notaRapida = tp.system.prompt(
+			const notaRapida = await tp.system.prompt(
 				"Escribir la información necesaria para citar después",
 				null, false, true
 			);
@@ -110,9 +112,11 @@ dv.el("p", ` > [!${estadoCallout}]+ Estado de la nota\n > ${texto}`);
 		tR += "#### Notas referencias\n---\n";
 		let contador = 1;
 		for (let nota of notasRapidas) {
-			tR += `##### Nota num.${contador++}\n---\n`;
+			tR += `\n##### Nota num° ${contador++}\n---\n`;
 			tR += `${nota}\n`;
 		}
+
+		tR += "\n";
 	}
 _%>
 

@@ -3,15 +3,22 @@ async function conseguirTema(tp, dv) {
 	if (carpeta == "/" || carpeta == "")
 		return preguntarTema(dv);
 	
+    console.log(carpeta);
+
     let archivos = dv.pages(`"${carpeta}"`)
-        .filter(archivo => {
+        .filter(archivo => {            
+            if (!archivo.tags)
+                return false;
+            
             if (archivo.tags.includes("Subtema"))
                 return false;
             
             return archivo.tags.includes("Índice");
         });
 
-    switch (archivos.length) {
+    console.log(archivos);
+
+    switch (archivos.value.length) {
         case 1: return archivos[0].tema;
         default: return preguntarTema(dv);
     }
