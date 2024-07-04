@@ -10,8 +10,6 @@
 	tR += "tipoCita = Libro\n";
 
 	const numReferencia = tp.user.obtenerNumReferencias(tp.file.title);
-	// Obtener numero de referencia por el nombre del archivo
-	// hacerlo un script
 	tR += `numRerefencia: ${numReferencia}\n`;
 	
 	tp.user.citarLibro(tp, tR);

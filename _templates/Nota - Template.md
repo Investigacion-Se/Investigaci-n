@@ -1,6 +1,7 @@
 <%* 
 	const CITA_RAPIDA = "cita rapida";
 	const NUEVA_CITA = "nueva cita";
+	const dv = app.plugins.plugins["dataview"].api;
 
 	tR += "---\n"; 
 
@@ -8,7 +9,7 @@
 	tR += `dia: ${dia}\n`;
 	tR += "etapa: sin-empezar\n";
 	
-	const dv = app.plugins.plugins["dataview"].api;
+	tR += `tema: ninguno\n`;
 
 	// hacer la parte de tema con dataview que puede ser más fácil
 	let referencias = dv.pages('"_referencias"')
