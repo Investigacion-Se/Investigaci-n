@@ -9,7 +9,7 @@ function generarNumReferencia(dv) {
         previoNumReferencia = referencia.numReferencia;
     }
 
-    return nuevoNumReferencia + 1;
+    return previoNumReferencia + 1;
 }
 
 module.exports = generarNumReferencia;

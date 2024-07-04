@@ -1,9 +1,7 @@
 async function conseguirTema(tp, dv) {
     let carpeta = tp.file.folder(true);
 	if (carpeta == "/" || carpeta == "")
-		return preguntarTema(dv);
-	
-    console.log(carpeta);
+		return await preguntarTema(dv);
 
     let archivos = dv.pages(`"${carpeta}"`)
         .filter(archivo => {            
@@ -16,11 +14,9 @@ async function conseguirTema(tp, dv) {
             return archivo.tags.includes("Índice");
         });
 
-    console.log(archivos);
-
-    switch (archivos.value.length) {
-        case 1: return archivos[0].tema;
-        default: return preguntarTema(dv);
+    switch (archivos.values.length) {
+        case 1: return archivos.values[0].tema;
+        default: return await preguntarTema(dv);
     }
 }
 
@@ -37,7 +33,7 @@ async function preguntarTema(tp, dv) {
             }
         });
 
-    return tp.system.suggester(
+    return await tp.system.suggester(
         temas.map(tema => tema.texto),
         temas.map(tema => tema.archivo.tema),
         true, "Cuál es el tema del archivo?"

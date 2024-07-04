@@ -5,7 +5,7 @@ async function generarCita(tp, numReferencia) {
         true, "Qué tipo de cita es?"
     );
 
-    return tp.file.create_new(
+    return await tp.file.create_new(
         "Cita - Template", 
         `${numReferencia} - ${tipoCita}`,
         false,

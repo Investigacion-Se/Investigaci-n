@@ -1,6 +1,6 @@
 <%* 
 	let titulo = tp.file.title;
-	if (titulo.startsWith("Untitle")) {
+	if (titulo.startsWith("temp")) {
 		titulo = await tp.system.prompt("Nota de:");
 		await tp.file.rename(titulo);
 	}
@@ -58,8 +58,13 @@
 		} else if (citar === NUEVA_CITA) {
 			let numReferencia = tp.user.generarNumReferencia(dv);
 			
-			try { await tp.user.generarCita(tp, numReferencia) }
-			catch (_) { continue; }
+			try { 
+				await tp.user.generarCita(tp, numReferencia) 
+			} catch (_) { 
+				continue; 
+			}
+
+			console.log("Cita generada ?");
 
 			numReferencias.push(numReferencia);
 		} else {
