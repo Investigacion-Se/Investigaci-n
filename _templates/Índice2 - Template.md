@@ -16,7 +16,7 @@
 			await app.workspace.getLeaf("tab").openFile(archivoExistente);
 		}
 		
-		await app.vault.trash(archivoActual, true);
+		// await app.vault.trash(archivoActual, true);
 		return;
 	}
 
