@@ -78,7 +78,7 @@
 
 	tR += "referencias: \n";
 	for (let numRef of numReferencias) {
-		tR += `  - ${numRef}\n`;
+		tR += ` - ${numRef}\n`;
 	}
 
 	tR += "---";
@@ -133,7 +133,7 @@ if (!referenciasArchivo)
 	referenciasArchivo = [];
 
 let referencias = dv.pages('"_referencias"')
-	.filter(ref => refrerenciasArchivo.find(ref.numRerefencia));
+	.filter(ref => referenciasArchivo.find(ref.numRerefencia));
 
 for (let referencia of referencias) {
 	await dv.view("_dataviewScripts/citaView", { archivo: referencia });
