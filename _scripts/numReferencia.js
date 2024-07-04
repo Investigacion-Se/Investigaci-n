@@ -1,5 +1,5 @@
 function generarNumReferencia(dv) {
-    
+    let referencias = dv.pages('"_referencias"');
 }
 
 function obtenerNumRerefencia(titulo) {
