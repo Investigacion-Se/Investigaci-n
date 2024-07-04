@@ -1,4 +1,7 @@
 <%* 
+	const CITA_RAPIDA = "cita rapida";
+	const NUEVA_CITA = "nueva cita";
+
 	tR += "---\n"; 
 
 	const dia = tp.file.creation_date("YYYY-MM-DD");
@@ -9,12 +12,46 @@
 
 	// hacer la parte de tema con dataview que puede ser más fácil
 	let referencias = dv.pages('"_referencias"')
+		.flatMap(referencia => {
+			let desc = tp.user.describirCita(tp, referencia);
+			if (!desc) {
+				console.log("El siguiente archivo tuvo un erro al describirse");
+				console.log(referencia);
+				return [];
+			}
+			return [ desc ];
+		});
 
-	const citar = await tp.system.suggester(
-		["No, no voy a citar esta nota", "Sí, voy a citar esta nota"],
-		[false, true],
-		false, "Vas a citar esta nota?"
+	const opciones = ["Citar de forma rápida", "Nueva cita"]
+		.concat(referencias.map(ref => tp.user.descripcionTexto(ref)));
+	const valores = [CITA_RAPIDA, NUEVA_CITA]
+		.concat(referencias.map(ref => ref.numReferencia));
+	
+	const citar = await tp.system.suggester(opciones, valores,
+		false, "Agregar una cita (si no hay nada que citar, apretar ESC)", 13
 	);
+
+	let numReferencias = [];
+	let notasRapidas = []
+	while (citar) {
+		if (citar === CITA_RAPIDA) {
+			const notaRapida = tp.system.prompt(
+				"Escribir la información necesaria para citar después",
+				null, false, true
+			);
+			if (notaRapida) notasRapidas.push(notaRapida);
+
+		} else if (citar === NUEVA_CITA) {
+			
+		} else {
+			numReferencias.push(citar);
+		}
+	}
+
+	tR += "referencias: \n";
+	for (let numRef of numReferencias) {
+		tR += `  - ${numRef}\n`;
+	}
 
 	tR += "---";
 %>
@@ -47,8 +84,16 @@ dv.el("p", ` > [!${estadoCallout}]+ Estado de la nota\n > ${texto}`);
 
 
 
-
-
+<%*
+	if (notasRapidas.length > 0) {	
+		tR += "#### Notas referencias\n---\n";
+		let contador = 1;
+		for (let nota of notasRapidas) {
+			tR += `##### Nota num.${contador++}\n---\n`;
+			tR += `${nota}\n`;
+		}
+	}
+_%>
 
 #### Referencias
 ---
