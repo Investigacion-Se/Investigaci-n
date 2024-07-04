@@ -17,4 +17,4 @@ function describirCita(tp, archivo) {
     }
 }
 
-module.exports = { describirCita };
+module.exports = describirCita;

@@ -127,6 +127,6 @@ let referencias = dv.pages('"_referencias"')
 	.filter(ref => refrerenciasArchivo.find(ref.numRerefencia));
 
 for (let referencia of referencias) {
-	await dv.view("_scripts/citaView", { archivo: referencia });
+	await dv.view("_dataviewScripts/citaView", { archivo: referencia });
 }
 ```

@@ -7,4 +7,4 @@ function describirYoutube(tp, archivo) {
     };
 }
 
-module.exports = { describirYoutube };
+module.exports = describirYoutube;

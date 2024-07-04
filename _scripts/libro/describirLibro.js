@@ -7,4 +7,4 @@ function describirLibro(tp, archivo) {
     };
 }
 
-module.exports = { describirLibro };
+module.exports = describirLibro;

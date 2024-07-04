@@ -50,4 +50,4 @@ async function citarYoutube(tp, tR) {
     }
 }
 
-module.exports = { citarYoutube };
+module.exports = citarYoutube;

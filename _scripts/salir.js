@@ -2,7 +2,7 @@ async function salir(tp, mensaje) {
     new Notice(`Hubo un error\n${mensaje}`);
 
     const RESPUESTA_AFIRMATIVA = 1;
-    const respuestaElimianr = tp.system.suggester(
+    const respuestaEliminar = tp.system.suggester(
         ["Si, quiero eliminar este archivo", "No, no quiero eliminar este archivo"],
         [RESPUESTA_AFIRMATIVA, undefined],
         false, "Quiere eliminar este archivo?"

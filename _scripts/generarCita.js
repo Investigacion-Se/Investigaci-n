@@ -13,4 +13,4 @@ async function generarCita(tp, numReferencia) {
     )
 }
 
-module.exports = { generarCita };
+module.exports = generarCita;

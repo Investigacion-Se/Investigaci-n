@@ -25,4 +25,4 @@ async function citarLibro(tp, tR) {
 	tR += `citaCapitulo: ${!citaCapitulo ? false : true}\n`;
 }
 
-module.exports = { citarLibro };
+module.exports = citarLibro;

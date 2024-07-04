@@ -12,4 +12,4 @@ function generarNumReferencia(dv) {
     return nuevoNumReferencia + 1;
 }
 
-module.exports = { generarNumReferencia };
+module.exports = generarNumReferencia;

@@ -1,6 +1,6 @@
 const { archivo } = input
 
-function mostrarCita(archivo) {
+async function mostrarCita(archivo) {
     let tipoCita = archivo.tipoCita;
     input = { archivo: archivo };
 

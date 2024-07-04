@@ -37,4 +37,4 @@ async function preguntarTema(tp, dv) {
     );
 }
 
-module.exports = { conseguirTema };
+module.exports = conseguirTema;
