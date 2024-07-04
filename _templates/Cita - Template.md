@@ -9,7 +9,7 @@
 		.map(texto => texto.trim());
 	
 	tR += `tipoCita = ${tipoCita}\n`;
-	tR += `numRerefencia: ${int(numReferencia)}\n`;
+	tR += `numRerefencia: ${parseInt(numReferencia, 10)}\n`;
 
 	try {
 		switch (tipoCita) {
@@ -17,7 +17,7 @@
 			case "Youtube": await tp.user.citarYoutube(tp, tR); break;
 			default: return await tp.user.salir("El tipo de cita no existe todavia");
 		}
-	} catch ({ _, mensaje }) {
+	} catch ({ nombre, mensaje }) {
 		return await tp.user.salir(mensaje);
 	}
 

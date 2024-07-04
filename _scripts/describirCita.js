@@ -7,7 +7,7 @@ function describirCita(tp, archivo) {
         case "Youtube": description = tp.user.decribirYoutube(tp, archivo); break;
     }   
 
-    return (!description) ? undefined : {
+    return (!descripcion) ? undefined : {
         archivo: archivo,
         tipoCita: tipoCita,
         numReferencia: descripcion.numReferencia,

@@ -5,11 +5,11 @@ async function generarCita(tp, numReferencia) {
         true, "Qué tipo de cita es?"
     );
 
+    let template = tp.file.find_tfile("Cita - Template");
+    let carpeta = app.vault.getAbstractFileByPath("_referencias");
+
     return await tp.file.create_new(
-        tp.file.find_tfile("Cita - Template") 
-        `${numReferencia} - ${tipoCita}`,
-        true,
-        app.vault.getAbstractFileByPath("_referencias")
+        template, `${numReferencia} - ${tipoCita}`, false, carpeta
     )
 }
 

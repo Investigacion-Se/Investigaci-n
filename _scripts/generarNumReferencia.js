@@ -4,9 +4,11 @@ function generarNumReferencia(dv) {
     
     let previoNumReferencia = 0;
     for (let referencia of referencias) {
-        if (referencia.numReferencia - previoNumReferencia > 1)
+        numReferenciaActual = parseInt(referencia.numReferencia, 10);
+
+        if (numReferenciaActual - previoNumReferencia > 1)
             break;
-        previoNumReferencia = referencia.numReferencia;
+        previoNumReferencia = numReferenciaActual;
     }
 
     return previoNumReferencia + 1;

@@ -64,8 +64,6 @@
 				continue; 
 			}
 
-			console.log("Cita generada ?");
-
 			numReferencias.push(numReferencia);
 		} else {
 			numReferencias.push(citar);
@@ -73,7 +71,7 @@
 
 		citar = await tp.system.suggester(opciones, valores,
 			false, "Agregar una cita (si no hay nada que citar, apretar ESC)", 13
-		);
+		);		
 	}
 
 	tR += "referencias: \n";

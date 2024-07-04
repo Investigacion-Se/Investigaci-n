@@ -1,4 +1,6 @@
 async function citarYoutube(tp, tR) {
+    console.log("Hola");
+
     try {
         let nombreVideo = await tp.system.propmt(
             "Nombre del video: ", null, true
