@@ -1,4 +1,8 @@
 async function citarLibro(tp, tR) {
+    const LIBRO_IMPRESO = "impreso";
+	const LIBRO_VERSION_ELECTRONICA = "version electrónica";
+	const LIBRO_ELECTRONICO = "electrónica";
+    
     let tipo = undefined;
     try{ 
         tipo = await tp.system.suggester(

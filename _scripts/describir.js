@@ -4,6 +4,7 @@ function describirCita(tp, archivo) {
 
     switch (tipoCita) {
         case "Libro": description = tp.user.decribirLibro(tp, archivo); break;
+        case "Youtube": description = tp.user.decribirYoutube(tp, archivo); break;
     }   
 
     return (!description) ? undefined : {

@@ -9,7 +9,12 @@
 	tR += `dia: ${dia}\n`;
 	tR += "etapa: sin-empezar\n";
 	
-	tR += `tema: ninguno\n`;
+	try {
+		const tema = await tp.user.conseguirTema(tp, dv);
+		tR += `tema: ${tema}\n`;
+	} catch (_) {
+		return await tp.user.salir(tp, "No se ingresó un tema");
+	}
 
 	// hacer la parte de tema con dataview que puede ser más fácil
 	let referencias = dv.pages('"_referencias"')
@@ -44,7 +49,10 @@
 
 		} else if (citar === NUEVA_CITA) {
 			let numReferencia = tp.user.generarNumReferencia(dv);
-			tp.user.generarCita(tp, numReferencia);
+			
+			try { await tp.user.generarCita(tp, numReferencia) }
+			catch (_) { continue; }
+
 			numReferencias.push(numReferencia);
 		} else {
 			numReferencias.push(citar);
