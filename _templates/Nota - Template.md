@@ -1,4 +1,10 @@
 <%* 
+	let titulo = tp.file.title;
+	if (titulo.startsWith("Untitle")) {
+		titulo = await tp.system.prompt("Nota de:");
+		await tp.file.rename(titulo);
+	}
+
 	const CITA_RAPIDA = "cita rapida";
 	const NUEVA_CITA = "nueva cita";
 	const dv = app.plugins.plugins["dataview"].api;
