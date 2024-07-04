@@ -1,23 +1,13 @@
-<%* 
-	tR += "---\n"; 
-
-	const dia = tp.file.creation_date("YYYY-MM-DD");
-	tR += `dia: ${dia}\n`;
-	tR += "etapa: sin-empezar\n";
-	
-	const dv = app.plugins.plugins["dataview"].api;
-
-	// hacer la parte de tema con dataview que puede ser más fácil
-	let referencias = dv.pages('"_referencias"')
-
-	const citar = await tp.system.suggester(
-		["No, no voy a citar esta nota", "Sí, voy a citar esta nota"],
-		[false, true],
-		false, "Vas a citar esta nota?"
-	);
-
-	tR += "---";
-%>
+---
+dia: 2024-07-03
+etapa: terminado
+tema: 
+referencias:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+---
 ```dataviewjs
 const archivoActual = dv.current();
 const etapa = archivoActual.etapa;
@@ -43,7 +33,7 @@ dv.el("p", ` > [!${estadoCallout}]+ Estado de la nota\n > ${texto}`);
 ```
 ### Definición
 ---
-<% tp.file.cursor() %>
+
 
 
 
