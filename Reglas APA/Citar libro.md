@@ -1,10 +1,34 @@
 ---
-dia: 2024-07-03
-biblio:
-  - https://normas-apa.org/referencias/citar-libro/
+dia: 2024-07-05
 etapa: terminado
-tema: "[[Reglas APA/index|Reglas APA]]"
+tema: Reglas APA
+indice: "[[Reglas APA/index.md|Reglas APA]]"
+referencias:
+  - "6"
 ---
+```dataviewjs
+const archivoActual = dv.current();
+const etapa = archivoActual.etapa;
+
+let estadoCallout = "missing";
+let texto = "Hubo un error, el estado todavia no se agregó";
+switch (etapa) {
+	case "sin-empezar": estadoCallout = "info"; 
+		texto = "Esta nota todavía no se inició";
+		break;
+	case "empezado": estadoCallout = "help"; 
+		texto = "Todavía no esta terminado, puede modificarse";
+		break;
+	case "ampliar": estadoCallout = "todo"; 
+		texto = "Se puede ampliar el contenido";
+		break;
+	case "terminado": estadoCallout = "done"; 
+		texto = "Esta nota esta completa";
+		break;
+}
+
+dv.el("p", ` > [!${estadoCallout}]+ Estado de la nota\n > ${texto}`);
+```
 ### Definición
 ---
 En esta entrada, detallaremos el proceso de citar y referenciar diversos tipos de fuentes, como libros, enciclopedias, diccionarios, monografías, tesis, entre otros. También abordaremos la citación de libros exclusivamente electrónicos y aquellos libros que, estando agotados, podrían encontrarse únicamente en repositorios en línea.
@@ -32,26 +56,27 @@ En esta entrada, detallaremos el proceso de citar y referenciar diversos tipos d
 		* Apellido Autor, N. N. (año). Título del capítulo o entrada en N. Apellido Editor (Ed.), Título del libro (xx dc., Vol. xx, pp. xxx-xxx). Editorial
 		* Ejemplo
 			* Renteria Salazar, P. (2006). El comienzo de la renovación. En M. A. Flórez Góngora (Ed.), _Bogotá: Renovacion Urbana, Renovacion Humana_ (pp. 80-100). Empresa De Renovacion Urbana.
-		* Si no tienes los números de página en el ejemplo anterior, el título del capítulo o de la entrada es suficiente. Si el libro no tiene número de edición o volumen, omitir esta intormación
+		* Si no tienes los números de página en el ejemplo anterior, el título del capítulo o de la entrada es suficiente. Si el libro no tiene número de edición o volumen, omitir esta información
 
 ##### Número de edición o volumen
 ---
 Apellido Autor, N. N. (1994). _Título del trabajo._ ==(3ª ed., Vol. 4).== Editorial.
 
-### Archivos
+
+
+### Referencias
 ---
-```dataviewjs 
-const paginaActual = dv.current();
-let archivos = dv.pages(`"${paginaActual.file.folder}" and -#Índice`)
-	.where(pagina => pagina.file.path != paginaActual.file.path);
+```dataviewjs
+let referenciasArchivo = dv.current().referencias;
+if (!referenciasArchivo)
+	referenciasArchivo = [];
 
-archivos = (archivos.length > 0) 
-	? archivos.map(archivo => {
-			let nombre = archivo.file.name;
-			let path = archivo.file.path;
-			return `[[${path}|${nombre}]]`;
-		}) 
-	: ["No hay más archivos"];
+referenciasArchivo = referenciasArchivo.map(ref =>  parseInt(ref, 10));
 
-dv.list(archivos);	
+let referencias = dv.pages('"_referencias"')
+	.filter(ref => referenciasArchivo.indexOf(ref.numReferencia) >= 0);
+
+for (let referencia of referencias) {
+	await dv.view("_dataviewScripts/citaView", { archivo: referencia });
+}
 ```

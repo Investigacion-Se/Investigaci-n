@@ -2,6 +2,7 @@
 ---
 Lista de todas las carpetas siendo investigadas, con todos los links que usan. Cualquier cosa ver el [[README|read me]].
 
+
 ```dataviewjs
 function conseguir_nombre(carpeta) {
 	const nombre = carpeta.rows[0].file.folder;
@@ -64,5 +65,13 @@ for (let carpeta of paginas.groupBy(pagina => pagina.file.folder)) {
 	dv.el("hr", "");
 
 	mostrar_bibliografia(carpeta);
+}
+```
+
+```dataviewjs
+let referencias = dv.pages('"_referencias"');
+
+for (let referencia of referencias) {
+	await dv.view("_dataviewScripts/citaView", { archivo: referencia });
 }
 ```

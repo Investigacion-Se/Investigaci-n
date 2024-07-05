@@ -35,7 +35,7 @@ async function citarWeb(tp) {
     tR += await tp.user.preguntarSimple(
         tp, 
         "url",
-        "Ingresar el url del video de Youtube:",
+        "Ingresar el url del artículo:",
         "No se ingresó el url del video"
     );
 

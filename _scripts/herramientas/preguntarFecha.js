@@ -2,9 +2,9 @@ async function preguntarFecha(tp, key, mensaje, errorFormatoIncorrecto, errorFec
     let tR = "";
 
     try {
-        let fechaVideoTexto = await tp.system.prompt(mensaje, null, true);
+        let fechaVideoTexto = await tp.system.prompt(`${mensaje} (formato: DD/MM/YYYY)`, null, true);
 
-        let fechaVideo = moment(fechaVideoTexto);
+        let fechaVideo = moment(fechaVideoTexto, "D/MM/YYYY");
 
         if (!fechaVideo.isValid()) {
             let formato = await tp.system.prompt(

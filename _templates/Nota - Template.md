@@ -18,7 +18,7 @@
 	try {
 		const archivoTema = await tp.user.conseguirTema(tp, dv);
 		tR += `tema: ${archivoTema.tema}\n`;
-		tR += `indice: [[${archivoTema.path}|${archivoTema.tema}]]\n`;
+		tR += `indice: "[[${archivoTema.file.path}|${archivoTema.tema}]]"\n`;
 	} catch (_) {
 		return await tp.user.salir(tp, "No se ingresó un tema");
 	}
