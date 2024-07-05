@@ -76,7 +76,7 @@
 
 	tR += "referencias: \n";
 	for (let numRef of numReferencias) {
-		tR += ` - ${numRef}\n`;
+		tR += ` - "${numRef}"\n`;
 	}
 
 	tR += "---";

@@ -3,5 +3,5 @@
   "promptDelete": false,
   "alwaysUpdateLinks": true,
   "newFileLocation": "current",
-  "propertiesInDocument": "visible"
+  "propertiesInDocument": "hidden"
 }

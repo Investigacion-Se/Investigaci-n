@@ -6,14 +6,20 @@ function mostrarCitaYoutube(archivo) {
     const numReferencia = archivo.numReferencia;
     const nombreCanal = archivo.nombreCanal;
     const nombreVideo = archivo.nombreVideo;
-    console.log(archivo.fecha);
-    const [dia, mes, anio] = moment(archivo.fecha)
-        .format("D-MM-YYYY")
-        .split("-");
+    
+    const dia = archivo.fecha.c.day;
+    const mes = MESES[ archivo.fecha.c.month - 1 ];
+    const anio = archivo.fecha.c.year;
+    
     const url = archivo.url;
 
-    let texto = `${nombreCanal} (${dia} de ${MESES[mes - 1]} del ${anio}). <em> ${nombreVideo} </em>. [Archivo de video]. Youtube. ${url}`;
-    dv.el("p", `[${numReferencia}] ${texto}`);
+    const ref = `<p style="margin-right: 0.5em">[${numReferencia}]</p>`;
+    const texto = `<p>${nombreCanal} (${dia} de ${mes} del ${anio}). <i> ${nombreVideo} </i>. [Archivo de video]. Youtube. ${url}</p>`;
+
+    const divStyle = "display:flex; flex-direction: row;";
+    const div = `<div style="${divStyle}"> ${ref} ${texto} </div>`;
+
+    dv.el("p", div);
 }
 
 mostrarCitaYoutube(archivo);
