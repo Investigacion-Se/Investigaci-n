@@ -2,11 +2,12 @@ async function preguntarAutores(tp, key, mensajeNombre, mensajeApellido, errorNo
     let tR = `${key}:\n`;
 
     let nombre = await tp.user
-        .preguntarAutores("", mensajeNombre, errorNombre)
-        .slice(2);
+        .preguntarSimple(tp, "", mensajeNombre, errorNombre);
+    nombre = nombre.slice(2);
     let apellido = await tp.user
-        .preguntarAutores("", mensajeApellido, errorApellido)
-        .slice(2);
+        .preguntarSimple(tp, "", mensajeApellido, errorApellido);
+    apellido = apellido.slice(2);
+
     tR += ` - autore:\n`;
     tR += `   - nombre: ${nombre}\n`;
     tR += `   - apellido: ${apellido}\n`;
@@ -14,11 +15,12 @@ async function preguntarAutores(tp, key, mensajeNombre, mensajeApellido, errorNo
     while (true) {
         try {
             let nombre = await tp.user
-                .preguntarAutores("", mensajeNombre, errorNombre)
-                .slice(2);
+                .preguntarSimple(tp, "", mensajeNombre, errorNombre);
+            nombre = nombre.slice(2);
             let apellido = await tp.user
-                .preguntarAutores("", mensajeApellido, errorApellido)
-                .slice(2);
+                .preguntarSimple(tp, "", mensajeApellido, errorApellido);
+            apellido = apellido.slice(2);
+            
             tR += ` - autore:\n`;
             tR += `   - nombre: ${nombre}\n`;
             tR += `   - apellido: ${apellido}\n`;

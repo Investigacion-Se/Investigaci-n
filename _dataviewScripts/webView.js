@@ -4,20 +4,29 @@ const MESES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 
 function mostrarCitaYoutube(archivo) {
     const numReferencia = archivo.numReferencia;
-    const nombreCanal = archivo.nombreCanal;
-    const nombreVideo = archivo.nombreVideo;
+    const nombreAutores = archivo.nombreAutores;
+    const tituloArticulo = archivo.tituloArticulo;
+    const nombrePagina = archivo.nombrePagina;
     
-    const dia = archivo.fecha.c.day;
-    const mes = MESES[ archivo.fecha.c.month - 1 ];
-    const anio = archivo.fecha.c.year;
+    const fecha = archivo.fechaPublicacion.c;
+    const dia = fecha.day;
+    const mes = MESES[ fecha.month - 1 ];
+    const anio = fecha.year;
     
     const url = archivo.url;
 
     const ref = `<p style="margin-right: 0.5em">[${numReferencia}]</p>`;
-    const texto = `<p>${nombreCanal} (${dia} de ${mes} del ${anio}). <i> ${nombreVideo} </i>. [Archivo de video]. Youtube. ${url}</p>`;
+    
+    let autores = "";
+    for (let {autore: autore} of nombreAutores) {
+        let [{nombre: nombre}, {apellido: apellido}] = autore;
+        autores += `${apellido}, ${nombre[0]}.`;
+    }
+
+    const texto = `${autores} (${dia} de ${mes} del ${anio}). <i>${tituloArticulo}</i>. ${nombrePagina}. ${url}`;
 
     const divStyle = "display:flex; flex-direction: row;";
-    const div = `<div style="${divStyle}"> ${ref} ${texto} </div>`;
+    const div = `<div style="${divStyle}"> ${ref} <p> ${texto} </p> </div>`;
 
     dv.el("p", div);
 }

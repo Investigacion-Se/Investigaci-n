@@ -1,5 +1,6 @@
 function describirCita(tp, archivo) {
     let tipoCita = archivo.tipoCita;
+    let numReferencia = archivo.numReferencia;
     let descripcion = undefined;
 
     switch (tipoCita) {
@@ -11,7 +12,7 @@ function describirCita(tp, archivo) {
     return (!descripcion) ? undefined : {
         archivo: archivo,
         tipoCita: tipoCita,
-        numReferencia: descripcion.numReferencia,
+        numReferencia: numReferencia,
         nombreAutor: descripcion.nombreAutor,
         nombreObra: descripcion.nombreObra,
         extra: descripcion.extra

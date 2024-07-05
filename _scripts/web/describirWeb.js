@@ -1,9 +1,8 @@
 function describirYoutube(tp, archivo) {
     return {
-        numReferencia: archivo.numReferencia,
-        nombreAutor: archivo.nombreCanal,
-        nombreObra: archivo.nombreVideo,
-        extra: ""
+        nombreAutor: archivo.nombreAutores,
+        nombreObra: archivo.tituloArticulo,
+        extra: `publicado en ${nombrePagina}`
     };
 }
 

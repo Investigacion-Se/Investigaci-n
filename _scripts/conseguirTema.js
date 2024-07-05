@@ -15,7 +15,7 @@ async function conseguirTema(tp, dv) {
         });
 
     switch (archivos.values.length) {
-        case 1: return archivos.values[0].tema;
+        case 1: return archivos.values[0];
         default: return await preguntarTema(dv);
     }
 }

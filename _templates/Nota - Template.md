@@ -131,8 +131,10 @@ let referenciasArchivo = dv.current().referencias;
 if (!referenciasArchivo)
 	referenciasArchivo = [];
 
+referenciasArchivo = referenciasArchivo.map(ref =>  parseInt(ref, 10));
+
 let referencias = dv.pages('"_referencias"')
-	.filter(ref => referenciasArchivo.find(ref.numRerefencia));
+	.filter(ref => referenciasArchivo.indexOf(ref.numReferencia) >= 0);
 
 for (let referencia of referencias) {
 	await dv.view("_dataviewScripts/citaView", { archivo: referencia });
