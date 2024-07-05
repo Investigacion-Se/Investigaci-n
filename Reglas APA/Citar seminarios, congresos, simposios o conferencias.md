@@ -3,7 +3,8 @@ dia: 2024-07-05
 etapa: sin-empezar
 tema: Reglas APA
 indice: "[[Reglas APA/index.md|Reglas APA]]"
-referencias: 
+referencias:
+  - "11"
 aliases:
   - Citar seminarios
   - Citar congresos
