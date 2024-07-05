@@ -16,7 +16,9 @@
   "folder_templates": [],
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": false,
-  "enabled_templates_hotkeys": [],
+  "enabled_templates_hotkeys": [
+    "_templates/Modificar referencia.md"
+  ],
   "startup_templates": [],
   "enable_ribbon_icon": true
 }

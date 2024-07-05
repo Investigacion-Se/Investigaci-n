@@ -139,4 +139,8 @@ let referencias = dv.pages('"_referencias"')
 for (let referencia of referencias) {
 	await dv.view("_dataviewScripts/citaView", { archivo: referencia });
 }
+
+if (referencias.length == 0){
+	dv.el("p", "Actualmente no tiene referencias");
+}
 ```

@@ -4,7 +4,14 @@
   "debug": false,
   "editorMenu": [],
   "fileMenu": [],
-  "leftRibbon": [],
+  "leftRibbon": [
+    {
+      "id": "templater-obsidian:_templates/Modificar referencia.md",
+      "icon": "bookmark-plus",
+      "name": "Templater: Insert _templates/Modificar referencia.md",
+      "mode": "any"
+    }
+  ],
   "rightRibbon": [],
   "titleBar": [],
   "statusBar": [],
@@ -17,7 +24,10 @@
       "Templater",
       "Advanced Tables Toolbar",
       "Insert template",
-      "Open today's daily note"
+      "Open today's daily note",
+      "Open quick switcher",
+      "Create new canvas",
+      "Open command palette"
     ]
   },
   "spacing": 8,
