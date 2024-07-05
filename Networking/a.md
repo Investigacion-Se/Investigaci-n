@@ -30,7 +30,7 @@ dv.el("p", ` > [!${estadoCallout}]+ Estado de la nota\n > ${texto}`);
 ```
 ### Definición
 ---
-
+<% tp.file.cursor() %>
 
 
 

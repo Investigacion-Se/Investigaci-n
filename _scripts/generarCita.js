@@ -9,7 +9,7 @@ async function generarCita(tp, numReferencia) {
     let carpeta = app.vault.getAbstractFileByPath("_referencias");
 
     return await tp.file.create_new(
-        template, `${numReferencia} - ${tipoCita}`, true, carpeta
+        template, `${numReferencia} - ${tipoCita}`, false, carpeta
     )
 }
 

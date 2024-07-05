@@ -21,7 +21,5 @@
 		return await tp.user.salir(tp, message);
 	}
 
-	
-
 	tR += "---";
 %>
