@@ -1,9 +1,9 @@
 ---
 dia: 2024-07-03
 biblio:
- - https://normas-apa.org/referencias/citar-entrevistas/
+  - https://normas-apa.org/referencias/citar-entrevistas/
 etapa: sin-empezar
-tema: "[[Reglas APA/Investigar reglas APA.md|Reglas APA]]"
+tema: "[[Reglas APA/index|Reglas APA]]"
 ---
 ### Definición
 ---

@@ -35,7 +35,7 @@ async function preguntarTema(tp, dv) {
 
     return await tp.system.suggester(
         temas.map(tema => tema.texto),
-        temas.map(tema => tema.archivo.tema),
+        temas.map(tema => tema.archivo),
         true, "Cuál es el tema del archivo?"
     );
 }

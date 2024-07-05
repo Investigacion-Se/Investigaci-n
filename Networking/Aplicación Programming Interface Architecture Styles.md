@@ -6,6 +6,7 @@ referencias:
   - "1"
 aliases:
   - API Architecture Styles
+indice: "[[Networking/index|Networking]]"
 ---
 ```dataviewjs
 const archivoActual = dv.current();

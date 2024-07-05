@@ -15,7 +15,8 @@
 		switch (tipoCita) {
 			case "Libro": tR += await tp.user.citarLibro(tp); break;
 			case "Youtube": tR += await tp.user.citarYoutube(tp); break;
-			default: throw new Error("El tipo de cita no existe todavia");
+			case "Web": tR += await tp.user.citarWeb(tp); break;
+			default: throw new Error(`El tipo de cita "${tipoCita}" no existe todavia`);
 		}
 	} catch ({ name, message }) {
 		return await tp.user.salir(tp, message);

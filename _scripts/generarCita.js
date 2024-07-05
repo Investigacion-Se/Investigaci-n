@@ -1,7 +1,7 @@
 async function generarCita(tp, numReferencia) {
     let tipoCita = await tp.system.suggester(
-        ["Citar Youtube", "Citar Wikipedia", "Citar página web", "Citar libro"],
-        ["Youtube", "Wikipedia", "Página web", "Libro"],
+        ["Citar Youtube", "Citar Wikipedia", "Citar Página web", "Citar Libro"],
+        ["Youtube", "Wikipedia", "Web", "Libro"],
         true, "Qué tipo de cita es?"
     );
 

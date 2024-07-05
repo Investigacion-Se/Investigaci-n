@@ -1,7 +1,8 @@
 ---
 dia: 2024-07-03
-tags: 
- - Índice
+tags:
+  - Índice
+tema: Reglas APA
 ---
 ### Que se va a investigar
 ---

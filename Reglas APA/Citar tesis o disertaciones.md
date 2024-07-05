@@ -3,7 +3,7 @@ dia: 2024-07-03
 biblio:
   - https://normas-apa.org/referencias/citar-tesis-disertaciones/
 etapa: sin-empezar
-tema: "[[Reglas APA/Investigar reglas APA.md|Reglas APA]]"
+tema: "[[Reglas APA/index|Reglas APA]]"
 aliases:
   - Citar tesis
   - Citar disertaciones
