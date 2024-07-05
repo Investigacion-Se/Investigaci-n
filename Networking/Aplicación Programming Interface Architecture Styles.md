@@ -1,9 +1,11 @@
 ---
 dia: 2024-07-04
-etapa: sin-empezar
+etapa: empezado
 tema: Networking
-referencias: 
- - 1
+referencias:
+  - "1"
+aliases:
+  - API Architecture Styles
 ---
 ```dataviewjs
 const archivoActual = dv.current();
@@ -30,19 +32,45 @@ dv.el("p", ` > [!${estadoCallout}]+ Estado de la nota\n > ${texto}`);
 ```
 ### Definición
 ---
+Las [[Aplicación Programming Interface|API's]] son claves para el desarrollo de [[Software|software]]
+
+#### SOAP
+---
+
+
+#### RESTful
+---
+
+
+#### GraphQL
+---
+
+
+#### gRPC
+---
+
+
+#### WebSocket
+---
+
+
+#### Webhook
+---
 
 
 
 
-#### Referencias
+### Referencias
 ---
 ```dataviewjs
 let referenciasArchivo = dv.current().referencias;
 if (!referenciasArchivo)
 	referenciasArchivo = [];
 
+referenciasArchivo = referenciasArchivo.map(ref =>  parseInt(ref, 10));
+
 let referencias = dv.pages('"_referencias"')
-	.filter(ref => referenciasArchivo.find(ref.numRerefencia));
+	.filter(ref => referenciasArchivo.indexOf(ref.numReferencia) >= 0);
 
 for (let referencia of referencias) {
 	await dv.view("_dataviewScripts/citaView", { archivo: referencia });

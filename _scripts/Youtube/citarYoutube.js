@@ -1,33 +1,27 @@
-async function citarYoutube(tp, tR) {
-    console.log("Hola");
+async function citarYoutube(tp) {
+    let tR = "";
 
     try {
-        let nombreVideo = await tp.system.propmt(
-            "Nombre del video: ", null, true
-        );
+        let nombreVideo = await tp.system.prompt("Nombre del video: ", null, true);
         tR += `nombreVideo: ${nombreVideo}\n`;
     } catch (_) {
         throw new Error("No se ingresa nombre del video");
-    }
+    }    
 
     try {
-        let nombreCanal = await tp.system.propmt(
-            "Nombre del canal de Youtube: ", null, true
-        );
+        let nombreCanal = await tp.system.prompt("Nombre del canal de Youtube: ", null, true);
         tR += `nombreCanal: ${nombreCanal}\n`;
     } catch (_) {
         throw new Error("No se ingresó nombre del canal");
     }
 
     try {
-        let fechaVideoTexto = await tp.system.propmt(
-            "Fecha del video: ", null, true
-        );
+        let fechaVideoTexto = await tp.system.prompt("Fecha del video: ", null, true);
 
         let fechaVideo = moment(fechaVideoTexto);
 
         if (!fechaVideo.isValid()) {
-            let formato = await tp.system.propmt(
+            let formato = await tp.system.prompt(
                 `Ingrese el formato para la fecha ${fechaVideoTexto}`,
             )
 
@@ -43,13 +37,13 @@ async function citarYoutube(tp, tR) {
     }
 
     try {
-        let url = await tp.system.propmt(
-            "Ingresar el url del video de Youtube: ", null, true
-        );
+        let url = await tp.system.prompt("Ingresar el url del video de Youtube: ", null, true);
         tR += `url: ${url}\n`;
     } catch (_) {
         throw new Error("No se ingresó el url del video");
     }
+
+    return tR;
 }
 
 module.exports = citarYoutube;

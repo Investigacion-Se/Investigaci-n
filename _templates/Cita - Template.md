@@ -9,12 +9,12 @@
 		.map(texto => texto.trim());
 	
 	tR += `tipoCita: ${tipoCita}\n`;
-	tR += `numRerefencia: ${parseInt(numReferencia, 10)}\n`;
+	tR += `numReferencia: ${parseInt(numReferencia, 10)}\n`;
 
 	try {
 		switch (tipoCita) {
-			case "Libro": await tp.user.citarLibro(tp, tR); break;
-			case "Youtube": await tp.user.citarYoutube(tp, tR); break;
+			case "Libro": tR += await tp.user.citarLibro(tp); break;
+			case "Youtube": tR += await tp.user.citarYoutube(tp); break;
 			default: throw new Error("El tipo de cita no existe todavia");
 		}
 	} catch ({ name, message }) {

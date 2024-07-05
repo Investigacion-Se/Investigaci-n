@@ -1,7 +1,8 @@
-async function citarLibro(tp, tR) {
+async function citarLibro(tp) {
     const LIBRO_IMPRESO = "impreso";
 	const LIBRO_VERSION_ELECTRONICA = "version electrónica";
 	const LIBRO_ELECTRONICO = "electrónica";
+    let tR = "";
     
     let tipo = undefined;
     try{ 
@@ -23,6 +24,8 @@ async function citarLibro(tp, tR) {
 	);
 
 	tR += `citaCapitulo: ${!citaCapitulo ? false : true}\n`;
+
+    return tR;
 }
 
 module.exports = citarLibro;

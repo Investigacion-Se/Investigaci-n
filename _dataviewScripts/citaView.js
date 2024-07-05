@@ -5,8 +5,8 @@ async function mostrarCita(archivo) {
     input = { archivo: archivo };
 
     switch (tipoCita) {
-        case "Libro": return dv.view("_dataviewScripts/libroView", input);
-        case "Youtube": return dv.view("_dataviewScripts/youtubeView", input);
+        case "Libro": await dv.view("_dataviewScripts/libroView", input); break;
+        case "Youtube": await dv.view("_dataviewScripts/youtubeView", input); break;
     }
 }
 

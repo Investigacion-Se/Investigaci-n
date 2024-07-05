@@ -11,7 +11,7 @@ Con las diferentes formas de información de hoy día, es posible que necesitemo
 
 La referencias de Youtube siguen el estándar de **quién** (autor, usuario de youtube), **cuándo** (fecha de publicación del vídeo), **qué** (título del vídeo) y **dónde** (URL del vídeo).
 
-Nombre del autor. \[Nombre de usuario en Youtube\] (fecha). _Título del video_ \[Video\]. Youtube. http://youtube.com/url-del-video
+Nombre del autor. \[Nombre de usuario en Youtube\] (fecha). _Título del video_ \[Archivo de video\]. Youtube. http://youtube.com/url-del-video
 
 ### Archivos
 ---

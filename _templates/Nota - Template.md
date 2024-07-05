@@ -123,7 +123,7 @@ dv.el("p", ` > [!${estadoCallout}]+ Estado de la nota\n > ${texto}`);
 	}
 _%>
 
-#### Referencias
+### Referencias
 ---
 ```dataviewjs
 let referenciasArchivo = dv.current().referencias;
