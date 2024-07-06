@@ -1,11 +1,12 @@
 ---
-dia: 2023-12-01
+dia: 2023-07-14
 tags:
   - Índice
+tema: Runge-Kutta methods
 ---
 ### Que se va a investigar
 ---
-La idea es ver todo el proceso del renderizado, desde las meshes hasta los fragmentos
+Encontrar un método parecido a la integración del trapecio, pero con un orden de precisión mayor, y ver los métodos de autocorrección que tendrían.
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ La idea es ver todo el proceso del renderizado, desde las meshes hasta los fragm
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Shaders"';
+let carpeta = '"Runge-Kutta methods"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -43,12 +44,13 @@ if (pagina_actual) {
 ```
 
 
+
 ### Archivos
 ---
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Shaders"';
+let carpeta = '"Runge-Kutta methods"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

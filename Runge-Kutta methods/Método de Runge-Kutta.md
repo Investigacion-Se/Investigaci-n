@@ -3,7 +3,7 @@ dia: 2024-02-17
 biblio:
   - https://es.wikipedia.org/wiki/M%C3%A9todo_de_Runge-Kutta
 etapa: terminado
-tema: "[[Runge-Kutta methods/Índice.md|Runge-Kutta methods]]"
+tema: "[[Runge-Kutta methods/index|Runge-Kutta methods]]"
 ---
 ### Definición
 ---

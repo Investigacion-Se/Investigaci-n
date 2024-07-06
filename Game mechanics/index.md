@@ -1,11 +1,12 @@
 ---
-dia: 2023-08-01
+dia: 2023-07-15
 tags:
   - Índice
+tema: Game mechanics
 ---
 ### Que se va a investigar
 ---
-La intención es tener un lugar para investigar como crear desde sistemas solares hasta la topología de un planeta, de esta forma poder implementarlo o tenerlo en cuenta en creación procedural del mismo
+Acá voy a investigar sobre mecánicas que pueden ser interesantes explorar y poder modificarlas para poder tener una mejor idea de cosas que me gustaría investigar
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ La intención es tener un lugar para investigar como crear desde sistemas solare
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Geofiction"';
+let carpeta = '"Game mechanics"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -49,7 +50,7 @@ if (pagina_actual) {
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Geofiction"';
+let carpeta = '"Game mechanics"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

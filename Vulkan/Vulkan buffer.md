@@ -14,4 +14,4 @@ etapa: sin-empezar
 
 
 
-![[Vulkan/Índice#Archivos]]
+![[Vulkan/index#Archivos]]

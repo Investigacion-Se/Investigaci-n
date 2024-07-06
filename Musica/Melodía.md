@@ -9,4 +9,4 @@ etapa: sin-empezar
 
 
 
-![[Musica/Índice#Archivos]]
+![[Musica/index#Archivos]]

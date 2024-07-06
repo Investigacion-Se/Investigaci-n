@@ -13,4 +13,4 @@ etapa: sin-empezar
 
 
 
-![[Rust parser/Índice#Archivos]]
+![[Rust parser/index#Archivos]]

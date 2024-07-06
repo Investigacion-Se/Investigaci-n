@@ -1,11 +1,12 @@
 ---
-dia: 2023-07-14
+dia: 2023-08-01
 tags:
   - Índice
+tema: XML
 ---
 ### Que se va a investigar
 ---
-En el mismo sentido que [[Runge-Kutta methods/Índice|Runge-Kutta methods]] vamos a ver como resolver el [[Lagrangain mechanics/Índice|Lagrangian mechanics]] de forma numérica, con sistemas de corrección.
+La intención es aprender como funciona xml, especialmente en el ámbito de rust
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ En el mismo sentido que [[Runge-Kutta methods/Índice|Runge-Kutta methods]] vamo
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Variational integrator"';
+let carpeta = '"XML"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -42,18 +43,13 @@ if (pagina_actual) {
 }
 ```
 
-
-
 ### Archivos
 ---
 ```dataviewjs
 const pagina_actual = dv.current();
-
-let carpeta = '"Variational integrator"';
-
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
-	const paginas = dv.pages(carpeta)
+	const paginas = dv.pages(`"${pagina_actual.file.folder}"`)
 		.where(pagina => {
 			return pagina.file.name != nombre_pagina;
 		});

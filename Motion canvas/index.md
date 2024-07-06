@@ -1,11 +1,12 @@
 ---
-dia: 2023-12-02
+dia: 2023-07-21
 tags:
   - Índice
+tema: Motion canvas
 ---
 ### Que se va a investigar
 ---
-Investigar sobre música 
+La librería de [Motion canvas](https://motioncanvas.io/) permite animar de forma programática, lo cual significa que podemos crear animaciones puramente a base de código. Esto es muy interesante, y quiero investigar como usarla y poder recrearla
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ Investigar sobre música
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Musica"';
+let carpeta = '"Motion canvas"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -43,12 +44,13 @@ if (pagina_actual) {
 ```
 
 
+
 ### Archivos
 ---
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Musica"';
+let carpeta = '"Motion canvas"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

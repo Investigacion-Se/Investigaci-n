@@ -14,4 +14,4 @@ etapa: sin-empezar
 
 
 
-![[Geofiction/Índice#Archivos]]
+![[Geofiction/index#Archivos]]

@@ -9,4 +9,4 @@ Un fractal es un objeto geométrico cuya estructura básica, fragmentada o apare
 
 
 
-![[Fractales/Índice#Archivos]]
+![[Fractales/index#Archivos]]

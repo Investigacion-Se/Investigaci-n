@@ -18,4 +18,4 @@ Tenemos dos grupos, los aditivos
 
 
 
-![[Procedural generation/Índice#Archivos]]
+![[Procedural generation/index#Archivos]]

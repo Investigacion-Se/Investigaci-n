@@ -9,4 +9,4 @@ etapa: sin-empezar
 
 
 
-![[Conlang/Índice#Archivos]]
+![[Conlang/index#Archivos]]

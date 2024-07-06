@@ -1,11 +1,12 @@
 ---
-dia: 2023-07-15
+dia: 2023-07-14
 tags:
   - Índice
+tema: Vulkan
 ---
 ### Que se va a investigar
 ---
-La intención es poder reconocer los aspectos importantes de la creación de mundos, con la capacidad de poder recrearlos de forma procedural
+Simplemente entender su funcionamiento, y poder tener un lugar donde encontrar como se hacen las cosas más simples
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ La intención es poder reconocer los aspectos importantes de la creación de mun
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Worldbuilding"';
+let carpeta = '"Vulkan"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -49,7 +50,7 @@ if (pagina_actual) {
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Worldbuilding"';
+let carpeta = '"Vulkan"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

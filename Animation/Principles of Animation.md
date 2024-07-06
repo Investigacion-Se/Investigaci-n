@@ -14,4 +14,4 @@ etapa: sin-empezar
 
 
 
-![[Animation/Índice#Archivos]]
+![[Animation/index#Archivos]]

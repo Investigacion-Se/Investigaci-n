@@ -3,7 +3,7 @@ dia: 2024-02-17
 biblio:
   - https://es.wikipedia.org/wiki/Integraci%C3%B3n_num%C3%A9rica
 etapa: terminado
-tema: "[[Runge-Kutta methods/Índice.md|Runge-Kutta methods]]"
+tema: "[[Runge-Kutta methods/index|Runge-Kutta methods]]"
 ---
 ### Definición
 ---

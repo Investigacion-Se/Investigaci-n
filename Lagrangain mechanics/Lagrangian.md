@@ -14,4 +14,4 @@ etapa: sin-empezar
 
 
 
-![[Lagrangain mechanics/Índice#Archivos]]
+![[Lagrangain mechanics/index#Archivos]]

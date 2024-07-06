@@ -16,4 +16,4 @@ etapa: sin-empezar
 
 
 
-![[Worldbuilding/Índice#Archivos]]
+![[Worldbuilding/index#Archivos]]

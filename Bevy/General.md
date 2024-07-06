@@ -1,9 +1,9 @@
 ---
 dia: 2024-02-23
 biblio:
- - https://youtube.com/playlist?list=PLVnntJRoP85JHGX7rGDu6LaF3fmDDbqyd&si=tfuoQ_uIqBsCzAGX
+  - https://youtube.com/playlist?list=PLVnntJRoP85JHGX7rGDu6LaF3fmDDbqyd&si=tfuoQ_uIqBsCzAGX
 etapa: sin-empezar
-tema: "[[Bevy/Índice.md|Bevy]]"
+tema: "[[Bevy/index|Bevy]]"
 ---
 ### Definición
 ---

@@ -1,11 +1,12 @@
 ---
-dia: 2023-08-01
+dia: 2023-07-14
 tags:
   - Índice
+tema: Variational integrator
 ---
 ### Que se va a investigar
 ---
-La intención es aprender como funciona xml, especialmente en el ámbito de rust
+En el mismo sentido que [[Runge-Kutta methods/index|Runge-Kutta methods]] vamos a ver como resolver el [[Lagrangain mechanics/index|Lagrangian mechanics]] de forma numérica, con sistemas de corrección.
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ La intención es aprender como funciona xml, especialmente en el ámbito de rust
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"XML"';
+let carpeta = '"Variational integrator"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -42,13 +43,18 @@ if (pagina_actual) {
 }
 ```
 
+
+
 ### Archivos
 ---
 ```dataviewjs
 const pagina_actual = dv.current();
+
+let carpeta = '"Variational integrator"';
+
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
-	const paginas = dv.pages(`"${pagina_actual.file.folder}"`)
+	const paginas = dv.pages(carpeta)
 		.where(pagina => {
 			return pagina.file.name != nombre_pagina;
 		});

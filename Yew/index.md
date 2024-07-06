@@ -1,11 +1,12 @@
 ---
-dia: 2023-08-07
+dia: 2024-02-23
 tags:
   - Índice
+tema: Yew
 ---
 ### Que se va a investigar
 ---
-Aprender sobre conceptos para poder escribir y contar historias de forma más interesante
+
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ Aprender sobre conceptos para poder escribir y contar historias de forma más in
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Storytelling"';
+let carpeta = '"Yew"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -43,17 +44,13 @@ if (pagina_actual) {
 ```
 
 
-
 ### Archivos
 ---
 ```dataviewjs
 const pagina_actual = dv.current();
-
-let carpeta = '"Storytelling"';
-
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
-	const paginas = dv.pages(carpeta)
+	const paginas = dv.pages(`"${pagina_actual.file.folder}"`)
 		.where(pagina => {
 			return pagina.file.name != nombre_pagina;
 		});

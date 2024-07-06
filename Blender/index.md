@@ -1,10 +1,13 @@
 ---
-dia: 2024-02-23
-tags: 
- - Índice
+dia: 2023-07-27
+tags:
+  - Índice
+tema: Blender
 ---
 ### Que se va a investigar
 ---
+La idea es aprender la idea general de usar blender.
+
 
 
 
@@ -13,7 +16,7 @@ tags:
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Yew"';
+let carpeta = '"Blender"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -43,13 +46,17 @@ if (pagina_actual) {
 ```
 
 
+
 ### Archivos
 ---
 ```dataviewjs
 const pagina_actual = dv.current();
+
+let carpeta = '"Blender"';
+
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
-	const paginas = dv.pages(`"${pagina_actual.file.folder}"`)
+	const paginas = dv.pages(carpeta)
 		.where(pagina => {
 			return pagina.file.name != nombre_pagina;
 		});

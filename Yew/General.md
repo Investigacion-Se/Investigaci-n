@@ -1,9 +1,9 @@
 ---
 dia: 2024-02-23
 biblio:
- - https://youtube.com/playlist?list=PLrmY5pVcnuE_R5qJ0o30eGw77bWmnrUtL&si=l-PU6I0to_gCSDML
+  - https://youtube.com/playlist?list=PLrmY5pVcnuE_R5qJ0o30eGw77bWmnrUtL&si=l-PU6I0to_gCSDML
 etapa: sin-empezar
-tema: "[[Yew/Índice.md|Yew]]"
+tema: "[[Yew/index|Yew]]"
 ---
 ### Definición
 ---

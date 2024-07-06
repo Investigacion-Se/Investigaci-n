@@ -14,4 +14,4 @@ etapa: sin-empezar
 
 
 
-![[Variational integrator/Índice#Archivos]]
+![[Variational integrator/index#Archivos]]

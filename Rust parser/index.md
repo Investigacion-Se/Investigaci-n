@@ -1,11 +1,12 @@
 ---
-dia: 2023-07-21
+dia: 2023-08-24
 tags:
   - Índice
+tema: Rust parser
 ---
 ### Que se va a investigar
 ---
-La librería de [Motion canvas](https://motioncanvas.io/) permite animar de forma programática, lo cual significa que podemos crear animaciones puramente a base de código. Esto es muy interesante, y quiero investigar como usarla y poder recrearla
+Intención de ver como poder parsear el código de rust para usarlo en las macros
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ La librería de [Motion canvas](https://motioncanvas.io/) permite animar de form
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Motion canvas"';
+let carpeta = '"Rust parser"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -42,6 +43,9 @@ if (pagina_actual) {
 }
 ```
 
+### Referencia
+---
+* https://docs.rs/typed-html/latest/typed_html/
 
 
 ### Archivos
@@ -49,7 +53,7 @@ if (pagina_actual) {
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Motion canvas"';
+let carpeta = '"Rust parser"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

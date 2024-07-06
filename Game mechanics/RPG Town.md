@@ -14,4 +14,4 @@ etapa: sin-empezar
 
 
 
-![[Game mechanics/Índice#Archivos|Índice]]
+![[Game mechanics/index#Archivos|Índice]]

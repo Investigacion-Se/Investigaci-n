@@ -1,11 +1,12 @@
 ---
-dia: 2023-07-15
+dia: 2023-12-01
 tags:
   - Índice
+tema: Shaders
 ---
 ### Que se va a investigar
 ---
-Acá voy a investigar sobre mecánicas que pueden ser interesantes explorar y poder modificarlas para poder tener una mejor idea de cosas que me gustaría investigar
+La idea es ver todo el proceso del renderizado, desde las meshes hasta los fragmentos
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ Acá voy a investigar sobre mecánicas que pueden ser interesantes explorar y po
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Game mechanics"';
+let carpeta = '"Shaders"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -43,13 +44,12 @@ if (pagina_actual) {
 ```
 
 
-
 ### Archivos
 ---
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Game mechanics"';
+let carpeta = '"Shaders"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

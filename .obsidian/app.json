@@ -3,5 +3,11 @@
   "promptDelete": false,
   "alwaysUpdateLinks": true,
   "newFileLocation": "current",
-  "propertiesInDocument": "visible"
+  "propertiesInDocument": "visible",
+  "userIgnoreFilters": [
+    "_referencias/",
+    "_templates/",
+    "_scripts/",
+    "_dataviewScripts/"
+  ]
 }

@@ -9,4 +9,4 @@ etapa: sin-empezar
 
 
 
-![[Shaders/Índice#Archivos]]
+![[Shaders/index#Archivos]]

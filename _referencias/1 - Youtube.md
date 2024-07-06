@@ -5,5 +5,5 @@ numReferencia: 1
 nombreVideo: Top 6 Most Popular API Architecture Styles
 nombreCanal: ByteByteGo
 fecha: 2023-05-30
-url: https://www.youtube.com/watch?v=4vLxWqE94l4&list=TLPQMjMwNzIwMjOWEypUkadTZg
+url: https://youtu.be/4vLxWqE94l4?si=V-3v0mh5yPaXGktm
 ---

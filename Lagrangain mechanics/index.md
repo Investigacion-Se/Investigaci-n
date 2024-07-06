@@ -1,11 +1,12 @@
 ---
-dia: 2023-07-14
+dia: 2023-07-15
 tags:
   - Índice
+tema: Lagrangian mechanics
 ---
 ### Que se va a investigar
 ---
-Simplemente entender su funcionamiento, y poder tener un lugar donde encontrar como se hacen las cosas más simples
+Se va intentar investigar como es este nuevo paradigma para encontrar las ecuaciones de movimiento, y la resolución de colisiones.
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ Simplemente entender su funcionamiento, y poder tener un lugar donde encontrar c
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Vulkan"';
+let carpeta = '"Lagrangain mechanics"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -49,7 +50,7 @@ if (pagina_actual) {
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Vulkan"';
+let carpeta = '"Lagrangain mechanics"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

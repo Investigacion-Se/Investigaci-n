@@ -15,4 +15,4 @@ etapa: sin-empezar
 
 
 
-![[Storytelling/Índice#Archivos]]
+![[Storytelling/index#Archivos]]

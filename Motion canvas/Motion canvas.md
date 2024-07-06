@@ -14,4 +14,4 @@ etapa: sin-empezar
 
 
 
-![[Motion canvas/Índice#Archivos]]
+![[Motion canvas/index#Archivos]]

@@ -3,7 +3,7 @@ dia: 2024-02-18
 biblio:
   - https://youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z&si=Sv76fBmOtY8fOcqJ
 etapa: sin-empezar
-tema: "[[Blender/Índice.md|Blender]]"
+tema: "[[Blender/index|Blender]]"
 ---
 ### Definición
 ---

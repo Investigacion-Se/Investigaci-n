@@ -4,7 +4,7 @@ biblio:
   - https://www.youtube.com/@DerekElliott
   - https://www.youtube.com/@TheDucky3D
 etapa: sin-empezar
-tema: "[[Blender/Índice.md|Blender]]"
+tema: "[[Blender/index|Blender]]"
 ---
 ### Definición
 ---

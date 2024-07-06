@@ -1,9 +1,9 @@
 ---
 dia: 2024-02-18
 biblio:
- - https://www.youtube.com/@polygonrunway
+  - https://www.youtube.com/@polygonrunway
 etapa: sin-empezar
-tema: "[[Blender/Índice.md|Blender]]"
+tema: "[[Blender/index|Blender]]"
 ---
 ### Definición
 ---

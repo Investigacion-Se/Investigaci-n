@@ -1,11 +1,12 @@
 ---
-dia: 2024-02-23
-tags: 
- - Índice
+dia: 2023-07-15
+tags:
+  - Índice
+tema: Worldbuilding
 ---
 ### Que se va a investigar
 ---
-
+La intención es poder reconocer los aspectos importantes de la creación de mundos, con la capacidad de poder recrearlos de forma procedural
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ tags:
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Bevy"';
+let carpeta = '"Worldbuilding"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -43,13 +44,17 @@ if (pagina_actual) {
 ```
 
 
+
 ### Archivos
 ---
 ```dataviewjs
 const pagina_actual = dv.current();
+
+let carpeta = '"Worldbuilding"';
+
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
-	const paginas = dv.pages(`"${pagina_actual.file.folder}"`)
+	const paginas = dv.pages(carpeta)
 		.where(pagina => {
 			return pagina.file.name != nombre_pagina;
 		});

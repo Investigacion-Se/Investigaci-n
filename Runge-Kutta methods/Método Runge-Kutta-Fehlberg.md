@@ -1,9 +1,9 @@
 ---
 dia: 2024-02-17
 biblio:
- - https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods#Adaptive_Runge%E2%80%93Kutta_methods
+  - https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods#Adaptive_Runge%E2%80%93Kutta_methods
 etapa: terminado
-tema: "[[Runge-Kutta methods/Índice.md|Runge-Kutta methods]]"
+tema: "[[Runge-Kutta methods/index|Runge-Kutta methods]]"
 ---
 ### Definición
 ---

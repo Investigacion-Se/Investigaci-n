@@ -1,9 +1,9 @@
 ---
 dia: 2024-02-18
 biblio:
- - https://youtu.be/ZerJnivvBn4?si=1uxW8VkFzWsCUGKS
+  - https://youtu.be/ZerJnivvBn4?si=1uxW8VkFzWsCUGKS
 etapa: empezado
-tema: "[[Blender/Índice.md|Blender]]"
+tema: "[[Blender/index|Blender]]"
 ---
 ### Definición
 ---

@@ -13,4 +13,4 @@ etapa: sin-empezar
 
 
 
-![[Procedural generation/Índice#Archivos]]
+![[Procedural generation/index#Archivos]]

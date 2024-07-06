@@ -1,11 +1,12 @@
 ---
-dia: 2023-07-25
+dia: 2023-12-02
 tags:
   - Índice
+tema: Música
 ---
 ### Que se va a investigar
 ---
-Métodos de generación de cualquier tipo de cosa, de forma procedural
+Investigar sobre música 
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ Métodos de generación de cualquier tipo de cosa, de forma procedural
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Procedural generation"';
+let carpeta = '"Musica"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -43,13 +44,12 @@ if (pagina_actual) {
 ```
 
 
-
 ### Archivos
 ---
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Procedural generation"';
+let carpeta = '"Musica"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

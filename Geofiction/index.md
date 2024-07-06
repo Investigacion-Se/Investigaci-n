@@ -1,11 +1,12 @@
 ---
-dia: 2023-11-23
+dia: 2023-08-01
 tags:
   - Índice
+tema: Geofiction
 ---
 ### Que se va a investigar
 ---
-La intención es investigar sobre fractales y como se pueden hacer pseudo-fractales, que yo defino como estructuras repetitivas dependientes de condiciones pueden producir variaciones repetitivas o no. 
+La intención es tener un lugar para investigar como crear desde sistemas solares hasta la topología de un planeta, de esta forma poder implementarlo o tenerlo en cuenta en creación procedural del mismo
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ La intención es investigar sobre fractales y como se pueden hacer pseudo-fracta
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Fractales"';
+let carpeta = '"Geofiction"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -43,12 +44,13 @@ if (pagina_actual) {
 ```
 
 
+
 ### Archivos
 ---
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Fractales"';
+let carpeta = '"Geofiction"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

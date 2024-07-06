@@ -1,11 +1,12 @@
 ---
-dia: 2023-08-24
+dia: 2023-07-25
 tags:
   - Índice
+tema: Procedural generation
 ---
 ### Que se va a investigar
 ---
-Intención de ver como poder parsear el código de rust para usarlo en las macros
+Métodos de generación de cualquier tipo de cosa, de forma procedural
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ Intención de ver como poder parsear el código de rust para usarlo en las macro
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Rust parser"';
+let carpeta = '"Procedural generation"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -42,9 +43,6 @@ if (pagina_actual) {
 }
 ```
 
-### Referencia
----
-* https://docs.rs/typed-html/latest/typed_html/
 
 
 ### Archivos
@@ -52,7 +50,7 @@ if (pagina_actual) {
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Rust parser"';
+let carpeta = '"Procedural generation"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

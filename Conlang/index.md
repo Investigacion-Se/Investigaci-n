@@ -1,13 +1,11 @@
 ---
-dia: 2023-07-27
+dia: 2023-08-01
 tags:
   - Índice
+tema: Conlang
 ---
 ### Que se va a investigar
 ---
-La idea es aprender la idea general de usar blender.
-
-
 
 
 ### Bibliografía
@@ -15,7 +13,7 @@ La idea es aprender la idea general de usar blender.
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Blender"';
+let carpeta = '"Geofiction"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -51,7 +49,7 @@ if (pagina_actual) {
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Blender"';
+let carpeta = '"Conlang"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

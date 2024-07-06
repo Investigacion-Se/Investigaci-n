@@ -1,11 +1,12 @@
 ---
-dia: 2023-07-15
+dia: 2023-08-07
 tags:
   - Índice
+tema: Storytelling
 ---
 ### Que se va a investigar
 ---
-Se va intentar investigar como es este nuevo paradigma para encontrar las ecuaciones de movimiento, y la resolución de colisiones.
+Aprender sobre conceptos para poder escribir y contar historias de forma más interesante
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ Se va intentar investigar como es este nuevo paradigma para encontrar las ecuaci
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Lagrangain mechanics"';
+let carpeta = '"Storytelling"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -49,7 +50,7 @@ if (pagina_actual) {
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Lagrangain mechanics"';
+let carpeta = '"Storytelling"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

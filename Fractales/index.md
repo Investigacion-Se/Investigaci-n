@@ -1,10 +1,12 @@
 ---
-dia: 2023-08-01
+dia: 2023-11-23
 tags:
   - Índice
+tema: Fractales
 ---
 ### Que se va a investigar
 ---
+La intención es investigar sobre fractales y como se pueden hacer pseudo-fractales, que yo defino como estructuras repetitivas dependientes de condiciones pueden producir variaciones repetitivas o no. 
 
 
 ### Bibliografía
@@ -12,7 +14,7 @@ tags:
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Geofiction"';
+let carpeta = '"Fractales"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -42,13 +44,12 @@ if (pagina_actual) {
 ```
 
 
-
 ### Archivos
 ---
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Conlang"';
+let carpeta = '"Fractales"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;

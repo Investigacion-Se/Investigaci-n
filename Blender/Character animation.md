@@ -1,10 +1,10 @@
 ---
 dia: 2024-02-18
 biblio:
- - https://www.youtube.com/@SouthernShotty
- - https://www.youtube.com/@grabbitt
+  - https://www.youtube.com/@SouthernShotty
+  - https://www.youtube.com/@grabbitt
 etapa: sin-empezar
-tema: "[[Blender/Índice.md|Blender]]"
+tema: "[[Blender/index|Blender]]"
 ---
 ### Definición
 ---

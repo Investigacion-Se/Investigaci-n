@@ -2,7 +2,7 @@
 dia: 2024-02-20
 biblio: 
 etapa: ampliar
-tema: "[[Blender/Índice.md|Blender]]"
+tema: "[[Blender/index|Blender]]"
 ---
 ### Definición
 ---

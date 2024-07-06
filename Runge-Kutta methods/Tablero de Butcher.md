@@ -3,7 +3,7 @@ dia: 2024-02-17
 biblio:
   - https://repositorio.ual.es/bitstream/handle/10835/3513/2414_TFG_ALBACANOVAS.pdf?sequence=1&isAllowed=y
 etapa: terminado
-tema: "[[Runge-Kutta methods/Índice.md|Runge-Kutta methods]]"
+tema: "[[Runge-Kutta methods/index|Runge-Kutta methods]]"
 ---
 ### Definición
 ---

@@ -1,11 +1,12 @@
 ---
-dia: 2023-07-14
+dia: 2024-02-23
 tags:
   - Índice
+tema: Bevy
 ---
 ### Que se va a investigar
 ---
-Encontrar un método parecido a la integración del trapecio, pero con un orden de precisión mayor, y ver los métodos de autocorrección que tendrían.
+
 
 
 ### Bibliografía
@@ -13,7 +14,7 @@ Encontrar un método parecido a la integración del trapecio, pero con un orden 
 ```dataviewjs
 const pagina_actual = dv.current();
 
-let carpeta = '"Runge-Kutta methods"';
+let carpeta = '"Bevy"';
 
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
@@ -43,17 +44,13 @@ if (pagina_actual) {
 ```
 
 
-
 ### Archivos
 ---
 ```dataviewjs
 const pagina_actual = dv.current();
-
-let carpeta = '"Runge-Kutta methods"';
-
 if (pagina_actual) {
 	const nombre_pagina = pagina_actual.file.name;
-	const paginas = dv.pages(carpeta)
+	const paginas = dv.pages(`"${pagina_actual.file.folder}"`)
 		.where(pagina => {
 			return pagina.file.name != nombre_pagina;
 		});
