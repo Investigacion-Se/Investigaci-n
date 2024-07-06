@@ -7,8 +7,8 @@ referencias:
   - "2"
 ---
 ```dataviewjs
-    await dv.view("_dataviewScripts/referenciasView", { archivo: dv.current() });
-```
+await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
+````
 ### Definición
 ---
 Debes utilizar el estilo de cita de páginas web si no hay otra categoría de referencia que se ajuste más específicamente al tipo de trabajo que quieras citar.

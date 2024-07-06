@@ -2,7 +2,6 @@
 ---
 Lista de todas las carpetas siendo investigadas, con todos los links que usan. Cualquier cosa ver el [[README|read me]].
 
-
 ```dataviewjs
 const indices = dv.pages('#Índice');
 const referencias = dv.pages('"_referencias"');

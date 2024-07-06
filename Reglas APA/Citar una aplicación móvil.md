@@ -9,7 +9,7 @@ aliases:
   - Citar una APP
 ---
 ```dataviewjs
-    await dv.view("_dataviewScripts/referenciasView", { archivo: dv.current() });
+await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
 ```
 ### Definición
 ---
