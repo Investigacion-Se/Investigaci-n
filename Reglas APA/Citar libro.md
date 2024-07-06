@@ -7,27 +7,7 @@ referencias:
   - "6"
 ---
 ```dataviewjs
-const archivoActual = dv.current();
-const etapa = archivoActual.etapa;
-
-let estadoCallout = "missing";
-let texto = "Hubo un error, el estado todavia no se agregó";
-switch (etapa) {
-	case "sin-empezar": estadoCallout = "info"; 
-		texto = "Esta nota todavía no se inició";
-		break;
-	case "empezado": estadoCallout = "help"; 
-		texto = "Todavía no esta terminado, puede modificarse";
-		break;
-	case "ampliar": estadoCallout = "todo"; 
-		texto = "Se puede ampliar el contenido";
-		break;
-	case "terminado": estadoCallout = "done"; 
-		texto = "Esta nota esta completa";
-		break;
-}
-
-dv.el("p", ` > [!${estadoCallout}]+ Estado de la nota\n > ${texto}`);
+await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
 ```
 ### Definición
 ---
@@ -67,16 +47,5 @@ Apellido Autor, N. N. (1994). _Título del trabajo._ ==(3ª ed., Vol. 4).== E
 ### Referencias
 ---
 ```dataviewjs
-let referenciasArchivo = dv.current().referencias;
-if (!referenciasArchivo)
-	referenciasArchivo = [];
-
-referenciasArchivo = referenciasArchivo.map(ref =>  parseInt(ref, 10));
-
-let referencias = dv.pages('"_referencias"')
-	.filter(ref => referenciasArchivo.indexOf(ref.numReferencia) >= 0);
-
-for (let referencia of referencias) {
-	await dv.view("_dataviewScripts/citaView", { archivo: referencia });
-}
+    await dv.view("_dataviewScripts/referenciasView", { archivo: dv.current() });
 ```
