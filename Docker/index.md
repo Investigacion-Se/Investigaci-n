@@ -2,6 +2,7 @@
 dia: 2024-01-16
 tags:
   - Índice
+tema: Docker
 ---
 ### Que se va a investigar
 ---

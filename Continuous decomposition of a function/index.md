@@ -2,6 +2,7 @@
 dia: 2023-07-14
 tags:
   - Índice
+tema: Continuous decomposition of a function
 ---
 ### Que se va a investigar
 ---

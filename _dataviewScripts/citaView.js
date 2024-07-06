@@ -1,14 +1,15 @@
-const { archivo } = input
+let libroView = require(app.vault.adapter.basePath + "/_dataviewScripts/libroView.js");
+let youtubeView = require(app.vault.adapter.basePath + "/_dataviewScripts/youtubeView.js");
+let webView = require(app.vault.adapter.basePath + "/_dataviewScripts/webView.js");
 
-async function mostrarCita(archivo) {
+function mostrarCita(archivo) {
     let tipoCita = archivo.tipoCita;
-    input = { archivo: archivo };
 
     switch (tipoCita) {
-        case "Libro": await dv.view("_dataviewScripts/libroView", input); break;
-        case "Youtube": await dv.view("_dataviewScripts/youtubeView", input); break;
-        case "Web": await dv.view("_dataviewScripts/webView", input); break;
+        case "Libro": return libroView.mostrarCitaLibro(archivo);
+        case "Youtube": return youtubeView.mostrarCitaYoutube(archivo);
+        case "Web": return webView.mostrarCitaWeb(archivo);
     }
 }
 
-await mostrarCita(archivo);
+exports.mostrarCita = mostrarCita;

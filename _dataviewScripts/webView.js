@@ -1,8 +1,6 @@
-const { archivo } = input
-
 const MESES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
-function mostrarCitaYoutube(archivo) {
+function mostrarCitaWeb(archivo) {
     const numReferencia = archivo.numReferencia;
     const nombreAutores = archivo.nombreAutores;
     const tituloArticulo = archivo.tituloArticulo;
@@ -26,9 +24,7 @@ function mostrarCitaYoutube(archivo) {
     const texto = `${autores} (${dia} de ${mes} del ${anio}). <i>${tituloArticulo}</i>. ${nombrePagina}. ${url}`;
 
     const divStyle = "display:flex; flex-direction: row;";
-    const div = `<div style="${divStyle}"> ${ref} <p> ${texto} </p> </div>`;
-
-    dv.el("p", div);
+    return `<div style="${divStyle}"> ${ref} <p> ${texto} </p> </div>`;
 }
 
-mostrarCitaYoutube(archivo);
+exports.mostrarCitaWeb = mostrarCitaWeb;

@@ -23,4 +23,4 @@ El archivo debe llamarse "Dockerfile", cada dockerfile empieza con una [[Docker 
 	* `-t` o `--tag`: permite setear un nombre con el formato `name:tag`
 
 
-![[Docker/Índice#Archivos]]
+![[Docker/index#Archivos]]

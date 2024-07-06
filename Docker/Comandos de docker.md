@@ -20,4 +20,4 @@ etapa: empezado
 * `docker start container_id/nombre`: Empieza a correr un contenedor que fue detenido (`docker stop`)
 
 
-![[Docker/Índice#Archivos]]
+![[Docker/index#Archivos]]
