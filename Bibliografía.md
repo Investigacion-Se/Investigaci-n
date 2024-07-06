@@ -5,7 +5,10 @@ Lista de todas las carpetas siendo investigadas, con todos los links que usan. C
 
 ```dataviewjs
 const indices = dv.pages('#Índice')
-	.;
+	.filter(indice => {
+		let paginas = dv.pages(`"${}"`)
+		return false;
+	});
 const referencias = dv.pages('"_referencias"');
 
 let citaIndiceView = require(app.vault.adapter.basePath + "/_dataviewScripts/citaIndiceView.js");
