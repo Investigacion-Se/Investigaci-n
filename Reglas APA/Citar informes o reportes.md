@@ -45,7 +45,7 @@ let referenciasArchivo = dv.current().referencias;
 if (!referenciasArchivo)
 	referenciasArchivo = [];
 
-referenciasArchivo = referenciasArchivo.map(ref =>  parseInt(ref, 10));
+referenciasArchivo = referenciasArchivo.map(ref => parseInt(ref, 10));
 
 let referencias = dv.pages('"_referencias"')
 	.filter(ref => referenciasArchivo.indexOf(ref.numReferencia) >= 0);

@@ -1,7 +1,7 @@
 ---
 dia: 2024-07-05
 etapa: terminado
-tema: Normas APA
+tema: Reglas APA
 indice: "[[Reglas APA/index|Reglas APA]]"
 referencias:
   - "2"
