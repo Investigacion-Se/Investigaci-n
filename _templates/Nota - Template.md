@@ -23,7 +23,6 @@
 		return await tp.user.salir(tp, "No se ingresó un tema");
 	}
 
-	// hacer la parte de tema con dataview que puede ser más fácil
 	let referencias = dv.pages('"_referencias"')
 		.flatMap(referencia => {
 			let desc = tp.user.describirCita(tp, referencia);
@@ -33,14 +32,11 @@
 				return [];
 			}
 			return [ desc ];
-		});
+		})
+		.sort(ref => -ref.numReferencia);
 
-	let opciones = ["Citar de forma rápida", "Nueva cita"];
-	let valores = [CITA_RAPIDA, NUEVA_CITA];
-	if (referencias.length > 0) {
-		opciones = opciones.concat(referencias.map(ref => tp.user.descripcionTexto(ref)));
-		valores = valores.concat(referencias.map(ref => ref.numReferencia));
-	}
+	let opciones = ["Citar de forma rápida", "Nueva cita", ...referencias.map(ref => tp.user.descripcionTexto(ref))];
+	let valores = [CITA_RAPIDA, NUEVA_CITA, ...referencias.map(ref => ref.numReferencia)];
 	
 	let citar = await tp.system.suggester(opciones, valores,
 		false, "Agregar una cita (si no hay nada que citar, apretar ESC)", 13

@@ -1,5 +1,10 @@
 function descripcionTexto(desc) {
-    return `[${desc.numReferencia}] ${desc.nombreObra} de ${nombreObra}, ${desc.extra}`;
+    let extra = "";
+    if (desc.extra) {
+        extra = `, ${desc.extra}`;
+    }
+
+    return `[${desc.numReferencia}] ${desc.nombreObra} de ${desc.nombreAutor}${extra}`;
 }
 
 module.exports = descripcionTexto;

@@ -9,8 +9,8 @@ async function preguntarAutores(tp, key, mensajeNombre, mensajeApellido, errorNo
     apellido = apellido.slice(2);
 
     tR += ` - autore:\n`;
-    tR += `   - nombre: ${nombre}\n`;
-    tR += `   - apellido: ${apellido}\n`;
+    tR += `   - nombre: ${nombre}`;
+    tR += `   - apellido: ${apellido}`;
 
     while (true) {
         try {
@@ -22,8 +22,8 @@ async function preguntarAutores(tp, key, mensajeNombre, mensajeApellido, errorNo
             apellido = apellido.slice(2);
             
             tR += ` - autore:\n`;
-            tR += `   - nombre: ${nombre}\n`;
-            tR += `   - apellido: ${apellido}\n`;
+            tR += `   - nombre: ${nombre}`;
+            tR += `   - apellido: ${apellido}`;
         } catch (_) {
             break;
         }

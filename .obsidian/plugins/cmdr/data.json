@@ -7,7 +7,7 @@
   "leftRibbon": [
     {
       "id": "templater-obsidian:_templates/Modificar referencia.md",
-      "icon": "bookmark-plus",
+      "icon": "album",
       "name": "Templater: Insert _templates/Modificar referencia.md",
       "mode": "any"
     }

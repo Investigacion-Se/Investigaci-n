@@ -1,10 +1,34 @@
 ---
-dia: 2024-07-03
-biblio:
-  - https://normas-apa.org/referencias/citar-wikipedia/
+dia: 2024-07-05
 etapa: terminado
-tema: "[[Reglas APA/index|Reglas APA]]"
+tema: Reglas APA
+indice: "[[Reglas APA/index.md|Reglas APA]]"
+referencias:
+  - "21"
 ---
+```dataviewjs
+const archivoActual = dv.current();
+const etapa = archivoActual.etapa;
+
+let estadoCallout = "missing";
+let texto = "Hubo un error, el estado todavia no se agregó";
+switch (etapa) {
+	case "sin-empezar": estadoCallout = "info"; 
+		texto = "Esta nota todavía no se inició";
+		break;
+	case "empezado": estadoCallout = "help"; 
+		texto = "Todavía no esta terminado, puede modificarse";
+		break;
+	case "ampliar": estadoCallout = "todo"; 
+		texto = "Se puede ampliar el contenido";
+		break;
+	case "terminado": estadoCallout = "done"; 
+		texto = "Esta nota esta completa";
+		break;
+}
+
+dv.el("p", ` > [!${estadoCallout}]+ Estado de la nota\n > ${texto}`);
+```
 ### Definición
 ---
 Uno de los grandes problemas de citar Wikipedia es la alta frecuencia de actualización de sus artículos. Wikipedia guarda copias de las versiones de cada entrada. Por lo tanto, idealmente, debemos intentar conseguir el enlace permanente de la versión a la cuál estamos accediendo, así ofrecemos a los lectores la versión que consultaremos al realizar la citación
@@ -18,20 +42,23 @@ Uno de los grandes problemas de citar Wikipedia es la alta frecuencia de actuali
 
 
 
-### Archivos
+### Referencias
 ---
-```dataviewjs 
-const paginaActual = dv.current();
-let archivos = dv.pages(`"${paginaActual.file.folder}" and -#Índice`)
-	.where(pagina => pagina.file.path != paginaActual.file.path);
+```dataviewjs
+let referenciasArchivo = dv.current().referencias;
+if (!referenciasArchivo)
+	referenciasArchivo = [];
 
-archivos = (archivos.length > 0) 
-	? archivos.map(archivo => {
-			let nombre = archivo.file.name;
-			let path = archivo.file.path;
-			return `[[${path}|${nombre}]]`;
-		}) 
-	: ["No hay más archivos"];
+referenciasArchivo = referenciasArchivo.map(ref =>  parseInt(ref, 10));
 
-dv.list(archivos);	
+let referencias = dv.pages('"_referencias"')
+	.filter(ref => referenciasArchivo.indexOf(ref.numReferencia) >= 0);
+
+for (let referencia of referencias) {
+	await dv.view("_dataviewScripts/citaView", { archivo: referencia });
+}
+
+if (referencias.length == 0){
+	dv.el("p", "Actualmente no tiene referencias");
+}
 ```
