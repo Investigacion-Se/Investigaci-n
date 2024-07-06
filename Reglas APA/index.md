@@ -12,35 +12,7 @@ Se va a investigar las reglas APA que se va a usar para citar cualquier contenid
 ### Bibliografía
 ---
 ```dataviewjs
-const pagina_actual = dv.current();
-
-let carpeta = '"Reglas APA"';
-
-if (pagina_actual) {
-	const nombre_pagina = pagina_actual.file.name;
-	const paginas = dv.pages(carpeta)
-		.where(pagina => {
-			return pagina.file.name != nombre_pagina;
-		});
-	
-	for (let pagina of paginas.file) {
-		if (!pagina.frontmatter.biblio) continue;
-		
-		let links = [];
-		for (let link of pagina.frontmatter.biblio) {
-			links.push(link);
-		}
-		if (links.length === 0) continue;
-		
-		let link = String(pagina.path);
-		link = ` [[${link}|?]]`;
-
-		dv.header(5, pagina.name + link);
-		dv.el("hr", "");
-
-		dv.list(links);
-	}
-}
+    await dv.view("_dataviewScripts/biblioIndice", { indice: dv.current() });
 ```
 
 
