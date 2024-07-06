@@ -4,6 +4,9 @@
 
 	tR += "---\n"; 
 
+	let dia = tp.file.creation_date("YYYY-MM-DD");
+	tR += `dia: ${dia}\n`;
+	tR += "tags: \n - Índice\n";
 
 	let indices = dv.pages("#Índice")
 		.filter(indice => indice.tema !== undefined);
@@ -21,43 +24,28 @@
 			return await tp.user.salir(tp, "No se ingresó un tema");
 	}
 
-	try {
+	let path = "/index";
+	// let path = `${tema}/index`;
 
-		
+	try {
+		let 
+
 
 	} catch {
 		return await tp.user.salir(tp, "No se eligió como definir el tema");
-	}
-	
-
-	let path = `${tema}/index`;
+	}		
 
 	try {
 		await this.app.vault.createFolder(tema);
 		await tp.file.move(path);
-	} catch {
-		return await salir();
+	} catch (e) {
+		const mensaje = "No se pudo crear y mover el tema";
+		console.log(mensaje);
+		console.log(e);
+		return await tp.user.salir(tp, mensaje);
 	}
-
-	let dia = tp.file.creation_date("YYYY-MM-DD");
-	tR += `dia: ${dia}\n`;
-	tR += "tags: \n - Índice\n";
-
 
 	tR += "---";
-
-	async function salir() {
-		new Notice("El tema ya esta creado, abriendo el tema ya existente...");
-		let archivoActual = app.workspace.getActiveFile();
-
-		let archivoExistente = this.app.vault.getAbstractFileByPath(`${path}.md`);
-		if (archivoExistente) {
-			await app.workspace.getLeaf("tab").openFile(archivoExistente);
-		}
-		
-		await app.vault.trash(archivoActual, true);
-		return;
-	}
 %>
 ### Que se va a investigar
 ---
