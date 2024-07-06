@@ -79,7 +79,7 @@
 	tR += "---";
 %>
 ```dataviewjs
-await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
+	await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
 ```
 ### Definición
 ---
