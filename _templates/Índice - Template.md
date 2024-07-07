@@ -25,14 +25,12 @@
 			return await tp.user.salir(tp, "No se ingresó un tema");
 	}
 
-	
-	
+	tR += `tema: ${nuevoTema}\n`;
+
 	// { archivo, nivel, tema, subTemas }
 	let temasOrdenados = ordenarTemas(temas);
 	let descripcion = [];
 	generarDescripcion(temasOrdenados, 0, descripcion);
-
-
 	
 	let eleccion;
 	try {
@@ -48,9 +46,12 @@
 	let path = "/index";
 	if (eleccion === CREAR_TEMA) {
 		path = `${nuevoTema}/${path}`;
+		tR += "nivel: 0\n";
 	} else {
 		// Es subtema
 		path = `${eleccion.file.folder}/${nuevoTema}/${path}`;
+		tR += `nivel: ${parseInt(eleccion.nivel, 10) + 1}\n`;
+		tR += `superTema: ${eleccion.tema}\n`;
 	}
 
 	try {
@@ -62,6 +63,18 @@
 		console.log(e);
 		return await tp.user.salir(tp, mensaje);
 	}
+
+	// Agregamos subtema al tema elegido
+	if (eleccion !== CREAR_TEMA) {
+		let superTema = tp.file.find_tfile(eleccion.file.path);
+		await app.fileManager.processFrontMatter(superTema, (frontmatter) => {
+			if (!frontmatter["subTemas"]) {
+				frontmatter["subTemas"] = [ `${nuevoTema}` ];
+			} else {
+				frontmatter["subTemas"].push(`${nuevoTema}`);
+			}
+		});
+	}	
 
 	tR += "---";
 
