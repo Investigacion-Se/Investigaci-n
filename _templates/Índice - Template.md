@@ -25,32 +25,33 @@
 			return await tp.user.salir(tp, "No se ingresó un tema");
 	}
 
-	let path = "/index";
-	// let path = `${tema}/index`;
 	
-	// { archivo, nivel, orden }
+	
+	// { archivo, nivel, tema, subTemas }
 	let temasOrdenados = ordenarTemas(temas);
+	let descripcion = [];
+	generarDescripcion(temasOrdenados, 0, descripcion);
 
 
-
-	/*
-		● Tema
-		├─○ Subtema
-		│ └─○ Subsubtema
-		├─○ Subtema
-		│ ├─○ Subsubtema
-		│ └─○ Subsubtema
-		└─○ Subtema
-		● Tema
-	*/
-
+	
+	let eleccion;
 	try {
-		let 
-
-
+		eleccion = await tp.system.suggester(
+			["Crear un nuevo tema", ...descripcion.map(desc => desc.descripcion)], 
+			[CREAR_TEMA, ...descripcion.map(desc => desc.archivo)], 
+			true, "Crear un nuevo tema o elegir de que tema va a ser subtema", 11
+		);
 	} catch {
 		return await tp.user.salir(tp, "No se eligió como definir el tema");
 	}		
+
+	let path = "/index";
+	if (eleccion === CREAR_TEMA) {
+		path = `${nuevoTema}/${path}`;
+	} else {
+		// Es subtema
+		path = `${eleccion.file.folder}/${nuevoTema}/${path}`;
+	}
 
 	try {
 		await this.app.vault.createFolder(tema);
@@ -65,28 +66,72 @@
 	tR += "---";
 
 	function ordenarTemas(temas) {
+		temas = temas
+			.map(archivo => {
+				return { 
+					archivo: archivo, 
+					nivel: archivo.nivel, 
+					tema: archivo.tema, 
+					superTema: archivo.superTema,
+					subTemas: undefined
+				}
+			})
+			.groupBy(data => data.nivel)
+			.sort(grupo => grupo.key)
+			.map(grupo => grupo.values);
 
-		// repetir groupBy
+		for (let i = temas.length - 1; i > 0; i--) {
+			let archivosNivelI = temas[i];
+			let archivosNivelIAnterior = temas[i - 1];
 
-		let ordenActual = 0;
-		temas = temas.map(archivo => {
-			if (!archivo.tags.includes("Índice") || archivo.tags.includes("Subtema")) {
-				return { archivo: archivo, id: 0, nivel: 1, orden: 0 };
+			let superTemas = archivosNivelI.groupBy(data => data.superTema);
+
+			for (let archivoNivelIAnterior of archivosNivelIAnterior) {
+				archivoNivelIAnterior.subTemas = superTemas.find(data => data.key === archivoNivelIAnterior.tema)?.values;
 			}
-			return { archivo: archivo, id: ordenActual++, nivel: 0, orden: 0 };
-		})
+		}
 
-		let maximoOrden = 0;
+		return temas[0];
+	}
 
-		// asignamos id, nivel, orden
+	/*
+		● Tema
+		├─○ Subtema
+		│ └─○ Subsubtema
+		├─○ Subtema
+		│ ├─○ Subsubtema
+		│ ├─○ Subsubtema
+		│ │ ├─○ Subsubtema
+		│ │ ├─○ Subsubtema
+		│ │ └─○ Subsubtema
+		│ └─○ Subsubtema
+		└─○ Subtema
+		● Tema
+	*/
+	function generarDescripcion(temas, index, guardarlo) {
+		if (temas.length >= index) return;
 
-		const potenciaMaximoOrden = Math.pow(10, -Math.floor(Math.log10(ordenActual)) - 1);
+		let data = temas[index];
+		let descripcion = "";
+		if (data.nivel == 0) { 
+			descripcion = `● ${data.tema}`;
+		} else {
+			for (let i = 0; i < data.nivel - 1; i++) {
+				descripcion += "│ ";
+			}
 
-		return temas.sort(data => {
-			return data.id - orden * potenciaMaximoOrden;
-		}).map(data => {
-			return { archivo: data.archivo, nivel: data.nivel, orden: data.orden };
-		});
+			if (index >= temas.length - 1) {
+				descripcion += `└─○ ${data.tema}`;
+			} else {
+				descripcion += `├─○ ${data.tema}`;
+			}
+		}
+		guardarlo.push({ archivo: tema.archivo, descripcion: descripcion });
+
+		if (data.subTemas !== undefined) {
+			return generarDescripcion(data.subTemas, 0, guardarlo);
+		}
+		return generarDescripcion(temas, index + 1, guardarlo); 
 	}
 
 %>
