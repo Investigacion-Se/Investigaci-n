@@ -27,18 +27,9 @@
 
 	let path = "/index";
 	// let path = `${tema}/index`;
-	temas = dv.pages("#Índice and -#Subtema")
-	.map(archivo => {
-		return {
-			archivo: archivo,
-			tema: archivo.tema
-		}
-	});
 	
-	
-	let todosSubtemas = dv.pages("#Subtema");
-	let subtemas = todosSubtemas
-		.filter(subtema => temas.find(indice => indice.tema == subtema.dependencia));
+	// { archivo, nivel, orden }
+	let temasOrdenados = ordenarTemas(temas);
 
 
 
@@ -72,6 +63,32 @@
 	}
 
 	tR += "---";
+
+	function ordenarTemas(temas) {
+
+		// repetir groupBy
+
+		let ordenActual = 0;
+		temas = temas.map(archivo => {
+			if (!archivo.tags.includes("Índice") || archivo.tags.includes("Subtema")) {
+				return { archivo: archivo, id: 0, nivel: 1, orden: 0 };
+			}
+			return { archivo: archivo, id: ordenActual++, nivel: 0, orden: 0 };
+		})
+
+		let maximoOrden = 0;
+
+		// asignamos id, nivel, orden
+
+		const potenciaMaximoOrden = Math.pow(10, -Math.floor(Math.log10(ordenActual)) - 1);
+
+		return temas.sort(data => {
+			return data.id - orden * potenciaMaximoOrden;
+		}).map(data => {
+			return { archivo: data.archivo, nivel: data.nivel, orden: data.orden };
+		});
+	}
+
 %>
 ### Que se va a investigar
 ---
