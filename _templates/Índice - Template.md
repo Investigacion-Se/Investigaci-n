@@ -10,6 +10,7 @@
 
 	let indices = dv.pages("#Índice")
 		.filter(indice => indice.tema !== undefined);
+		
 	let temas = indices.map(indice => indice.tema);
 
 	let nuevoTema = await tp.system.prompt("Temática: (Apretar ESC para salir)");
@@ -26,6 +27,31 @@
 
 	let path = "/index";
 	// let path = `${tema}/index`;
+	temas = dv.pages("#Índice and -#Subtema")
+	.map(archivo => {
+		return {
+			archivo: archivo,
+			tema: archivo.tema
+		}
+	});
+	
+	
+	let todosSubtemas = dv.pages("#Subtema");
+	let subtemas = todosSubtemas
+		.filter(subtema => temas.find(indice => indice.tema == subtema.dependencia));
+
+
+
+	/*
+		● Tema
+		├─○ Subtema
+		│ └─○ Subsubtema
+		├─○ Subtema
+		│ ├─○ Subsubtema
+		│ └─○ Subsubtema
+		└─○ Subtema
+		● Tema
+	*/
 
 	try {
 		let 

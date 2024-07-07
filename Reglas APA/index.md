@@ -8,7 +8,6 @@ tema: Reglas APA
 ---
 Se va a investigar las reglas APA que se va a usar para citar cualquier contenido nuevo hecho en esta página
 
-
 ### Bibliografía
 ---
 ```dataviewjs
