@@ -10,6 +10,12 @@
       "icon": "album",
       "name": "Templater: Insert _templates/Modificar referencia.md",
       "mode": "any"
+    },
+    {
+      "id": "quickadd:choice:e69b4725-b385-4b48-b68c-03a8f766d800",
+      "icon": "bookmark-plus",
+      "name": "QuickAdd: Nuevo Tema",
+      "mode": "any"
     }
   ],
   "rightRibbon": [],

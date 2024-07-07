@@ -4,6 +4,7 @@
     "cssclasses": "multitext",
     "tags": "tags",
     "referencias": "multitext",
-    "indice": "text"
+    "indice": "text",
+    "nivel": "number"
   }
 }

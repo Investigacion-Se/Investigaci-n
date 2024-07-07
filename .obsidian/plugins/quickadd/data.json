@@ -27,6 +27,36 @@
       "openFileInMode": "default",
       "fileExistsMode": "Increment the file name",
       "setFileExistsBehavior": true
+    },
+    {
+      "id": "e69b4725-b385-4b48-b68c-03a8f766d800",
+      "name": "Nuevo Tema",
+      "type": "Template",
+      "command": true,
+      "templatePath": "_templates/Índice - Template.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "index"
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "/"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      },
+      "openFile": true,
+      "openFileInMode": "default",
+      "fileExistsMode": "Increment the file name",
+      "setFileExistsBehavior": true
     }
   ],
   "macros": [],

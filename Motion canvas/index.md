@@ -3,6 +3,7 @@ dia: 2023-07-21
 tags:
   - Índice
 tema: Motion canvas
+nivel: "0"
 ---
 ### Que se va a investigar
 ---

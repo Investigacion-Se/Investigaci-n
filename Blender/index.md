@@ -3,6 +3,7 @@ dia: 2023-07-27
 tags:
   - Índice
 tema: Blender
+nivel: "0"
 ---
 ### Que se va a investigar
 ---

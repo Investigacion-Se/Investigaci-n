@@ -3,6 +3,7 @@ dia: 2023-08-01
 tags:
   - Índice
 tema: Conlang
+nivel: "0"
 ---
 ### Que se va a investigar
 ---

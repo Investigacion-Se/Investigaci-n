@@ -3,6 +3,7 @@ dia: 2023-07-25
 tags:
   - Índice
 tema: Procedural generation
+nivel: "0"
 ---
 ### Que se va a investigar
 ---
