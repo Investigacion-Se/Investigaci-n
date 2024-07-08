@@ -34,7 +34,7 @@
 	let eleccion;
 	try {
 		eleccion = await tp.system.suggester(
-			["Crear un nuevo tema", ...descripcion.map(desc => desc.descripcion)], 
+			["⊕ Crear un nuevo tema", ...descripcion.map(desc => desc.descripcion)], 
 			[CREAR_TEMA, ...descripcion.map(desc => desc.archivo)], 
 			true, "Crear un nuevo tema o elegir de que tema va a ser subtema"
 		);
@@ -131,50 +131,20 @@
 				descripcion = `● ${data.tema}`;
 			} else {
 				for (let i = 0; i < data.nivel - 1; i++) {
-					descripcion += "│ ";
+					descripcion += "└⇢ ";
 				}
-
-				if (i >= temas.length - 1) {
-					descripcion += `└─○ ${data.tema}`;
-				} else {
-					descripcion += `├─○ ${data.tema}`;
-				}
+				descripcion += `└⇢ ○ ${data.tema}`;
 			}
 			guardarlo.push({ archivo: data.archivo, descripcion: descripcion });
 
 			if (data.subTemas !== undefined) {
 				let guardadoSiguienteNivel = generarDescripcion(data.subTemas, guardarlo);
-				guardarlo.concat(guardadoSiguienteNivel);
+				guardarlo = guardarlo.concat(guardadoSiguienteNivel);
 			}
 		}
 
 		return guardarlo;
 	}
-
-	/*function generarDescripcion(temas, index, guardarlo) {
-		console.log(temas);
-		if (temas.length >= index) return;
-
-		let data = temas[index];
-		let descripcion = "";
-		if (data.nivel == 0) { 
-			descripcion = `● ${data.tema}`;
-		} else {
-			for (let i = 0; i < data.nivel - 1; i++) {
-				descripcion += "│ ";
-			}
-
-			if (index >= temas.length - 1) {
-				descripcion += `└─○ ${data.tema}`;
-			} else {
-				descripcion += `├─○ ${data.tema}`;
-			}
-		}
-		guardarlo.push({ archivo: tema.archivo, descripcion: descripcion });
-
-		
-		return generarDescripcion(temas, index + 1, guardarlo); 
-	}*/
 
 %>
 ### Que se va a investigar

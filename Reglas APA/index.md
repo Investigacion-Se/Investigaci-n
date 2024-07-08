@@ -4,8 +4,7 @@ tags:
   - Índice
 tema: Reglas APA
 nivel: 0
-subTemas:
-  - Hola
+subTemas: []
 ---
 ### Que se va a investigar
 ---
