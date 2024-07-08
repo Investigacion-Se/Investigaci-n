@@ -3,7 +3,7 @@ async function preguntarSimple(tp, key, mensaje, errorInputIncorrecto) {
 
     try {
         let value = await tp.system.prompt(mensaje, null, true);
-        tR += `${key}: ${value}\n`;
+        tR += `${key}: "${value}"\n`;
     } catch (_) {
         throw new Error(errorInputIncorrecto);
     }

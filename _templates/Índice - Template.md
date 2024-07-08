@@ -27,9 +27,11 @@
 
 	tR += `tema: ${nuevoTema}\n`;
 
-	// { archivo, nivel, tema, subTemas }
-	let temasOrdenados = ordenarTemas(indices);
-	let descripcion = generarDescripcion(temasOrdenados);
+	let descripcion = [];
+	if (indices.length > 0) {
+		let temasOrdenados = ordenarTemas(indices);
+		descripcion = generarDescripcion(temasOrdenados);
+	}
 	
 	let eleccion;
 	try {
@@ -54,7 +56,7 @@
 
 	try {
 		await this.app.vault.createFolder(path);
-		await tp.file.move(`${path}/index`);
+		await tp.file.move(`${path}/${nuevoTema}`);
 	} catch (e) {
 		const mensaje = "No se pudo crear y mover el tema";
 		console.log(mensaje);
