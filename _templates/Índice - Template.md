@@ -147,18 +147,8 @@
 	}
 
 %>
-### Que se va a investigar
----
-<% tp.file.cursor() %>
-
-
-
-
-
-
-
-### Bibliografía
----
-```dataviewjs
-	await dv.view("_dataviewScripts/biblioIndice", { indice: dv.current() });
-```
+<%* 
+	let subtemas = tp.frontmatter["subTemas"];
+	let superTema = tp.frontmatter["superTema"];
+	tR += tp.user.infoIndice("", subtemas, superTema);
+_%>
