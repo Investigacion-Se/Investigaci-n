@@ -1,15 +1,10 @@
 ---
 dia: 2024-07-08
-tags:
-  - Índice
-tema: Generación procedural
-nivel: 0
-subTemas:
-  - Generación procedural con Tiles
-  - Generación procedural con Grammars
-  - Generación procedural con Distribuciones
-  - Generación procedural parametrizada
-  - Generación procedural por Simulación
+tags: 
+ - Índice
+tema: Generación procedural por Simulación
+nivel: 1
+superTema: Generación procedural
 ---
 ```dataviewjs
 await dv.view("_dataviewScripts/mostrarSuperTema", { superTema: dv.current().superTema });
@@ -17,7 +12,7 @@ await dv.view("_dataviewScripts/mostrarSubTemas", { subTemas: dv.current().subTe
 ```
 ### ¿Qué se va a investigar?
 ---
-Métodos de generación de cualquier tipo de cosa, de forma procedural
+Se va a explorar la generación procedural por uso de simulación
 
 
 #### Archivos
