@@ -16,10 +16,12 @@
 	tR += "etapa: sin-empezar\n";
 	
 	try {
+		console.log("Hola");
 		const archivoTema = await tp.user.conseguirTema(tp, dv);
 		tR += `tema: ${archivoTema.tema}\n`;
 		tR += `indice: "[[${archivoTema.file.path}|${archivoTema.tema}]]"\n`;
-	} catch (_) {
+	} catch (e) {
+		console.log(e);
 		return await tp.user.salir(tp, "No se ingresó un tema");
 	}
 

@@ -1,18 +1,10 @@
 async function conseguirTema(tp, dv) {
+    console.log("Hola antes");
     let carpeta = tp.file.folder(true);
 	if (carpeta == "/" || carpeta == "")
 		return await preguntarTema(dv);
 
-    let archivos = dv.pages(`"${carpeta}"`)
-        .filter(archivo => {            
-            if (!archivo.tags)
-                return false;
-            
-            if (archivo.tags.includes("Subtema"))
-                return false;
-            
-            return archivo.tags.includes("Índice");
-        });
+    let archivos = dv.pages(`"${carpeta}" and #Índice`);
 
     switch (archivos.values.length) {
         case 1: return archivos.values[0];
@@ -21,6 +13,7 @@ async function conseguirTema(tp, dv) {
 }
 
 async function preguntarTema(tp, dv) {
+    console.log("Hola preguntarTema");
     let temas = dv.pages("#Índice")
         .map(archivo => {
             let tema = archivo.tema;
