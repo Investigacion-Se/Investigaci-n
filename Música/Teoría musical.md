@@ -1,17 +1,19 @@
 ---
 dia: 2024-07-08
-etapa: ampliar
-tema: Fractales
-indice: "[[Fractales/Fractales.md|Fractales]]"
-referencias:
-  - "38"
+etapa: sin-empezar
+tema: Música
+indice: "[[Música/Música.md|Música]]"
+referencias: 
+ - "58"
+ - "59"
+ - "60"
 ---
 ```dataviewjs
 	await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
 ```
 ### Definición
 ---
-Un fractal es un objeto geométrico cuya estructura básica, fragmentada o aparentemente irregular, se repite a diferentes escalas
+
 
 
 

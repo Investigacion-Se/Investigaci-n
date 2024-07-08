@@ -28,7 +28,7 @@ function mostrarCita(archivo) {
 
     const ref = `<p style="margin-right: 0.5em">[${archivo.numReferencia}]</p>`;
     const divStyle = "display:flex; flex-direction: row;";
-    return `<div style="${divStyle}"> ${ref} ${texto} </div>`;
+    return `<div style="${divStyle}"> ${ref} <p> ${texto} </p> </div>`;
 }
 
 exports.mostrarCita = mostrarCita;
@@ -52,7 +52,14 @@ function mostrarCitaWeb(archivo) {
     let autores = "";
     for (let {autore: autore} of nombreAutores) {
         let [{nombre: nombre}, {apellido: apellido}] = autore;
-        autores += `${apellido}, ${nombre[0]}.`;
+
+        if (nombre && apellido) {
+            autores += `${apellido}, ${nombre[0]}.`;
+        } else if (nombre && !apellido) {
+            autores += `${nombre}.`;
+        } else {
+            autores += `${apellido}.`;
+        }
     }
 
     return `${autores} (${dia} de ${mes} del ${anio}). <i>${tituloArticulo}</i>. ${nombrePagina}. ${url}`;
@@ -67,7 +74,7 @@ function mostrarCitaWiki(archivo) {
     
     const url = archivo.url;
 
-    return `<p>${nombreArticulo}. (${dia} de ${mes} del ${anio}). En <i> Wikipedia </i>. ${url}</p>`;
+    return `${nombreArticulo}. (${dia} de ${mes} del ${anio}). En <i> Wikipedia </i>. ${url}`;
 }
 
 function mostrarCitaYoutube(archivo) {
@@ -80,5 +87,5 @@ function mostrarCitaYoutube(archivo) {
     
     const url = archivo.url;
 
-    return `<p>${nombreCanal} (${dia} de ${mes} del ${anio}). <i> ${nombreVideo} </i>. [Archivo de video]. Youtube. ${url}</p>`;
+    return `${nombreCanal} (${dia} de ${mes} del ${anio}). <i> ${nombreVideo} </i>. [Archivo de video]. Youtube. ${url}`;
 }

@@ -1,17 +1,20 @@
 ---
 dia: 2024-07-08
-etapa: ampliar
-tema: Fractales
-indice: "[[Fractales/Fractales.md|Fractales]]"
+etapa: sin-empezar
+tema: Game mechanics
+indice: "[[Game mechanics/Game mechanics.md|Game mechanics]]"
 referencias:
-  - "38"
+  - "49"
+aliases:
+  - Ciudades en role-playing games
+  - Ciudades en RPG
 ---
 ```dataviewjs
 	await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
 ```
 ### Definición
 ---
-Un fractal es un objeto geométrico cuya estructura básica, fragmentada o aparentemente irregular, se repite a diferentes escalas
+
 
 
 
