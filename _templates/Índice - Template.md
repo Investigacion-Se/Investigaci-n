@@ -145,5 +145,37 @@
 		return guardarlo;
 	}
 
-	tR += tp.user.infoIndice("", [], eleccion);
+	// tR += tp.user.infoIndice("", [], eleccion);
 _%>
+### ¿Qué se va a investigar?
+---
+<% tp.file.cursor() %>
+
+
+
+
+#### Super tema
+---
+```dataviewjs
+await dv.view("_dataviewScripts/mostrarSuperTema", { superTema: dv.current().superTema });
+```
+
+
+#### Subtemas
+---
+```dataviewjs
+await dv.view("_dataviewScripts/mostrarSubTemas", { subTemas: dv.current().subTemas });
+```
+
+#### Archivos
+---
+```dataviewjs
+await dv.view("_dataviewScripts/mostrarArchivos", { indice: dv.current() });
+```
+
+
+### Bibliografía
+---
+```dataviewjs
+await dv.view('_dataviewScripts/biblioIndice', { indice: dv.current() });
+```
