@@ -64,8 +64,8 @@
 
 	// Agregamos subtema al tema elegido
 	if (eleccion !== CREAR_TEMA) {
-		let superTema = tp.file.find_tfile(eleccion.file.path);
-		await app.fileManager.processFrontMatter(superTema, (frontmatter) => {
+		let tSuperTema = tp.file.find_tfile(eleccion.file.path);
+		await app.fileManager.processFrontMatter(tSuperTema, (frontmatter) => {
 			if (!frontmatter["subTemas"]) {
 				frontmatter["subTemas"] = [ `${nuevoTema}` ];
 			} else {
@@ -74,7 +74,7 @@
 		});
 	}	
 
-	tR += "---";
+	tR += "---\n";
 
 	function ordenarTemas(indices) {
 		let temas = indices
@@ -120,7 +120,6 @@
 		└─○ Subtema
 		● Tema
 	*/
-
 	function generarDescripcion(temas) {
 		let guardarlo = [];
 		
@@ -146,9 +145,5 @@
 		return guardarlo;
 	}
 
-%>
-<%* 
-	let subtemas = tp.frontmatter["subTemas"];
-	let superTema = tp.frontmatter["superTema"];
-	tR += tp.user.infoIndice("", subtemas, superTema);
+	tR += tp.user.infoIndice("", [], eleccion);
 _%>

@@ -12,6 +12,11 @@ superTema: Reglas APA
 
 
 
+### Supertemas
+---
+Se tiene como supertema a: [[Reglas APA/index.md|Reglas APA]]
+
+
 ### Bibliografía
 ---
 ```dataviewjs

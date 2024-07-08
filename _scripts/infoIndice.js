@@ -8,12 +8,16 @@ function infoIndice(infoInvestigar, subTemas, superTema) {
 
     if (superTema) {
         tR += "### Supertemas\n---\n";
-        
+        tR += `Se tiene como supertema a: [[${superTema.file.path}|${superTema.tema}]]\n`;
+        tR += "\n\n";
     }
 
-    if (subTemas) {
+    if (subTemas && subTemas.length > 0) {
         tR += "### Subtemas\n---\n";
-        
+        for (let subTema of subTemas) {
+            tR += ` * [[${subTema.file.path}|${subTema.tema}]]\n\n`;
+        }
+        tR += "\n\n";
     }
 
     tR += "### Bibliografía\n";
