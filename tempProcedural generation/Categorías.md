@@ -5,11 +5,7 @@ biblio: [
 ]
 etapa: ampliar
 ---
-Tenemos dos grupos, los aditivos
-* [[Tile]]
-* [[Grammar]]
-* [[Distribution]]
-* [[Parametric]]
+
 * [[Interpretive]]
 * [[Simulation]]
 
