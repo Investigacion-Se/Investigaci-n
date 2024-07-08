@@ -3,7 +3,7 @@ dia: 2023-08-07
 tags:
   - Índice
 tema: Storytelling
-nivel: "0"
+nivel: 0
 ---
 ### Que se va a investigar
 ---

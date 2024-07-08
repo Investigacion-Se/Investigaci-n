@@ -3,7 +3,7 @@ dia: 2024-01-16
 tags:
   - Índice
 tema: Docker
-nivel: "0"
+nivel: 0
 ---
 ### Que se va a investigar
 ---

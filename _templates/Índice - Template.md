@@ -36,7 +36,7 @@
 		eleccion = await tp.system.suggester(
 			["Crear un nuevo tema", ...descripcion.map(desc => desc.descripcion)], 
 			[CREAR_TEMA, ...descripcion.map(desc => desc.archivo)], 
-			true, "Crear un nuevo tema o elegir de que tema va a ser subtema", 11
+			true, "Crear un nuevo tema o elegir de que tema va a ser subtema"
 		);
 	} catch {
 		return await tp.user.salir(tp, "No se eligió como definir el tema");

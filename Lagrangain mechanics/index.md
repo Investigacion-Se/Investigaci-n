@@ -3,7 +3,7 @@ dia: 2023-07-15
 tags:
   - Índice
 tema: Lagrangian mechanics
-nivel: "0"
+nivel: 0
 ---
 ### Que se va a investigar
 ---

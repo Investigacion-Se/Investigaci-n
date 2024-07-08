@@ -3,7 +3,7 @@ dia: 2023-11-23
 tags:
   - Índice
 tema: Fractales
-nivel: "0"
+nivel: 0
 ---
 ### Que se va a investigar
 ---

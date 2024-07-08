@@ -3,7 +3,7 @@ dia: 2023-07-21
 tags:
   - Índice
 tema: Asynchronous
-nivel: "0"
+nivel: 0
 ---
 ### Que se va a investigar
 ---

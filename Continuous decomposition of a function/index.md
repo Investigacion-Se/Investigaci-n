@@ -3,7 +3,7 @@ dia: 2023-07-14
 tags:
   - Índice
 tema: Continuous decomposition of a function
-nivel: "0"
+nivel: 0
 ---
 ### Que se va a investigar
 ---

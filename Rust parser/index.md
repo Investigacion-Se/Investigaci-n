@@ -3,7 +3,7 @@ dia: 2023-08-24
 tags:
   - Índice
 tema: Rust parser
-nivel: "0"
+nivel: 0
 ---
 ### Que se va a investigar
 ---

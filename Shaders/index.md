@@ -3,7 +3,7 @@ dia: 2023-12-01
 tags:
   - Índice
 tema: Shaders
-nivel: "0"
+nivel: 0
 ---
 ### Que se va a investigar
 ---
