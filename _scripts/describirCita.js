@@ -2,20 +2,19 @@ function describirCita(tp, archivo) {
     let tipoCita = archivo.tipoCita;
     let numReferencia = archivo.numReferencia;
     
-    let descripcion = undefined;
+    let texto = undefined;
     switch (tipoCita) {
-        case "Libro": descripcion = tp.user.describirLibro(tp, archivo); break;
-        case "Youtube": descripcion = tp.user.describirYoutube(tp, archivo); break;
-        case "Web": descripcion = tp.user.describirWeb(tp, archivo); break;
+        case "Libro": texto = tp.user.describirLibro(archivo); break;
+        case "Youtube": texto = tp.user.describirYoutube(archivo); break;
+        case "Web": texto = tp.user.describirWeb(archivo); break;
+        case "Wikipedia": texto = tp.user.describirWiki(archivo); break;
     }   
 
-    return (!descripcion) ? undefined : {
+    return (!texto) ? undefined : {
         archivo: archivo,
         tipoCita: tipoCita,
         numReferencia: numReferencia,
-        nombreAutor: descripcion.nombreAutor,
-        nombreObra: descripcion.nombreObra,
-        extra: descripcion.extra
+        texto: texto,
     }
 }
 

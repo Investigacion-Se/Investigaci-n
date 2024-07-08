@@ -1,9 +1,5 @@
-function describirYoutube(tp, archivo) {
-    return {
-        nombreAutor: archivo.nombreCanal,
-        nombreObra: archivo.nombreVideo,
-        extra: ""
-    };
+function describirYoutube(archivo) {
+    return `${archivo.nombreVideo} de ${archivo.nombreCanal}${extra}`;
 }
 
 module.exports = describirYoutube;
