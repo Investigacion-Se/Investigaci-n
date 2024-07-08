@@ -1,17 +1,10 @@
 ---
 dia: 2024-07-08
-tags:
-  - Índice
-tema: Blender
-nivel: 0
-subTemas:
-  - Animación de personajes con Blender
-  - Ambiente con Blender
-  - Geometry Nodes con Blender
-  - Modelado de superficies duras con Blender
-  - Modelado con Blender
-  - Motion graphics con Blender
-  - Shading procedural con Blender
+tags: 
+ - Índice
+tema: Motion graphics con Blender
+nivel: 1
+superTema: Blender
 ---
 ```dataviewjs
 await dv.view("_dataviewScripts/mostrarSuperTema", { superTema: dv.current().superTema });
@@ -19,7 +12,9 @@ await dv.view("_dataviewScripts/mostrarSubTemas", { subTemas: dv.current().subTe
 ```
 ### ¿Qué se va a investigar?
 ---
-La idea es aprender la idea general de usar blender.
+Para aprender como animar personajes usando la herramienta de Blender, nos basáremos en los trabajos de:
+* [DerekElliott](https://www.youtube.com/@DerekElliott)
+* [TheDucky3D](https://www.youtube.com/@TheDucky3D)
 
 
 #### Archivos

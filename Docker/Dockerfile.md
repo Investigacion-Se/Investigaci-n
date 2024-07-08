@@ -1,11 +1,15 @@
 ---
-dia: 2024-01-16
-biblio: [
-	
-]
+dia: 2024-07-08
 etapa: empezado
+tema: Docker
+indice: "[[Docker/Docker.md|Docker]]"
+referencias:
+  - "37"
 ---
-### Como crear un dockerfile
+```dataviewjs
+	await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
+```
+### Definición
 ---
 El archivo debe llamarse "Dockerfile", cada dockerfile empieza con una [[Docker image|imágen]] padre o base, desde el cual empieza.
 
@@ -23,4 +27,9 @@ El archivo debe llamarse "Dockerfile", cada dockerfile empieza con una [[Docker 
 	* `-t` o `--tag`: permite setear un nombre con el formato `name:tag`
 
 
-![[Docker/index#Archivos]]
+
+### Referencias
+---
+```dataviewjs
+	await dv.view("_dataviewScripts/referenciasView", { archivo: dv.current() });
+```

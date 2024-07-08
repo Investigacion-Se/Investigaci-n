@@ -1,17 +1,9 @@
 ---
 dia: 2024-07-08
-tags:
-  - Índice
-tema: Blender
+tags: 
+ - Índice
+tema: Fractales
 nivel: 0
-subTemas:
-  - Animación de personajes con Blender
-  - Ambiente con Blender
-  - Geometry Nodes con Blender
-  - Modelado de superficies duras con Blender
-  - Modelado con Blender
-  - Motion graphics con Blender
-  - Shading procedural con Blender
 ---
 ```dataviewjs
 await dv.view("_dataviewScripts/mostrarSuperTema", { superTema: dv.current().superTema });
@@ -19,7 +11,7 @@ await dv.view("_dataviewScripts/mostrarSubTemas", { subTemas: dv.current().subTe
 ```
 ### ¿Qué se va a investigar?
 ---
-La idea es aprender la idea general de usar blender.
+La intención es investigar sobre fractales y como se pueden hacer pseudo-fractales, que yo defino como estructuras repetitivas dependientes de condiciones pueden producir variaciones repetitivas o no. 
 
 
 #### Archivos

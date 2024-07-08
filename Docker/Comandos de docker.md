@@ -1,11 +1,15 @@
 ---
-dia: 2024-01-16
-biblio: [
-	
-]
+dia: 2024-07-08
 etapa: empezado
+tema: Docker
+indice: "[[Docker/Docker.md|Docker]]"
+referencias:
+  - "37"
 ---
-### Comandos
+```dataviewjs
+	await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
+```
+### Definición
 ---
 * `docker images` : Lista todas las [[Docker image|imágenes]]
 * `docker ps`: Lista todos los [[Docker container|contenedores]]
@@ -20,4 +24,9 @@ etapa: empezado
 * `docker start container_id/nombre`: Empieza a correr un contenedor que fue detenido (`docker stop`)
 
 
-![[Docker/index#Archivos]]
+
+### Referencias
+---
+```dataviewjs
+	await dv.view("_dataviewScripts/referenciasView", { archivo: dv.current() });
+```

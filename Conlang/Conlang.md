@@ -1,17 +1,9 @@
 ---
 dia: 2024-07-08
-tags:
-  - Índice
-tema: Blender
+tags: 
+ - Índice
+tema: Conlang
 nivel: 0
-subTemas:
-  - Animación de personajes con Blender
-  - Ambiente con Blender
-  - Geometry Nodes con Blender
-  - Modelado de superficies duras con Blender
-  - Modelado con Blender
-  - Motion graphics con Blender
-  - Shading procedural con Blender
 ---
 ```dataviewjs
 await dv.view("_dataviewScripts/mostrarSuperTema", { superTema: dv.current().superTema });
@@ -19,7 +11,7 @@ await dv.view("_dataviewScripts/mostrarSubTemas", { subTemas: dv.current().subTe
 ```
 ### ¿Qué se va a investigar?
 ---
-La idea es aprender la idea general de usar blender.
+Vamos a investigar como crear un conlang, y que hace uno natural
 
 
 #### Archivos
