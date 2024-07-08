@@ -1,7 +1,7 @@
 function describirCita(tp, archivo) {
     let tipoCita = archivo.tipoCita;
     let numReferencia = archivo.numReferencia;
-    
+
     let texto = undefined;
     switch (tipoCita) {
         case "Libro": texto = tp.user.describirLibro(archivo); break;

@@ -12,5 +12,6 @@ let referencias = dv.pages('"_referencias"')
 	.filter(ref => referenciasArchivo.indexOf(ref.numReferencia) >= 0);
 
 for (let referencia of referencias) {
+	console.log(citaView.mostrarCita(referencia));
     dv.el("p", citaView.mostrarCita(referencia));
 }

@@ -19,7 +19,7 @@ async function citarWiki(tp) {
     tR += await tp.user.preguntarSimple(
         tp, 
         "url",
-        "Ingresar el url del artículo:",
+        "Ingresar el enlace permanente del artículo:",
         "No se ingresó el url del artículo"
     )
 

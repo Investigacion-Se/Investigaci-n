@@ -16,6 +16,7 @@
 			case "Libro": tR += await tp.user.citarLibro(tp); break;
 			case "Youtube": tR += await tp.user.citarYoutube(tp); break;
 			case "Web": tR += await tp.user.citarWeb(tp); break;
+			case "Wikipedia": tR += await tp.user.citarWiki(tp); break;
 			default: throw new Error(`El tipo de cita "${tipoCita}" no existe todavia`);
 		}
 	} catch ({ name, message }) {

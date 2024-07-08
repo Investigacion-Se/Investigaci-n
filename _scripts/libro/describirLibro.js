@@ -1,9 +1,5 @@
-function describirLibro(tp, archivo) {
-    return {
-        nombreAutor: "Nombre del autor",
-        nombreObra: "Nombre de la obra",
-        extra: "Más datos"
-    };
+function describirLibro(archivo) {
+    return "Nombre de la obra, de Nombre del autor";
 }
 
 module.exports = describirLibro;

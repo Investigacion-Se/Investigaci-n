@@ -1,5 +1,5 @@
 function describirYoutube(archivo) {
-    return `${archivo.nombreVideo} de ${archivo.nombreCanal}${extra}`;
+    return `${archivo.nombreVideo} de ${archivo.nombreCanal}`;
 }
 
 module.exports = describirYoutube;
