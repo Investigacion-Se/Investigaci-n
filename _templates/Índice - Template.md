@@ -160,12 +160,12 @@ _%>
 await dv.view("_dataviewScripts/mostrarSuperTema", { superTema: dv.current().superTema });
 ```
 
-
 #### Subtemas
 ---
 ```dataviewjs
 await dv.view("_dataviewScripts/mostrarSubTemas", { subTemas: dv.current().subTemas });
 ```
+
 
 #### Archivos
 ---

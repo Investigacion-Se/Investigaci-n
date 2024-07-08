@@ -17,19 +17,19 @@ Se va a investigar las reglas APA que se va a usar para citar cualquier contenid
 await dv.view("_dataviewScripts/mostrarSuperTema", { superTema: dv.current().superTema });
 ```
 
-
-
 #### Subtemas
 ---
 ```dataviewjs
 await dv.view("_dataviewScripts/mostrarSubTemas", { subTemas: dv.current().subTemas });
 ```
 
+
 #### Archivos
 ---
 ```dataviewjs
 await dv.view("_dataviewScripts/mostrarArchivos", { indice: dv.current() });
 ```
+
 
 ### Bibliografía
 ---
