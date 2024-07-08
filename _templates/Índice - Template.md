@@ -147,24 +147,13 @@
 
 	// tR += tp.user.infoIndice("", [], eleccion);
 _%>
+```dataviewjs
+await dv.view("_dataviewScripts/mostrarSuperTema", { superTema: dv.current().superTema });
+await dv.view("_dataviewScripts/mostrarSubTemas", { subTemas: dv.current().subTemas });
+```
 ### ¿Qué se va a investigar?
 ---
 <% tp.file.cursor() %>
-
-
-
-
-#### Super tema
----
-```dataviewjs
-await dv.view("_dataviewScripts/mostrarSuperTema", { superTema: dv.current().superTema });
-```
-
-#### Subtemas
----
-```dataviewjs
-await dv.view("_dataviewScripts/mostrarSubTemas", { subTemas: dv.current().subTemas });
-```
 
 
 #### Archivos
