@@ -10,5 +10,5 @@ if (subTemas && subTemas.length > 0) {
         return ` >  * ${subTema.tema} [[${path}|?]]`;
     }).join("\n");
 
-    dv.paragraph(` > [!tldr]- Subtemas\n > ${texto}`);
+    dv.paragraph(` > [!example]- Subtemas\n > ${texto}`);
 }
