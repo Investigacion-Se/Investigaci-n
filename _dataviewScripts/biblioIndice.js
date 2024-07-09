@@ -14,7 +14,8 @@ let referenciasTema = paginas
 
 if (referenciasTema.length > 0) {
     let archivoReferencias = dv.pages('"_referencias"')
-        .filter(ref => referenciasTema.indexOf(ref.numReferencia) >= 0);
+        .filter(ref => referenciasTema.indexOf(ref.numReferencia) >= 0)
+        .sort(ref => ref.numReferencia);
 
     let resultado = "";
     for (let referencia of archivoReferencias) {
