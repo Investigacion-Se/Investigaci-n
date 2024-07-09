@@ -19,6 +19,9 @@ await dv.view("_dataviewScripts/mostrarSubTemas", { subTemas: dv.current().subTe
 ---
 Métodos de generación de cualquier tipo de cosa, de forma procedural
 
+Basado en la serie de videos
+* [GDC - Procedural](https://youtube.com/playlist?list=PLVmb_qp6XRcy8e-Lgs5SHzZezk1VPMvVl&si=wYhTlmNZeaQhaH-z)
+
 
 #### Archivos
 ---
