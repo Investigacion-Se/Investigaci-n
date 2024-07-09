@@ -9,5 +9,6 @@
     "_templates/",
     "_scripts/",
     "_dataviewScripts/"
-  ]
+  ],
+  "livePreview": true
 }

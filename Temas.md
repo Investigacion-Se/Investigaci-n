@@ -1,19 +1,5 @@
 Esta va a ser una lista de todos los temas y sus estados, estos siendo `sin-empezar`, `empezado`, `ampliar` y `terminado`
 
-```tikz
-\usepackage{amssymb}
-\usetikzlibrary{math}
-\usetikzlibrary{calc}
-
-\begin{document} 
-	\begin{tikzpicture}[scale=1.5, transform shape, thick]
-
-		\draw (0, 0) node {};
-
-	\end{tikzpicture}
-\end{document}
-```
-
 
 ```dataviewjs
 const SIN_EMPEZAR = "sin-empezar";

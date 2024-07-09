@@ -73,7 +73,7 @@
 		});
 	}	
 
-	await tp.user.regenerarTemas(tp);
+	await tp.user.regenerarREADME(tp, "", "README");
 
 	tR += "---\n";
 _%>
