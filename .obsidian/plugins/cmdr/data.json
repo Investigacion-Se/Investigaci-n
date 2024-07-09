@@ -12,9 +12,9 @@
       "mode": "any"
     },
     {
-      "id": "quickadd:choice:e69b4725-b385-4b48-b68c-03a8f766d800",
+      "id": "cmdr:macro-0",
       "icon": "bookmark-plus",
-      "name": "QuickAdd: Nuevo Tema",
+      "name": "Commander: Crear Tema",
       "mode": "any"
     }
   ],
@@ -22,7 +22,19 @@
   "titleBar": [],
   "statusBar": [],
   "pageHeader": [],
-  "macros": [],
+  "macros": [
+    {
+      "macro": [
+        {
+          "action": 0,
+          "commandId": "quickadd:choice:e69b4725-b385-4b48-b68c-03a8f766d800"
+        }
+      ],
+      "name": "Nuevo Tema",
+      "icon": "bookmark-plus",
+      "startup": false
+    }
+  ],
   "explorer": [],
   "hide": {
     "statusbar": [],

@@ -57,6 +57,36 @@
       "openFileInMode": "default",
       "fileExistsMode": "Increment the file name",
       "setFileExistsBehavior": true
+    },
+    {
+      "id": "0cf43c54-7d89-4abe-8663-92a7bf7c0a8f",
+      "name": "Regenerar Temas",
+      "type": "Template",
+      "command": true,
+      "templatePath": "_templates/Regenerar Temas.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "Temas"
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "/"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      },
+      "openFile": false,
+      "openFileInMode": "default",
+      "fileExistsMode": "Overwrite the file",
+      "setFileExistsBehavior": true
     }
   ],
   "macros": [],
