@@ -40,8 +40,9 @@
 		return await tp.user.salir(tp, "No se eligió como definir el tema");
 	}		
 
-	let path = `${nuevoTema}`;
+	let path;
 	if (eleccion === CREAR_TEMA) {
+		path = `${nuevoTema}`;
 		tR += "nivel: 0\n";
 	} else {
 		// Es subtema
@@ -51,7 +52,7 @@
 	}
 
 	try {
-		await this.app.vault.createFolder(path);
+		await app.vault.createFolder(path);
 		await tp.file.move(`${path}/${nuevoTema}`);
 	} catch (e) {
 		const mensaje = "No se pudo crear y mover el tema";
@@ -71,6 +72,8 @@
 			}
 		});
 	}	
+
+	await tp.user.regenerarTemas(tp);
 
 	tR += "---\n";
 _%>

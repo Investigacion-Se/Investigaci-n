@@ -16,8 +16,6 @@ const MESES = [
 function mostrarCita(archivo) {
     let tipoCita = archivo.tipoCita;
 
-    console.log("Hola");
-
     let texto = "falta info";
     switch (tipoCita) {
         case "Libro": texto = mostrarCitaLibro(archivo); break;
