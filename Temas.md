@@ -53,7 +53,7 @@ const temas = dv.pages(`#${tag_indice}`)
 
 dv.table(["Tema", "Etapa"], temas.map(tema => {
 	let path = tema.file.path;
-	let nombre = tema.file.folder.split("/")[0];
+	let nombre = tema.tema;
 	let etapa = determinarEstado(tema);
 	return [`${nombre} [[${path}|?]]`, etapa];
 }));
