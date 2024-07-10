@@ -1,11 +1,10 @@
 ---
-dia: 2024-07-08
-tags:
-  - Índice
-tema: Game engine
-nivel: 0
-subTemas:
-  - Técnicas
+dia: 2024-07-09
+tags: 
+ - Índice
+tema: Técnicas
+nivel: 1
+superTema: Game engine
 ---
 ```dataviewjs
 await dv.view("_dataviewScripts/mostrarSuperTema", { superTema: dv.current().superTema });
@@ -13,8 +12,7 @@ await dv.view("_dataviewScripts/mostrarSubTemas", { subTemas: dv.current().subTe
 ```
 ### ¿Qué se va a investigar?
 ---
-Entender la estructura de un motor de juegos, para poder expandirla o modificarla. Vamos a basarnos en la serie de videos
-* [Vulkan Game Engine Series Written in C](https://youtube.com/playlist?list=PLv8Ddw9K0JPg1BEO-RS-0MYs423cvLVtj&si=Qa-ZGZZu0nVC8gwr)
+Vamos a explorar diferentes técnicas que se aprovechan de la estructura de los [[Game engine|game engines]] para tener resultado muy buenos con altos rendimientos
 
 
 #### Archivos

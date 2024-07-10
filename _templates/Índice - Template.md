@@ -46,7 +46,7 @@
 		tR += "nivel: 0\n";
 	} else {
 		// Es subtema
-		path = `${eleccion.file.folder}/${path}`;
+		path = `${eleccion.file.folder}/${nuevoTema}`;
 		tR += `nivel: ${parseInt(eleccion.nivel, 10) + 1}\n`;
 		tR += `superTema: ${eleccion.tema}\n`;
 	}

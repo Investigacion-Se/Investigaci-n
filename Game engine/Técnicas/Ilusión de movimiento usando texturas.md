@@ -1,14 +1,10 @@
 ---
-dia: 2024-07-08
+dia: 2024-07-09
 etapa: sin-empezar
-tema: Game engine
-indice: "[[Game engine/Game engine.md|Game engine]]"
-referencias:
-  - "40"
-  - "41"
-  - "142"
-aliases:
-  - Nanite
+tema: Técnicas
+indice: "[[Game engine/Técnicas/Técnicas.md|Técnicas]]"
+referencias: 
+ - "141"
 ---
 ```dataviewjs
 	await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
