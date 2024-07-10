@@ -46,34 +46,23 @@
             texto, opciones, valores
         );
 
-        if (eleccion == CREAR_TEMA) {
-            // Conseguir supertema y sacarle indiceBuscado de subtemas
-            // Mover carpeta al root
+        if (eleccion == CREAR_TEMA || !indiceBuscado.superTema) {
             // Cambiar subtemas del superTema
+            eliminarDeSubtemas(indiceBuscado);
+        }
 
-            // Cambiar nivel del tema a 0, y subtemas a sus niveles correspondientes
-            await cambiarNivel(dv, indiceBuscado, 0);
-            // Eliminar supertema
-            await cambiarSupertema(indiceBuscado);
+        // Cambiar nivel del tema y subtemas
+        let nuevoNivel = (eleccion == CREAR_TEMA) ? 0 : eleccion.nivel + 1;
+        await cambiarNivel(dv, indiceBuscado, nuevoNivel);
 
-        } else {
-            if (indiceBuscado.superTema) {
-                // Era un tema
-
-            } else {
-                // Era un subtema
-                // Cambiar subtemas del superTema
-
-            }
-
+        if (eleccion != CREAR_TEMA) {
             // Agregar subtema a la elección
             await agregarASubtemas(eleccion, indiceBuscado.tema);
-            // Mover carpeta al lugar correcto
-            // Cambiar nivel del tema y subtemas
-            await cambiarNivel(dv, indiceBuscado, eleccion.nivel + 1);
-            // Agregar/Cambiar supertema
-            await cambiarSupertema(indiceBuscado, eleccion.tema);
-        } 
+        }
+
+        // Agregar/Cambiar supertema
+        let nuevoSuperTema = (eleccion == CREAR_TEMA) ? undefined : eleccion.tema;
+        await cambiarSupertema(indiceBuscado, nuevoSuperTema);
     }
 
     async function cambiarNivel(dv, indice, nivel) {
@@ -103,7 +92,23 @@
     }
 
     async function eliminarDeSubtemas(indice) {
-        
+        let carpeta = indice.file.folder;
+        let carpetaSuperTema = carpeta.split("/");
+        carpetaSuperTema = carpetaSuperTema.slice(0, carpetaSuperTema.length - 2).join("/");
+
+        let tFileSuperTema = tp.file.find_tfile(`${carpetaSuperTema}/${indice.superTema}.md`);
+        await app.fileManager.processFrontMatter(tFileSuperTema, (frontmatter) => {
+            let subtemas = frontmatter["subTemas"];
+            let index = subtemas.indexOf(indice.tema);
+            if (index < 0) {
+                const mensaje = "No se encontró el subtema en el superTema, posiblemente un error";
+                console.log(mensaje);
+                new Notice(mensaje);
+            } else {
+                subtemas.splice(index, 1);
+                frontmatter["subTemas"] = subtemas;
+            }
+        });
     }
 
     async function agregarASubtemas(eleccion, tema) {
