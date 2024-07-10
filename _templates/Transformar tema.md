@@ -46,6 +46,10 @@
             texto, opciones, valores
         );
 
+        // Cambiar la carpeta
+        let carpetaDestino = (eleccion == CREAR_TEMA) ? "" : eleccion.file.folder;
+        await moverACarpeta(dv, indiceBuscado, carpetaDestino);
+
         if (eleccion == CREAR_TEMA || !indiceBuscado.superTema) {
             // Cambiar subtemas del superTema
             eliminarDeSubtemas(indiceBuscado);
@@ -63,6 +67,10 @@
         // Agregar/Cambiar supertema
         let nuevoSuperTema = (eleccion == CREAR_TEMA) ? undefined : eleccion.tema;
         await cambiarSupertema(indiceBuscado, nuevoSuperTema);
+    }
+
+    async function moverACarpeta(dv, indice, carpetaDestino) {
+        // Hacer
     }
 
     async function cambiarNivel(dv, indice, nivel) {
