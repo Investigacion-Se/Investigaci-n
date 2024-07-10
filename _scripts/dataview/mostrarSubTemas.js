@@ -7,7 +7,7 @@ if (subTemas && subTemas.length > 0) {
 
     texto += subTemas.map(subTema => {
         const path = subTema.file.path;
-        return ` >  * ${subTema.tema} [[${path}|?]]`;
+        return ` >  * ${subTema.tema} [[${path}|?]]\n >`;
     }).join("\n");
 
     dv.paragraph(` > [!example]- Subtemas\n > ${texto}`);
