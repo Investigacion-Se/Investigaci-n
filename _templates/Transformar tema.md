@@ -49,29 +49,29 @@
         if (eleccion == CREAR_TEMA) {
             // Conseguir supertema y sacarle indiceBuscado de subtemas
             // Mover carpeta al root
+            // Cambiar subtemas del superTema
 
             // Cambiar nivel del tema a 0, y subtemas a sus niveles correspondientes
             await cambiarNivel(dv, indiceBuscado, 0);
             // Eliminar supertema
             await cambiarSupertema(indiceBuscado);
 
-        } else if (indiceBuscado.superTema) {
-            // Era un tema
-
-            // Mover carpeta al lugar correcto
-            // Cambiar nivel del tema y subtemas
-            await cambiarNivel(dv, indiceBuscado, eleccion.nivel + 1);
-            // Agregar supertema
-            await cambiarSupertema(indiceBuscado, eleccion.tema);
         } else {
-            // Era un subtema
+            if (indiceBuscado.superTema) {
+                // Era un tema
+
+            } else {
+                // Era un subtema
+                // Cambiar subtemas del superTema
+
+            }
 
             // Mover carpeta al lugar correcto
             // Cambiar nivel del tema y subtemas
             await cambiarNivel(dv, indiceBuscado, eleccion.nivel + 1);
-            // Cambiar supertema
+            // Agregar/Cambiar supertema
             await cambiarSupertema(indiceBuscado, eleccion.tema);
-        }
+        } 
     }
 
     async function cambiarNivel(dv, indice, nivel) {
@@ -94,6 +94,10 @@
 
     async function cambiarSupertema(indice, nuevoSupertema = undefined) {
         // Cambiar el supertema del indice
+        let tFileIndice = tp.file.find_tfile(indice.file.path);
+        await app.fileManager.processFrontMatter(tFileIndice, (frontmatter) => {
+            frontmatter["superTema"] = nuevoSupertema;
+        });
     }
 
     async function preguntarArchivo(tp, indices, texto, otrasOpciones = [], otrosValores = []) {

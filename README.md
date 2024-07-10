@@ -26,3 +26,4 @@ Para eso usaré obsidian, y pdfs, donde en obsidian todo sería archivos markdow
 | Vulkan                                 | No empezado |
 | Worldbuilding                          | No empezado |
 | XML                                    | No empezado |
+
