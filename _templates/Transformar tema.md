@@ -80,20 +80,14 @@
         let paginasModificar = dv.pages(`"${indice.file.folder}" and #Índice`)
             .map(pagina => tp.file.find_tfile(pagina.file.path));
 
-        let 
+        let modificaciones = [];
         for (let paginaModificar of paginasModificar) {
-             app.fileManager.processFrontMatter(paginaModificar, (frontmatter) => {
-                frontmatter["nivel"] = frontmatter["nivel"] - nivelIndice + nivel;
+            let modificacion = app.fileManager.processFrontMatter(paginaModificar, (frontmatter) => {
+                frontmatter["nivel"] = nivel + frontmatter["nivel"] - nivelIndice;
             });
-        }
 
-        await app.fileManager.processFrontMatter(tArchivo, (frontmatter) => {
-            if (!frontmatter["referencias"]) {
-                frontmatter["referencias"] = [ `${numReferencia}` ];
-            } else {
-                frontmatter["referencias"].push(`${numReferencia}`);
-            }
-        })
+            modificaciones.push(modificacion);
+        }
     }
 
     async function cambiarSupertema(indice, nuevoSupertema = undefined) {
