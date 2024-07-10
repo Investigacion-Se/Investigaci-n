@@ -3,7 +3,7 @@
     const dv = app.plugins.plugins["dataview"].api;
 
     try {
-        await transformar();
+        await transformar(dv);
     } catch (e) {
         const mensaje = "Hubo un error en la transformación";
         console.log(e);
@@ -11,7 +11,7 @@
         new Notice(mensaje);
     }
 
-    async function transformar() {
+    async function transformar(dv) {
         let carpeta = tp.file.folder(true);
         let todosIndices = dv.pages("#Índice");
         let indiceBuscado;
@@ -51,7 +51,7 @@
             // Mover carpeta al root
 
             // Cambiar nivel del tema a 0, y subtemas a sus niveles correspondientes
-            await cambiarNivel(indiceBuscado, 0);
+            await cambiarNivel(dv, indiceBuscado, 0);
             // Eliminar supertema
             await cambiarSupertema(indiceBuscado);
 
@@ -60,7 +60,7 @@
 
             // Mover carpeta al lugar correcto
             // Cambiar nivel del tema y subtemas
-            await cambiarNivel(indiceBuscado, eleccion.nivel + 1);
+            await cambiarNivel(dv, indiceBuscado, eleccion.nivel + 1);
             // Agregar supertema
             await cambiarSupertema(indiceBuscado, eleccion.tema);
         } else {
@@ -68,14 +68,31 @@
 
             // Mover carpeta al lugar correcto
             // Cambiar nivel del tema y subtemas
-            await cambiarNivel(indiceBuscado, eleccion.nivel + 1);
+            await cambiarNivel(dv, indiceBuscado, eleccion.nivel + 1);
             // Cambiar supertema
             await cambiarSupertema(indiceBuscado, eleccion.tema);
         }
     }
 
-    async function cambiarNivel(indice, nivel) {
+    async function cambiarNivel(dv, indice, nivel) {
         // Cambiar el nivel del indice y sus subtemas
+        let nivelIndice = indice.nivel;
+        let paginasModificar = dv.pages(`"${indice.file.folder}" and #Índice`)
+            .map(pagina => tp.file.find_tfile(pagina.file.path));
+
+        for (let paginaModificar of paginasModificar) {
+            await app.fileManager.processFrontMatter(paginaModificar, (frontmatter) => {
+                frontmatter["nivel"] = frontmatter["nivel"] - nivelIndice + nivel;
+            });
+        }
+
+        await app.fileManager.processFrontMatter(tArchivo, (frontmatter) => {
+            if (!frontmatter["referencias"]) {
+                frontmatter["referencias"] = [ `${numReferencia}` ];
+            } else {
+                frontmatter["referencias"].push(`${numReferencia}`);
+            }
+        })
     }
 
     async function cambiarSupertema(indice, nuevoSupertema = undefined) {
