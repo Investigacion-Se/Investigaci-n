@@ -70,7 +70,7 @@
     }
 
     async function moverACarpeta(dv, indice, carpetaDestino) {
-        // Hacer
+        
     }
 
     async function cambiarNivel(dv, indice, nivel) {
