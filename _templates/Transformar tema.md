@@ -18,22 +18,20 @@
         
         const textoPreguntarModificar = "Cuál es el tema que se quiere transformar?";
         if (carpeta == "/" || carpeta == "") {
-            indiceBuscado = await preguntarArchivo(tp, todosIndices, textoPreguntarModificar);
+            indiceBuscado = await tp.user.preguntarArchivo(tp, todosIndices, textoPreguntarModificar);
         } else {
             let archivos = dv.pages(`"${carpeta}" and #Índice`)
-                .filter(archivo => {
-                    return archivo.tema == tp.frontmatter["tema"] || archivo.tema == tp.frontmatter["superTema"];
-                });
+                .filter(archivo => archivo.tema == tp.frontmatter["tema"]);
             
             switch (archivos.length) {
-                case 0: indiceBuscado = await preguntarArchivo(tp, todosIndices, textoPreguntarModificar); break;
+                case 0: indiceBuscado = await tp.user.preguntarArchivo(tp, todosIndices, textoPreguntarModificar); break;
                 case 1: indiceBuscado = archivos[0]; break;
-                default: indiceBuscado = await preguntarArchivo(tp, archivos, textoPreguntarModificar); break;
+                default: indiceBuscado = await tp.user.preguntarArchivo(tp, archivos, textoPreguntarModificar); break;
             }
         }    
     
         // Necesitamos preguntar si va a ser un tema, o va a ser un subtema
-        let indicesPosibles = todosIndices.filter(ind => ind.tema != indiceBuscado.tema);
+        let indicesPosibles = todosIndices.filter(ind => ind.tema != indiceBuscado.tema && ind.tema != indiceBuscado.superTema);
         let texto = "Elegir tema para ser transformado en subtema de este";
         let opciones = [];
         let valores = [];
@@ -44,7 +42,7 @@
             valores.push(CREAR_TEMA);
         }
 
-        let eleccion = await preguntarArchivo(tp, indicesPosibles,
+        let eleccion = await tp.user.preguntarArchivo(tp, indicesPosibles,
             texto, opciones, valores
         );
 
@@ -68,27 +66,20 @@
 
         // Cambiar la carpeta
         let carpetaDestino = (eleccion == CREAR_TEMA) ? "" : eleccion.file.folder;
-        await moverACarpeta(dv, indiceBuscado, carpetaDestino);
+        await moverACarpeta(dv, indiceBuscado.file.folder, carpetaDestino);
     }
 
-    async function moverACarpeta(dv, indice, carpetaDestino) {
-        if (!indice.superTema)
-            carpetaDestino = `${carpetaDestino}/`;
-
-        let carpetaOrigen = indice.file.folder;
+    async function moverACarpeta(dv, carpetaOrigen, carpetaDestino) {
         let carpetas = dv.pages(`"${carpetaOrigen}"`)
             .groupBy(pagina => pagina.file.folder);
 
         carpetaOrigen = carpetaOrigen.split("/");
         carpetaOrigen = carpetaOrigen.slice(0, carpetaOrigen.length - 1).join("/");
         
+        let carpetasAEliminar = [];
         for (let { key: pathCarpeta, rows: paginas } of carpetas) {
             // Crear carpeta en el destino
-            let nuevoPathCarpeta = pathCarpeta.replace(carpetaOrigen, `${carpetaDestino}`);
-            console.log(`pathCarpeta: ${pathCarpeta}`);
-            console.log(`carpetaOrigen: ${carpetaOrigen}`);
-            console.log(`nuevoPathCarpeta: ${nuevoPathCarpeta}`);
-
+            let nuevoPathCarpeta = pathCarpeta.replace(carpetaOrigen, `${carpetaDestino}/`);
             await app.vault.createFolder(nuevoPathCarpeta);
 
             for (let pagina of paginas) {
@@ -97,9 +88,13 @@
                 await tp.file.move(`${nuevoPathCarpeta}/${pagina.file.name}`, tPagina);
             }
 
-            // Eliminar carpeta en el destino
-            let tCarpetaOrigen = app.vault.getAbstractFileByPath(pathCarpeta);
-            await app.vault.trash(tCarpetaOrigen);
+            carpetasAEliminar.push(pathCarpeta);
+        }
+        
+        for (let pathCarpeta of carpetasAEliminar) {
+            // Eliminar carpeta en el origen
+            let tCarpeta = app.vault.getAbstractFileByPath(pathCarpeta);
+            await app.vault.trash(tCarpeta);
         }
     }
 
@@ -158,16 +153,6 @@
                 frontmatter["subTemas"].push( `${tema}` );
             }
         });
-    }
-
-    async function preguntarArchivo(tp, indices, texto, otrasOpciones = [], otrosValores = []) {
-        let descripcion = tp.user.describirTemas(indices);
-    
-        return await tp.system.suggester(
-            otrasOpciones.concat(descripcion.map(desc => desc.descripcion)),
-            otrosValores.concat(descripcion.map(desc => desc.archivo)),
-            true, texto
-        );
     }
     
 _%>
