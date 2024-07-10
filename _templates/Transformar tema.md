@@ -88,6 +88,8 @@
 
             modificaciones.push(modificacion);
         }
+
+        await Promise.all(modificaciones);
     }
 
     async function cambiarSupertema(indice, nuevoSupertema = undefined) {
