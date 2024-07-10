@@ -21,7 +21,9 @@
             indiceBuscado = await preguntarArchivo(tp, todosIndices, textoPreguntarModificar);
         } else {
             let archivos = dv.pages(`"${carpeta}" and #Índice`)
-                .filter(archivo => archivo.tema == tp.frontmatter["tema"]);
+                .filter(archivo => {
+                    return archivo.tema == tp.frontmatter["tema"] || archivo.tema == tp.frontmatter["superTema"];
+                });
             
             switch (archivos.length) {
                 case 0: indiceBuscado = await preguntarArchivo(tp, todosIndices, textoPreguntarModificar); break;
@@ -46,10 +48,6 @@
             texto, opciones, valores
         );
 
-        // Cambiar la carpeta
-        let carpetaDestino = (eleccion == CREAR_TEMA) ? "" : eleccion.file.folder;
-        await moverACarpeta(dv, indiceBuscado, carpetaDestino);
-
         if (eleccion == CREAR_TEMA || !indiceBuscado.superTema) {
             // Cambiar subtemas del superTema
             eliminarDeSubtemas(indiceBuscado);
@@ -67,6 +65,10 @@
         // Agregar/Cambiar supertema
         let nuevoSuperTema = (eleccion == CREAR_TEMA) ? undefined : eleccion.tema;
         await cambiarSupertema(indiceBuscado, nuevoSuperTema);
+
+        // Cambiar la carpeta
+        let carpetaDestino = (eleccion == CREAR_TEMA) ? "" : eleccion.file.folder;
+        await moverACarpeta(dv, indiceBuscado, carpetaDestino);
     }
 
     async function moverACarpeta(dv, indice, carpetaDestino) {
@@ -74,12 +76,27 @@
         let carpetas = dv.pages(`"${carpetaOrigen}"`)
             .groupBy(pagina => pagina.file.folder);
 
-        for (let { key: path, rows: paginas } of carpetas) {
+        carpetaOrigen = carpetaOrigen.split("/");
+        carpetaOrigen = carpetaOrigen.slice(0, carpetaOrigen.length - 1).join("/");
+        
+        for (let { key: pathCarpeta, rows: paginas } of carpetas) {
             // Crear carpeta en el destino
+            let nuevoPathCarpeta = pathCarpeta.replace(carpetaOrigen, `${carpetaDestino}`);
+            console.log(`pathCarpeta: ${pathCarpeta}`);
+            console.log(`carpetaOrigen: ${carpetaOrigen}`);
+            console.log(`nuevoPathCarpeta: ${nuevoPathCarpeta}`);
+
+            await app.vault.createFolder(nuevoPathCarpeta);
+
             for (let pagina of paginas) {
                 // Mover paginas
+                let tPagina = tp.file.find_tfile(pagina.file.path);
+                await tp.file.move(`${nuevoPathCarpeta}/${pagina.file.name}`, tPagina);
             }
+
             // Eliminar carpeta en el destino
+            let tCarpetaOrigen = app.vault.getAbstractFileByPath(pathCarpeta);
+            await app.vault.delete(tCarpetaOrigen);
         }
     }
 
