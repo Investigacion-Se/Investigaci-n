@@ -73,7 +73,8 @@
 		});
 	}	
 
-	await tp.user.regenerarArchivo(tp, "", "README");
+	let template = tp.file.find_tfile("_templates/Regenerar README.md");
+	await tp.user.regenerarArchivo(tp, template, "README");
 
 	tR += "---\n";
 _%>
