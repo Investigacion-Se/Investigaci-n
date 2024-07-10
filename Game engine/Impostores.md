@@ -1,0 +1,24 @@
+---
+dia: 2024-07-09
+etapa: sin-empezar
+tema: Game engine
+indice: "[[Game engine/Game engine.md|Game engine]]"
+referencias:
+  - "139"
+aliases:
+  - Impostors
+---
+```dataviewjs
+	await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
+```
+### Definición
+---
+* [Chapter 21. True Impostors de GPU Gems 3](https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-21-true-impostors)
+
+
+
+### Referencias
+---
+```dataviewjs
+	await dv.view("_dataviewScripts/referenciasView", { archivo: dv.current() });
+```

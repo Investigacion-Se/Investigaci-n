@@ -2,7 +2,8 @@
 const CREAR = 1;
 const AGREGAR = 2;
 const SACAR = 3;
-const dv = this.app.plugins.plugins["dataview"].api;
+
+const dv = app.plugins.plugins["dataview"].api;
 
 let opciones = ["⊕ Crear referencia", "↶ Agregar referencia", "⊖ Sacar referencia"];
 let valores = [CREAR, AGREGAR, SACAR];
