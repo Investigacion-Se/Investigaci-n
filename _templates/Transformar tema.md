@@ -48,7 +48,7 @@
             texto, opciones, valores
         );
 
-        if (eleccion == CREAR_TEMA || !indiceBuscado.superTema) {
+        if (eleccion == CREAR_TEMA || indiceBuscado.superTema) {
             // Cambiar subtemas del superTema
             eliminarDeSubtemas(indiceBuscado);
         }
@@ -72,6 +72,9 @@
     }
 
     async function moverACarpeta(dv, indice, carpetaDestino) {
+        if (!indice.superTema)
+            carpetaDestino = `${carpetaDestino}/`;
+
         let carpetaOrigen = indice.file.folder;
         let carpetas = dv.pages(`"${carpetaOrigen}"`)
             .groupBy(pagina => pagina.file.folder);
@@ -96,7 +99,7 @@
 
             // Eliminar carpeta en el destino
             let tCarpetaOrigen = app.vault.getAbstractFileByPath(pathCarpeta);
-            await app.vault.delete(tCarpetaOrigen);
+            await app.vault.trash(tCarpetaOrigen);
         }
     }
 
