@@ -9,7 +9,7 @@ aliases:
   - API Architecture Styles
 ---
 ```dataviewjs
-	await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
+	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });
 ```
 ### Definición
 ---
@@ -43,5 +43,5 @@ Las [[Aplicación Programming Interface|API's]] son claves para el desarrollo de
 ### Referencias
 ---
 ```dataviewjs
-	await dv.view("_dataviewScripts/referenciasView", { archivo: dv.current() });
+	await dv.view("_scripts/dataview/referenciasView", { archivo: dv.current() });
 ```

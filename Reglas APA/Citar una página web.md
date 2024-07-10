@@ -7,7 +7,7 @@ referencias:
   - "2"
 ---
 ```dataviewjs
-	await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
+	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });
 ```
 ### Definición
 ---
@@ -24,5 +24,5 @@ Debes utilizar el estilo de cita de páginas web si no hay otra categoría de re
 ### Referencias
 ---
 ```dataviewjs
-	await dv.view("_dataviewScripts/referenciasView", { archivo: dv.current() });
+	await dv.view("_scripts/dataview/referenciasView", { archivo: dv.current() });
 ```

@@ -7,7 +7,7 @@ referencias:
   - "64"
 ---
 ```dataviewjs
-	await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
+	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });
 ```
 ### Definición
 ---
@@ -31,5 +31,5 @@ El método Runge-Kutta-Fehlberg usa dos [[Método de Runge-Kutta|métodos de Run
 ### Referencias
 ---
 ```dataviewjs
-	await dv.view("_dataviewScripts/referenciasView", { archivo: dv.current() });
+	await dv.view("_scripts/dataview/referenciasView", { archivo: dv.current() });
 ```

@@ -7,7 +7,7 @@ const indices = dv.pages('#Índice')
 	.sort(archivo => archivo.file.name);
 const referencias = dv.pages('"_referencias"');
 
-let citaView = require(app.vault.adapter.basePath + "/_dataviewScripts/citaView.js");
+let citaView = require(app.vault.adapter.basePath + "/_scripts/dataview/citaView.js");
 
 for (let indice of indices) {
 	let paginas = dv.pages(`"${indice.file.folder}" and -#Índice`)

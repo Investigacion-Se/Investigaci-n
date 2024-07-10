@@ -7,7 +7,7 @@ referencias:
   - "17"
 ---
 ```dataviewjs
-	await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
+	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });
 ```
 ### Definición
 ---
@@ -21,5 +21,5 @@ Nombre del autor. \[Nombre de usuario en Youtube\] (fecha). _Título del video_
 ### Referencias
 ---
 ```dataviewjs
-	await dv.view("_dataviewScripts/referenciasView", { archivo: dv.current() });
+	await dv.view("_scripts/dataview/referenciasView", { archivo: dv.current() });
 ```

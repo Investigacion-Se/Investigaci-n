@@ -7,7 +7,7 @@ referencias:
   - "64"
 ---
 ```dataviewjs
-	await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
+	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });
 ```
 ### Definición
 ---
@@ -33,5 +33,5 @@ c_s    & a_{s1} & a_{s2} & \cdots & a_{ss} \\\hline
 ### Referencias
 ---
 ```dataviewjs
-	await dv.view("_dataviewScripts/referenciasView", { archivo: dv.current() });
+	await dv.view("_scripts/dataview/referenciasView", { archivo: dv.current() });
 ```

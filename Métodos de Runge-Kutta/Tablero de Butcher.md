@@ -6,7 +6,7 @@ indice: "[[Métodos de Runge-Kutta/Métodos de Runge-Kutta.md|Métodos de Runge-
 referencias:
 ---
 ```dataviewjs
-	await dv.view("_dataviewScripts/mostarEtapa", { etapa: dv.current().etapa });
+	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });
 ```
 ### Definición
 ---
@@ -43,5 +43,5 @@ https://repositorio.ual.es/bitstream/handle/10835/3513/2414_TFG_ALBACANOVAS.pdf?
 ### Referencias
 ---
 ```dataviewjs
-	await dv.view("_dataviewScripts/referenciasView", { archivo: dv.current() });
+	await dv.view("_scripts/dataview/referenciasView", { archivo: dv.current() });
 ```
