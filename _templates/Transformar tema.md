@@ -70,7 +70,17 @@
     }
 
     async function moverACarpeta(dv, indice, carpetaDestino) {
-        
+        let carpetaOrigen = indice.file.folder;
+        let carpetas = dv.pages(`"${carpetaOrigen}"`)
+            .groupBy(pagina => pagina.file.folder);
+
+        for (let { key: path, rows: paginas } of carpetas) {
+            // Crear carpeta en el destino
+            for (let pagina of paginas) {
+                // Mover paginas
+            }
+            // Eliminar carpeta en el destino
+        }
     }
 
     async function cambiarNivel(dv, indice, nivel) {
