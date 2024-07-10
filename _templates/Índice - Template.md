@@ -73,7 +73,7 @@
 		});
 	}	
 
-	await tp.user.regenerarREADME(tp, "", "README");
+	await tp.user.regenerarArchivo(tp, "", "README");
 
 	tR += "---\n";
 _%>
