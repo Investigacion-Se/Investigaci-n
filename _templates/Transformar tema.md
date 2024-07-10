@@ -80,8 +80,9 @@
         let paginasModificar = dv.pages(`"${indice.file.folder}" and #Índice`)
             .map(pagina => tp.file.find_tfile(pagina.file.path));
 
+        let 
         for (let paginaModificar of paginasModificar) {
-            await app.fileManager.processFrontMatter(paginaModificar, (frontmatter) => {
+             app.fileManager.processFrontMatter(paginaModificar, (frontmatter) => {
                 frontmatter["nivel"] = frontmatter["nivel"] - nivelIndice + nivel;
             });
         }
