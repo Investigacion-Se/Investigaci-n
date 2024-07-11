@@ -1,8 +1,8 @@
 ---
 dia: 2024-07-08
-tags: 
- - Índice
-tema: Animación de personajes con Blender
+tags:
+  - Índice
+tema: Geometry Nodes
 nivel: 1
 superTema: Blender
 ---
@@ -12,9 +12,8 @@ await dv.view("_scripts/dataview/mostrarSubTemas", { subTemas: dv.current().subT
 ```
 ### ¿Qué se va a investigar?
 ---
-Para aprender como animar personajes usando la herramienta de Blender, nos basáremos en los trabajos de:
-* [SouthernShotty](https://www.youtube.com/@SouthernShotty)
-* [grabbitt](https://www.youtube.com/@grabbitt)
+Para aprender la herramienta de Blender que es Geometry Nodes, nos basáremos principalmente en el video:
+* [Blender Geometry Nodes - Full Course](https://youtu.be/ZerJnivvBn4?si=fWfk6hblaYYN6LBZ)
 
 
 #### Archivos

@@ -1,8 +1,8 @@
 ---
 dia: 2024-07-08
-tags: 
- - Índice
-tema: Motion graphics con Blender
+tags:
+  - Índice
+tema: Modelado
 nivel: 1
 superTema: Blender
 ---
@@ -12,9 +12,8 @@ await dv.view("_scripts/dataview/mostrarSubTemas", { subTemas: dv.current().subT
 ```
 ### ¿Qué se va a investigar?
 ---
-Para aprender como animar personajes usando la herramienta de Blender, nos basáremos en los trabajos de:
-* [DerekElliott](https://www.youtube.com/@DerekElliott)
-* [TheDucky3D](https://www.youtube.com/@TheDucky3D)
+Para aprender modelado usando la herramienta de Blender, nos basáremos en el trabajo de:
+* [polygonrunway](https://www.youtube.com/@polygonrunway)
 
 
 #### Archivos

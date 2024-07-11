@@ -5,13 +5,13 @@ tags:
 tema: Blender
 nivel: 0
 subTemas:
-  - Animación de personajes con Blender
-  - Ambiente con Blender
-  - Geometry Nodes con Blender
-  - Modelado de superficies duras con Blender
-  - Modelado con Blender
-  - Motion graphics con Blender
-  - Shading procedural con Blender
+  - Shading procedural
+  - Motion graphics
+  - Modelado de superficies duras
+  - Modelado
+  - Geometry Nodes
+  - Animación de personajes
+  - Ambiente
 ---
 ```dataviewjs
 await dv.view("_scripts/dataview/mostrarSuperTema", { superTema: dv.current().superTema });

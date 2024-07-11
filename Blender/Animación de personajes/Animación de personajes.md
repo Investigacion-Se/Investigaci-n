@@ -1,8 +1,8 @@
 ---
 dia: 2024-07-08
-tags: 
- - Índice
-tema: Modelado de superficies duras con Blender
+tags:
+  - Índice
+tema: Animación de personajes
 nivel: 1
 superTema: Blender
 ---
@@ -12,8 +12,9 @@ await dv.view("_scripts/dataview/mostrarSubTemas", { subTemas: dv.current().subT
 ```
 ### ¿Qué se va a investigar?
 ---
-Para aprender como modelar superficies duras, o también conocido como hard surface modelling, usando la herramienta de Blender, nos basáremos en el trabajo de:
-* [JoshGambrell](https://www.youtube.com/@JoshGambrell)
+Para aprender como animar personajes usando la herramienta de Blender, nos basáremos en los trabajos de:
+* [SouthernShotty](https://www.youtube.com/@SouthernShotty)
+* [grabbitt](https://www.youtube.com/@grabbitt)
 
 
 #### Archivos

@@ -1,8 +1,8 @@
 ---
 dia: 2024-07-08
-tags: 
- - Índice
-tema: Shading procedural con Blender
+tags:
+  - Índice
+tema: Modelado de superficies duras
 nivel: 1
 superTema: Blender
 ---
@@ -12,12 +12,8 @@ await dv.view("_scripts/dataview/mostrarSubTemas", { subTemas: dv.current().subT
 ```
 ### ¿Qué se va a investigar?
 ---
-Para aprender como animar personajes usando la herramienta de Blender, nos basáremos en el trabajo de:
-* [RyanKingArt](https://www.youtube.com/@RyanKingArt)
-
-Y siguiendo las series de videos:
-* [Blender Procedural Nodes](https://youtu.be/O3gLBhC353Y?si=RJoWg3tKUzVtm3qx)
-* [Shading series of Ducky3D](https://youtube.com/playlist?list=PLNShHVjao84dtGx6VxFhkeSDPX1gt4NuS&si=FIgNOiZ4jnpOfPF2)
+Para aprender como modelar superficies duras, o también conocido como hard surface modelling, usando la herramienta de Blender, nos basáremos en el trabajo de:
+* [JoshGambrell](https://www.youtube.com/@JoshGambrell)
 
 
 #### Archivos
