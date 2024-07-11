@@ -43,44 +43,77 @@
                 return await tp.user.salir(tp, "No se ingresó un tema");
         }
 
+        // Cambiar nombre del indice
+        let pathNuevoIndice = `${indiceBuscado.file.folder}/${nuevoTema}.md`;
+        let tIndice = tp.file.find_tfile(indiceBuscado.file.path);
+        await app.vault.rename(tIndice, pathNuevoIndice);
+        await app.fileManager.processFrontMatter(tIndice, (frontmatter) => {
+            frontmatter["tema"] = nuevoTema;
+        });
+        pathNuevoIndice = indiceBuscado.file.folder.split("/");
+        pathNuevoIndice.pop();
+        pathNuevoIndice.push(nuevoTema);
+        pathNuevoIndice.push(`${nuevoTema}.md`);
+        pathNuevoIndice = pathNuevoIndice.join("/");
 
+        // Cambiar los subtemas del supertema
+        if (indiceBuscado.superTema) {
+            
+            let carpetaSuperTema = carpeta.split("/");
+            carpetaSuperTema = carpetaSuperTema.slice(0, carpetaSuperTema.length - 2).join("/");
+            let tFileSuperTema = tp.file.find_tfile(`${carpetaSuperTema}/${indiceBuscado.superTema}.md`);
 
+            await app.fileManager.processFrontMatter(tFileSuperTema, (frontmatter) => {
+                let subtemas = frontmatter["subTemas"];
+                let index = subtemas.indexOf(indiceBuscado.tema);
+                if (index < 0) {
+                    const mensaje = "No se encontró el subtema en el superTema, posiblemente un error";
+                    console.log(mensaje);
+                    new Notice(mensaje);
+                } else {
+                    subtemas.splice(index, 1);
+                    subtemas.push(nuevoTema);
+                    frontmatter["subTemas"] = subtemas;
+                }
+            });        
+        }
+
+        // Cambiar los supertemas de los subtemas
+        let subtemas = indiceBuscado.subTemas;
+        if (subtemas && subtemas.length > 0) {
+            
+            let indicesSubtemas = dv.pages(`"${indiceBuscado.file.folder}" and #Índice`)
+                .filter(indice => subtemas.indexOf(indice.tema) >= 0)
+                .map(pagina => tp.file.find_tfile(pagina.file.path));
+
+            modificaciones = [];
+            for (let tArchivo of indicesSubtemas) {
+                let modificacion = app.fileManager.processFrontMatter(tArchivo, (frontmatter) => {
+                    frontmatter["superTema"] = nuevoTema;
+                });
+    
+                modificaciones.push(modificacion);
+            }
+            await Promise.all(modificaciones);
+        }
+
+        // Cambiar los temas de los archivos
         let archivosModificar = dv.pages(`"${indiceBuscado.file.folder}" and -#Índice`)
             .filter(archivo => archivo.tema == indiceBuscado.tema)
             .map(pagina => tp.file.find_tfile(pagina.file.path));
 
-        let modificaciones = [];
+        modificaciones = [];
         for (let tArchivo of archivosModificar) {
             let modificacion = app.fileManager.processFrontMatter(tArchivo, (frontmatter) => {
                 frontmatter["tema"] = nuevoTema;
-                frontmatter["indice"] = nuevoTema;
+                frontmatter["indice"] = `[[${pathNuevoIndice}|${nuevoTema}]]`;
             });
 
             modificaciones.push(modificacion);
         }
-
         await Promise.all(modificaciones);
 
+        // Cambiar nombre de la carpeta
         await tp.user.cambiarNombreCarpeta(indiceBuscado.file.folder, nuevoTema);        
-    }
-
-    async function cambiarSubtemas(indice, nuevoTema) {
-        let carpeta = indice.file.folder;
-        let carpetaSuperTema = carpeta.split("/");
-        carpetaSuperTema = carpetaSuperTema.slice(0, carpetaSuperTema.length - 2).join("/");
-
-        let tFileSuperTema = tp.file.find_tfile(`${carpetaSuperTema}/${indice.superTema}.md`);
-        await app.fileManager.processFrontMatter(tFileSuperTema, (frontmatter) => {
-            let subtemas = frontmatter["subTemas"];
-            let index = subtemas.indexOf(indice.tema);
-            if (index < 0) {
-                const mensaje = "No se encontró el subtema en el superTema, posiblemente un error";
-                console.log(mensaje);
-                new Notice(mensaje);
-            } else {
-                subtemas.splice(index, 1);
-                frontmatter["subTemas"] = subtemas;
-            }
-        });
     }
 _%>
