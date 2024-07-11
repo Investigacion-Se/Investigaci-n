@@ -15,18 +15,23 @@
         let accion = await tp.system.suggester(
             ["⊕ Agregar alias", ...aliasActual],
             [AGREGAR_ALIAS, ...aliasActual],
-            true, "¿Qué desea hacer?", 13
+            true, "¿Qué desea hacer?", 11
         );
 
         if (accion == AGREGAR_ALIAS) {
             let nuevoAlias = await tp.system.prompt("Escriba el alias a agregar", null, true);
 
             let aliasValido = tp.user.validarNombre(nuevoAlias);
+            let aliasExiste = aliasActual.indexOf(nuevoAlias) >= 0;
 
-            while (aliasActual.indexOf(nuevoAlias) >= 0 || !aliasValido) {
-                const mensaje = !aliasValido ? "El alias no es válido" : "El alias ya existe";
+            while (aliasExiste || !aliasValido) {
+                const mensaje = !aliasValido ? 'El alias no es válido, no puede contener * " \\ / < > : | ?' : "El alias ya existe";
                 new Notice(mensaje);
+                
                 nuevoAlias = await tp.system.prompt("Escriba el alias a agregar", null, true);
+
+                aliasValido = tp.user.validarNombre(nuevoAlias);
+                aliasExiste = aliasActual.indexOf(nuevoAlias) >= 0;
             }
 
             await app.fileManager.processFrontMatter(archivo.tp, (frontmatter) => {
