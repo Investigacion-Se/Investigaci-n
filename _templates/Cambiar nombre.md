@@ -108,6 +108,7 @@
 
     async function preguntarNombreTema(dv, indiceActual) {
         let todosIndices = dv.pages("#Índice");
+        let indicesPrincipales = todosIndices.filter(indice => !indice.superTema);
 
         let nuevoTema = await tp.system.prompt("Nuevo nombre de la temática: (Apretar ESC para salir)");
         if (!nuevoTema) 
