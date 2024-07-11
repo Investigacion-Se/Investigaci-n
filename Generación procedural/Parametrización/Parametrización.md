@@ -1,8 +1,8 @@
 ---
 dia: 2024-07-08
-tags: 
- - Índice
-tema: Generación procedural por Simulación
+tags:
+  - Índice
+tema: Parametrización
 nivel: 1
 superTema: Generación procedural
 ---
@@ -12,7 +12,7 @@ await dv.view("_scripts/dataview/mostrarSubTemas", { subTemas: dv.current().subT
 ```
 ### ¿Qué se va a investigar?
 ---
-Se va a explorar la generación procedural por uso de simulación
+Se va a explorar la generación procedural donde el resultado esta parametrizado
 
 
 #### Archivos

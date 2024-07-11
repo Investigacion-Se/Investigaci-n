@@ -5,11 +5,11 @@ tags:
 tema: Generación procedural
 nivel: 0
 subTemas:
-  - Generación procedural con Tiles
-  - Generación procedural con Grammars
-  - Generación procedural con Distribuciones
-  - Generación procedural parametrizada
-  - Generación procedural por Simulación
+  - Simulación
+  - Grammars
+  - Tiles
+  - Parametrización
+  - Distribuciones
 ---
 ```dataviewjs
 await dv.view("_scripts/dataview/mostrarSuperTema", { superTema: dv.current().superTema });

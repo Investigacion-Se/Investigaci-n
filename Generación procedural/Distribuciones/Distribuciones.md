@@ -2,7 +2,7 @@
 dia: 2024-07-08
 tags:
   - Índice
-tema: Generación procedural con Tiles
+tema: Distribuciones
 nivel: 1
 superTema: Generación procedural
 ---
@@ -12,7 +12,7 @@ await dv.view("_scripts/dataview/mostrarSubTemas", { subTemas: dv.current().subT
 ```
 ### ¿Qué se va a investigar?
 ---
-Se va a explorar la generación procedural con el uso de [[Tile|tiles]]
+Se va a explorar la generación procedural a base del uso de [[Facultad/proba/Distribuciones/index|distribuciones]]
 
 
 #### Archivos
