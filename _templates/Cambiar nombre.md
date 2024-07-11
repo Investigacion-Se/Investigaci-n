@@ -30,18 +30,7 @@
         } 
 
         let temas = todosIndices.map(indice => indice.tema);
-
-        let nuevoTema = await tp.system.prompt("Nuevo nombre de la temática: (Apretar ESC para salir)");
-        if (!nuevoTema) 
-            return await tp.user.salir(tp, "No se ingresó un tema");
-
-        while (temas.values.indexOf(nuevoTema) >= 0) {
-            new Notice("El tema ya existe, por favor elegir otro, o salir");
-            
-            nuevoTema = await tp.system.prompt("Nuevo nombre de la temática: (Apretar ESC para salir)");
-            if (!nuevoTema) 
-                return await tp.user.salir(tp, "No se ingresó un tema");
-        }
+        let nuevoTema = await preguntarNombreTema(indiceBuscado, temas);
 
         // Cambiar nombre del indice
         let pathNuevoIndice = `${indiceBuscado.file.folder}/${nuevoTema}.md`;
@@ -115,5 +104,21 @@
 
         // Cambiar nombre de la carpeta
         await tp.user.cambiarNombreCarpeta(indiceBuscado.file.folder, nuevoTema);        
+    }
+
+    async function preguntarNombreTema(indiceActual, temas) {
+        let nuevoTema = await tp.system.prompt("Nuevo nombre de la temática: (Apretar ESC para salir)");
+        if (!nuevoTema) 
+            return await tp.user.salir(tp, "No se ingresó un tema");
+
+        while (temas.values.indexOf(nuevoTema) >= 0) {
+            new Notice("El tema ya existe, por favor elegir otro, o salir");
+            
+            nuevoTema = await tp.system.prompt("Nuevo nombre de la temática: (Apretar ESC para salir)");
+            if (!nuevoTema) 
+                return await tp.user.salir(tp, "No se ingresó un tema");
+        }
+
+        return nuevoTema;
     }
 _%>
