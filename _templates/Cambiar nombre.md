@@ -30,7 +30,7 @@
         } 
 
         let temas = todosIndices.map(indice => indice.tema);
-        let nuevoTema = await preguntarNombreTema(indiceBuscado, temas);
+        let nuevoTema = await preguntarNombreTema(dv, indiceBuscado);
 
         // Cambiar nombre del indice
         let pathNuevoIndice = `${indiceBuscado.file.folder}/${nuevoTema}.md`;
@@ -106,7 +106,9 @@
         await tp.user.cambiarNombreCarpeta(indiceBuscado.file.folder, nuevoTema);        
     }
 
-    async function preguntarNombreTema(indiceActual, temas) {
+    async function preguntarNombreTema(dv, indiceActual) {
+        let todosIndices = dv.pages("#Índice");
+
         let nuevoTema = await tp.system.prompt("Nuevo nombre de la temática: (Apretar ESC para salir)");
         if (!nuevoTema) 
             return await tp.user.salir(tp, "No se ingresó un tema");
