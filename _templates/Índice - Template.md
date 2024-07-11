@@ -13,18 +13,13 @@
 		
 	let temas = indices.map(indice => indice.tema);
 
-	let nuevoTema = await tp.system.prompt("Temática: (Apretar ESC para salir)");
-	if (!nuevoTema) 
-		return await tp.user.salir(tp, "No se ingresó un tema");
-
-	while (temas.values.indexOf(nuevoTema) >= 0) {
-		new Notice("El tema ya existe, por favor elegir otro, o salir");
-		
-		nuevoTema = await tp.system.prompt("Temática: (Apretar ESC para salir)");
-		if (!nuevoTema) 
-			return await tp.user.salir(tp, "No se ingresó un tema");
+	let nuevoTema;
+	try {
+		nuevoTema = await preguntarNombreTema(dv);
+	} catch ({ name: _, message: mensaje }) {
+		return await tp.user.salir(tp, mensaje);
 	}
-
+		
 	tR += `tema: ${nuevoTema}\n`;
 
 	let descripcion = tp.user.describirTemas(indices);
@@ -77,6 +72,20 @@
 	await tp.user.regenerarArchivo(tp, template, "README");
 
 	tR += "---\n";
+
+	async function preguntarNombreTema(dv) {
+		let nuevoTema = await tp.system.prompt("Temática: (Apretar ESC para salir)");
+		if (!nuevoTema) throw Error("No se ingresó un tema");
+
+		while (temas.values.indexOf(nuevoTema) >= 0) {
+			new Notice("El tema ya existe, por favor elegir otro, o salir");
+			
+			nuevoTema = await tp.system.prompt("Temática: (Apretar ESC para salir)");
+			if (!nuevoTema) throw Error("No se ingresó un tema");
+		}
+
+		return nuevoTema;
+	}
 _%>
 ```dataviewjs
 await dv.view("_scripts/dataview/mostrarSuperTema", { superTema: dv.current().superTema });
