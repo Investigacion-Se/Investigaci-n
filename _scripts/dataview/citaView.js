@@ -24,7 +24,7 @@ function mostrarCita(archivo) {
         case "Wikipedia": texto = mostrarCitaWiki(archivo); break;
     }
 
-    const ref = `<p style="margin-right: 0.5em">[${archivo.numReferencia}]</p>`;
+    const ref = `<p id="ref-${archivo.numReferencia}" style="margin-right: 0.5em">[${archivo.numReferencia}]</p>`;
     const divStyle = "display:flex; flex-direction: row;";
     return `<div style="${divStyle}"> ${ref} <p> ${texto} </p> </div>`;
 }
