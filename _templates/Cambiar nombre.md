@@ -43,7 +43,7 @@
                 return await tp.user.salir(tp, "No se ingresó un tema");
         }
 
-        
+
 
         let archivosModificar = dv.pages(`"${indiceBuscado.file.folder}" and -#Índice`)
             .filter(archivo => archivo.tema == indiceBuscado.tema)
@@ -61,18 +61,26 @@
 
         await Promise.all(modificaciones);
 
-        await cambiarNombreCarpeta(indiceBuscado.file.folder, nuevoTema);        
+        await tp.user.cambiarNombreCarpeta(indiceBuscado.file.folder, nuevoTema);        
     }
 
-    async function cambiarNombreCarpeta(nombreCarpeta, nuevoNombre) {
-        let pathDestino = nombreCarpeta.split("/");
-        pathDestino = pathDestino.slice(0, pathDestino.length - 1);
-        pathDestino.push(nuevoNombre);
-        pathDestino = pathDestino.join("/");
+    async function cambiarSubtemas(indice, nuevoTema) {
+        let carpeta = indice.file.folder;
+        let carpetaSuperTema = carpeta.split("/");
+        carpetaSuperTema = carpetaSuperTema.slice(0, carpetaSuperTema.length - 2).join("/");
 
-        await app.vault.rename(
-            app.vault.getAbstractFileByPath(nombreCarpeta), 
-            pathDestino
-        );
+        let tFileSuperTema = tp.file.find_tfile(`${carpetaSuperTema}/${indice.superTema}.md`);
+        await app.fileManager.processFrontMatter(tFileSuperTema, (frontmatter) => {
+            let subtemas = frontmatter["subTemas"];
+            let index = subtemas.indexOf(indice.tema);
+            if (index < 0) {
+                const mensaje = "No se encontró el subtema en el superTema, posiblemente un error";
+                console.log(mensaje);
+                new Notice(mensaje);
+            } else {
+                subtemas.splice(index, 1);
+                frontmatter["subTemas"] = subtemas;
+            }
+        });
     }
 _%>

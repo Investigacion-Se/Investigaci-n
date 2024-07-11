@@ -144,8 +144,8 @@
         });
     }
 
-    async function agregarASubtemas(eleccion, tema) {
-        let tFileEleccion = tp.file.find_tfile(eleccion.file.path);
+    async function agregarASubtemas(indice, tema) {
+        let tFileEleccion = tp.file.find_tfile(indice.file.path);
         await app.fileManager.processFrontMatter(tFileEleccion, (frontmatter) => {
             if (!frontmatter["subTemas"]) {
                 frontmatter["subTemas"] = [ `${tema}` ];
