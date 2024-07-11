@@ -5,6 +5,7 @@ tema: Worldbuilding
 indice: "[[Worldbuilding|Worldbuilding]]"
 referencias:
   - "119"
+aliases:
 ---
 ```dataviewjs
 	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });
