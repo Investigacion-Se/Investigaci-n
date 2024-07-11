@@ -94,7 +94,7 @@
         for (let pathCarpeta of carpetasAEliminar) {
             // Eliminar carpeta en el origen
             let tCarpeta = app.vault.getAbstractFileByPath(pathCarpeta);
-            await app.vault.trash(tCarpeta);
+            await app.vault.trash(tCarpeta, true);
         }
     }
 
