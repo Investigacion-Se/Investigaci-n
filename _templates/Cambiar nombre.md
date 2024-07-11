@@ -107,19 +107,29 @@
     }
 
     async function preguntarNombreTema(dv, indiceActual) {
-        let todosIndices = dv.pages("#Índice");
-        let indicesPrincipales = todosIndices.filter(indice => !indice.superTema);
+        let temasPrincipales = dv.pages("#Índice").filter(indice => !indice.superTema)
+            .map(indice => indice.tema);
+        console.log(temasPrincipales);
+        let temasActual = dv.pages(`"${indiceActual.file.folder}" and #Índice`)
+            .map(indice => indice.tema);
 
         let nuevoTema = await tp.system.prompt("Nuevo nombre de la temática: (Apretar ESC para salir)");
         if (!nuevoTema) 
             return await tp.user.salir(tp, "No se ingresó un tema");
 
-        while (temas.values.indexOf(nuevoTema) >= 0) {
-            new Notice("El tema ya existe, por favor elegir otro, o salir");
+        let esUnicoTema = temasPrincipales.values.indexOf(nuevoTema) < 0 && temasActual.indexOf(nuevoTema) < 0;
+        let esValido = tp.user.validarNombre(nuevoTema);
+
+        while (!(esUnicoTema && esValido)) {
+            const mensaje = !esValido ? 'No es un nombre válido, no puede contener * " \\ / < > : | ?' : "El tema ya existe";
+            new Notice(mensaje);
             
             nuevoTema = await tp.system.prompt("Nuevo nombre de la temática: (Apretar ESC para salir)");
             if (!nuevoTema) 
                 return await tp.user.salir(tp, "No se ingresó un tema");
+
+            esUnicoTema = temasPrincipales.values.indexOf(nuevoTema) < 0 && temasActual.indexOf(nuevoTema) < 0;
+            esValido = tp.user.validarNombre(nuevoTema);
         }
 
         return nuevoTema;

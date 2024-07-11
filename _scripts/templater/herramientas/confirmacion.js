@@ -1,7 +1,7 @@
 async function confirmacion(tp, mensaje) {
     try {
         return await tp.system.suggester(
-            ["Sí", "No"],
+            ["✓ Sí", "X No"],
             [true, false],
             true, mensaje
         );
