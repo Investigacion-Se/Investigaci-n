@@ -1,6 +1,6 @@
 // onRename(file: TAbstractFile, oldPath: string) => any
 function onRename(file, oldPath) {
-    console.log(`HOLAAA`);
+    console.log(dv);
 }
 
 module.exports = onRename;
