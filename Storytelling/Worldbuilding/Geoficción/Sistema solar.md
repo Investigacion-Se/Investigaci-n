@@ -1,10 +1,13 @@
 ---
-dia: 2024-07-09
+dia: 2024-07-08
 etapa: sin-empezar
-tema: Shaders
-indice: "[[Shaders/Shaders.md|Shaders]]"
-referencias: 
- - "140"
+tema: Geoficción
+indice: "[[Geoficción|Geoficción]]"
+referencias:
+  - "50"
+  - "51"
+  - "52"
+  - "53"
 ---
 ```dataviewjs
 	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });

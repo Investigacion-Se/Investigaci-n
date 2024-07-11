@@ -2,7 +2,7 @@
 dia: 2024-07-08
 etapa: terminado
 tema: Métodos de Runge-Kutta
-indice: "[[Métodos de Runge-Kutta/Métodos de Runge-Kutta.md|Métodos de Runge-Kutta]]"
+indice: "[[Métodos de Runge-Kutta|Métodos de Runge-Kutta]]"
 referencias:
   - "64"
 ---

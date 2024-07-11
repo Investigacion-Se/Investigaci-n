@@ -7,6 +7,7 @@ nivel: 1
 superTema: Storytelling
 subTemas:
   - Conlang
+  - Geoficción
 ---
 ```dataviewjs
 await dv.view("_scripts/dataview/mostrarSuperTema", { superTema: dv.current().superTema });

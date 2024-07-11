@@ -2,7 +2,7 @@
 dia: 2024-07-09
 etapa: sin-empezar
 tema: Shaders
-indice: "[[Shaders/Shaders.md|Shaders]]"
+indice: "[[Shaders|Shaders]]"
 referencias:
   - "137"
   - "138"

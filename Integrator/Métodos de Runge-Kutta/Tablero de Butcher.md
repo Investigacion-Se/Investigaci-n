@@ -2,8 +2,8 @@
 dia: 2024-07-08
 etapa: terminado
 tema: Métodos de Runge-Kutta
-indice: "[[Métodos de Runge-Kutta/Métodos de Runge-Kutta.md|Métodos de Runge-Kutta]]"
-referencias:
+indice: "[[Métodos de Runge-Kutta|Métodos de Runge-Kutta]]"
+referencias: 
 ---
 ```dataviewjs
 	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });

@@ -6,6 +6,7 @@ tema: Game engine
 nivel: 0
 subTemas:
   - Técnicas
+  - Shaders
 ---
 ```dataviewjs
 await dv.view("_scripts/dataview/mostrarSuperTema", { superTema: dv.current().superTema });

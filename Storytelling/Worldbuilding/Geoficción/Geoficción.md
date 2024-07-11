@@ -1,9 +1,10 @@
 ---
 dia: 2024-07-08
-tags: 
- - Índice
+tags:
+  - Índice
 tema: Geoficción
-nivel: 0
+nivel: 2
+superTema: Worldbuilding
 ---
 ```dataviewjs
 await dv.view("_scripts/dataview/mostrarSuperTema", { superTema: dv.current().superTema });

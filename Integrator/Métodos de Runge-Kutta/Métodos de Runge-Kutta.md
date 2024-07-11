@@ -1,9 +1,10 @@
 ---
 dia: 2024-07-08
-tags: 
- - Índice
+tags:
+  - Índice
 tema: Métodos de Runge-Kutta
-nivel: 0
+nivel: 1
+superTema: Integrator
 ---
 ```dataviewjs
 await dv.view("_scripts/dataview/mostrarSuperTema", { superTema: dv.current().superTema });
