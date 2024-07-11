@@ -92,5 +92,13 @@
       ],
       "key": "R"
     }
+  ],
+  "templater-obsidian:_templates/Modificar alias.md": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "A"
+    }
   ]
 }

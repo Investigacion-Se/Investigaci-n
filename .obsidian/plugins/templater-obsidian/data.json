@@ -21,7 +21,8 @@
     "_templates/Cambiar nombre.md",
     "_templates/Transformar tema.md",
     "_templates/Cambiar etapa.md",
-    "_templates/Agregar cita.md"
+    "_templates/Agregar cita.md",
+    "_templates/Modificar alias.md"
   ],
   "startup_templates": [],
   "enable_ribbon_icon": true
