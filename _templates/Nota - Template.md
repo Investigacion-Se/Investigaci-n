@@ -1,13 +1,32 @@
 <%* 
-	let titulo = tp.file.title;
-	if (titulo.startsWith("temp")) {
-		titulo = await tp.system.prompt("Nota de:");
-		await tp.file.rename(titulo);
-	}
-
 	const CITA_RAPIDA = "cita rapida";
 	const NUEVA_CITA = "nueva cita";
 	const dv = app.plugins.plugins["dataview"].api;
+
+	let titulo = await tp.system.prompt("Nota de:");
+
+	while (!tp.user.validarNombre(titulo)) {
+		const mensaje = "El nombre de la nota no puede tener los siguientes caracteres: / \\ : * ? \" < > |";
+		console.log(mensaje);
+		new Notice(mensaje);
+
+		titulo = await tp.system.prompt("Nota de:");
+	}
+
+	let sePudoRenombrar = false;
+	let contador = 1;
+	let tituloFinal = titulo;
+
+	while (!sePudoRenombrar) {
+
+		try {
+			await tp.file.rename(tituloFinal);
+			sePudoRenombrar = true;
+		} catch {
+			contador++;
+			tituloFinal = `${titulo} ${contador}`;
+		}
+	}	
 
 	tR += "---\n"; 
 
@@ -17,12 +36,13 @@
 	
 	try {
 		const archivoTema = await tp.user.conseguirTema(tp, dv);
+		
 		tR += `tema: ${archivoTema.tema}\n`;
 		tR += `indice: "[[${archivoTema.file.path}|${archivoTema.tema}]]"\n`;
 	} catch (e) {
 		console.log(e);
 		return await tp.user.salir(tp, "No se ingresó un tema");
-	}
+	}	
 
 	let referencias = dv.pages('"_referencias"')
 		.flatMap(referencia => {
