@@ -75,5 +75,14 @@
       ],
       "key": "N"
     }
+  ],
+  "markdown:toggle-preview": [],
+  "templater-obsidian:_templates/Cambiar etapa.md": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "E"
+    }
   ]
 }

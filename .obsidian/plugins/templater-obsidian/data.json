@@ -19,7 +19,8 @@
   "enabled_templates_hotkeys": [
     "_templates/Modificar referencia.md",
     "_templates/Cambiar nombre.md",
-    "_templates/Transformar tema.md"
+    "_templates/Transformar tema.md",
+    "_templates/Cambiar etapa.md"
   ],
   "startup_templates": [],
   "enable_ribbon_icon": true
