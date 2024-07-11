@@ -84,5 +84,13 @@
       ],
       "key": "E"
     }
+  ],
+  "templater-obsidian:_templates/Agregar cita.md": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "R"
+    }
   ]
 }

@@ -2,12 +2,16 @@
     const dv = app.plugins.plugins["dataview"].api;
     let path = tp.file.path(true);
 
+    
+
     let archivo = {
         dv: dv.pageS(path),
         tp: tp.file.find_tfile(path)
     };
 
     try {
+
+
 
 
 

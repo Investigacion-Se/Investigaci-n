@@ -20,7 +20,8 @@
     "_templates/Modificar referencia.md",
     "_templates/Cambiar nombre.md",
     "_templates/Transformar tema.md",
-    "_templates/Cambiar etapa.md"
+    "_templates/Cambiar etapa.md",
+    "_templates/Agregar cita.md"
   ],
   "startup_templates": [],
   "enable_ribbon_icon": true
