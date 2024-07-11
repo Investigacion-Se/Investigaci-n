@@ -1,9 +1,12 @@
 ---
 dia: 2024-07-09
-tags: 
- - Índice
+tags:
+  - Índice
 tema: Worldbuilding
-nivel: 0
+nivel: 1
+superTema: Storytelling
+subTemas:
+  - Conlang
 ---
 ```dataviewjs
 await dv.view("_scripts/dataview/mostrarSuperTema", { superTema: dv.current().superTema });

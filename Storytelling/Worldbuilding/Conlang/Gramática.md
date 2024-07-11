@@ -1,10 +1,11 @@
 ---
-dia: 2024-07-09
+dia: 2024-07-08
 etapa: sin-empezar
-tema: Worldbuilding
-indice: "[[Worldbuilding/Worldbuilding.md|Worldbuilding]]"
-referencias: 
- - "127"
+tema: Conlang
+indice: "[[Conlang|Conlang]]"
+referencias:
+  - "31"
+  - "34"
 ---
 ```dataviewjs
 	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });
