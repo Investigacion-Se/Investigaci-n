@@ -14,14 +14,14 @@ async function onRename(file, oldPath) {
         // Actualizar indice de esta carpeta
         console.log("Es carpeta y se cambio el nombre")
 
-        let indices = dv.pages(`"${oldPath}" and #Índice`)
+        let indices = dv.pages(`"${file.path}" and #Índice`)
             .filter(ind => ind.file.folder == oldPath);
 
-        console.log(dv.pages(`"${oldPath}" and #Índice`))
+        console.log(dv.pages(`"${file.path}" and #Índice`))
         console.log(indices);
 
         if (indices.length == 1) {
-            console.log("Encontre el indice de esta carpeta y lo voy a modificar");
+            console.log("Encontre el indice de esta carpeta y lo voy a modificar: " + `${file.path}/${file.name}`);
 
             let tIndice = tp.file.find_tfile(indices[0].file.path);
             await app.vault.rename(tIndice, `${file.path}/${file.name}`);
@@ -83,7 +83,7 @@ async function onRename(file, oldPath) {
         }
     } else if (!esCarpeta && !cambiaNombre && file.basename != "index") {
         // Si es indice, si se cambio el nombre, entonces cambiar el nombre de la carpeta
-        console.log("Es un archivo y no cambio de nombre");
+        console.log("Es un archivo y se cambio el path");
 
         let carpeta = file.path.replace(`/${file.name}`, "");
         let indices = dv.pages(`"${carpeta}" and #Índice`)
