@@ -29,13 +29,17 @@ async function onRename(file, oldPath) {
             new Notice(mensaje);
         }
 
-    } else if (!esCarpeta && cambiaNombre) {
+    } else if (!esCarpeta && cambiaNombre && file.basename != "index") {
         // Si es indice, si se cambio el nombre, entonces cambiar el nombre de la carpeta
         console.log("Es un archivo y cambio de nombre");
 
         let carpeta = file.path.replace(`/${file.name}`, "");
         let indices = dv.pages(`"${carpeta}" and #Índice`)
             .filter(ind => ind.file.folder == carpeta);
+        
+        console.log(carpeta);
+        console.log(dv.pages(`"${carpeta}" and #Índice`))
+        console.log(indices);
 
         let indice = indices.find(ind => ind.file.name == file.basename);
 
@@ -62,6 +66,39 @@ async function onRename(file, oldPath) {
 
                 await app.vault.rename(file.parent, nuevaCarpeta);
 
+            } else if (indices.length > 1) {
+                // Se movio a una carpeta donde ya existe uno o varios indices (de alguna forma hay varios)
+                await app.vault.rename(file, oldPath);
+
+                const mensaje = (indices.length > 2) 
+                    ? "Hay más indices de lo que debería en la carpeta que se movió"
+                    : "Ya exite un indice en esa carpeta";
+                
+                console.log(mensaje);
+                new Notice(mensaje);
+            }
+        }
+    } else if (!esCarpeta && !cambiaNombre && file.basename != "index") {
+        // Si es indice, si se cambio el nombre, entonces cambiar el nombre de la carpeta
+        console.log("Es un archivo y no cambio de nombre");
+
+        let carpeta = file.path.replace(`/${file.name}`, "");
+        let indices = dv.pages(`"${carpeta}" and #Índice`)
+            .filter(ind => ind.file.folder == carpeta);
+
+        let indice = indices.find(ind => ind.file.name == file.basename);
+
+        if (indice.tags && indice.tags.includes("Índice")) {
+            console.log("El archivo es un índice");
+
+            if (!file.parent || file.parent.isRoot()) {
+                // Movio el indice al root
+                await app.vault.rename(file, oldPath);
+
+                const mensaje = "El indice se movio al root";
+                console.log(mensjae);
+                new Notice(mensaje);
+                
             } else if (indices.length > 1) {
                 // Se movio a una carpeta donde ya existe uno o varios indices (de alguna forma hay varios)
                 await app.vault.rename(file, oldPath);
