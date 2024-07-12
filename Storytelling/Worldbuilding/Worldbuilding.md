@@ -10,8 +10,8 @@ subTemas:
   - Geoficción
 ---
 ```dataviewjs
-await dv.view("_scripts/dataview/mostrarSuperTema", { superTema: dv.current().superTema });
-await dv.view("_scripts/dataview/mostrarSubTemas", { subTemas: dv.current().subTemas });
+await dv.view("_scripts/dataview/mostrarSuperTema", { indice: dv.current() });
+await dv.view("_scripts/dataview/mostrarSubTemas", { indice: dv.current() });
 ```
 ### ¿Qué se va a investigar?
 ---

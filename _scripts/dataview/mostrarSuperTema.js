@@ -1,4 +1,4 @@
-let { superTema } = input;
+let { indice } = input;
 
 let posiblesSupertema = dv.pages("#Índice")
     .filter(archivo => archivo.tema == superTema);

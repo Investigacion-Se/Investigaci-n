@@ -1,6 +1,8 @@
-let { subTemas } = input;
+let { indice } = input;
 
-if (subTemas && subTemas.length > 0) {
+
+
+if (subTemas.length > 0) {
     let texto = "Se tiene los siguientes subtemas:\n";
     subTemas = dv.pages("#Índice")
         .filter(archivo => subTemas.find(subTema => subTema == archivo.tema));

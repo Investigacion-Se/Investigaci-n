@@ -35,16 +35,7 @@
 		return await tp.user.salir(tp, "No se eligió como definir el tema");
 	}		
 
-	let path;
-	if (eleccion === CREAR_TEMA) {
-		path = `${nuevoTema}`;
-		tR += "nivel: 0\n";
-	} else {
-		// Es subtema
-		path = `${eleccion.file.folder}/${nuevoTema}`;
-		tR += `nivel: ${parseInt(eleccion.nivel, 10) + 1}\n`;
-		tR += `superTema: ${eleccion.tema}\n`;
-	}
+	let path = (eleccion === CREAR_TEMA) ? nuevoTema : `${eleccion.file.folder}/${nuevoTema}`;
 
 	try {
 		await app.vault.createFolder(path);
@@ -56,23 +47,12 @@
 		return await tp.user.salir(tp, mensaje);
 	}
 
-	// Agregamos subtema al tema elegido
-	if (eleccion !== CREAR_TEMA) {
-		let tSuperTema = tp.file.find_tfile(eleccion.file.path);
-		await app.fileManager.processFrontMatter(tSuperTema, (frontmatter) => {
-			if (!frontmatter["subTemas"]) {
-				frontmatter["subTemas"] = [ `${nuevoTema}` ];
-			} else {
-				frontmatter["subTemas"].push(`${nuevoTema}`);
-			}
-		});
-	}	
-
-	let template = tp.file.find_tfile("_templates/Regenerar README.md");
-	await tp.user.regenerarArchivo(tp, template, "README");
+	// let template = tp.file.find_tfile("_templates/Regenerar README.md");
+	// await tp.user.regenerarArchivo(tp, template, "README");
 
 	tR += "---\n";
 
+	// TODO: Agregar validacion del nombre, y relacionado a los subtemas
 	async function preguntarNombreTema(dv) {
 		let nuevoTema = await tp.system.prompt("Temática: (Apretar ESC para salir)");
 		if (!nuevoTema) throw Error("No se ingresó un tema");
@@ -88,8 +68,8 @@
 	}
 _%>
 ```dataviewjs
-await dv.view("_scripts/dataview/mostrarSuperTema", { superTema: dv.current().superTema });
-await dv.view("_scripts/dataview/mostrarSubTemas", { subTemas: dv.current().subTemas });
+await dv.view("_scripts/dataview/mostrarSuperTema", { indice: dv.current() });
+await dv.view("_scripts/dataview/mostrarSubTemas", { indice: dv.current() });
 ```
 ### ¿Qué se va a investigar?
 ---
