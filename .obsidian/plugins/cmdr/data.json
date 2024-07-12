@@ -16,18 +16,6 @@
       "icon": "bookmark-plus",
       "name": "QuickAdd: Nuevo Tema",
       "mode": "any"
-    },
-    {
-      "id": "templater-obsidian:_templates/Cambiar nombre.md",
-      "icon": "align-center",
-      "name": "Templater: Insert _templates/Cambiar nombre.md",
-      "mode": "any"
-    },
-    {
-      "id": "templater-obsidian:_templates/Transformar tema.md",
-      "icon": "box-select",
-      "name": "Templater: Insert _templates/Transformar tema.md",
-      "mode": "any"
     }
   ],
   "rightRibbon": [],

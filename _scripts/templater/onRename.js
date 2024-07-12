@@ -10,10 +10,11 @@ function onRename(file, oldPath) {
     
     let oldName = oldPath.split("/").pop();
     let cambiaNombre = file.name !== oldName;
-    let esIndice = archivo.tags.includes("Índice");
+    let esIndice = archivo.tags && archivo.tags.includes("Índice");
 
     console.log(file);
     console.log(oldPath);
+    console.log(archivo);
 
     if (cambiaNombre && !esIndice) {
         return;
