@@ -9,9 +9,9 @@
 	tR += "tags: \n - Índice\n";
 
 	let indices = dv.pages("#Índice")
-		.filter(indice => indice.tema !== undefined);
+		.filter(indice => indice.file.name !== undefined);
 		
-	let temas = indices.map(indice => indice.tema);
+	let temas = indices.map(indice => indice.file.name);
 
 	let nuevoTema;
 	try {

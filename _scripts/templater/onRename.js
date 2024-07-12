@@ -14,13 +14,7 @@ async function onRename(file, oldPath) {
         return;
     }
 
-    let esIndice = false;
-    await app.fileManager.processFrontMatter(file, (frontmatter) => {
-        console.log(frontmatter);
-        esIndice = frontmatter["tags"] && frontmatter["tags"].includes("Índice");
-    });
-
-    if (!esIndice) {
+    if (!await esIndice(file)) {
         console.log("No es indice");
         return;
     }
@@ -68,13 +62,32 @@ async function onRename(file, oldPath) {
         // Cambio el path
         console.log("Cambiar el nombre del archivo");
 
-        let pathNuevo = file.path.split("/");
-        pathNuevo.pop();
-        pathNuevo.push(`${temaPadre}.md`);
-        pathNuevo = pathNuevo.join("/");
+        if (file.parent.children.some(archivo => archivo.path != file.path && esIndice(archivo))) {
+            // Ya existe un indice en ese lugar, entonces volvemos para atras
+            await app.vault.rename(file, oldPath);
 
-        await app.vault.rename(file, pathNuevo);
+            const mensaje = "Ya existe un indice en ese lugar, entonces volvemos para atras";
+            console.log(mensaje);
+            new Notice(mensaje);
+            
+        } else {
+
+            let pathNuevo = file.path.split("/");
+            pathNuevo.pop();
+            pathNuevo.push(`${temaPadre}.md`);
+            pathNuevo = pathNuevo.join("/");
+            
+            await app.vault.rename(file, pathNuevo);
+        }
     }
+}
+
+async function esIndice(file) {
+    let temp = false;
+    await app.fileManager.processFrontMatter(file, (frontmatter) => {  
+        temp = frontmatter["tags"] && frontmatter["tags"].includes("Índice");
+    });
+    return temp;
 }
 
 /*
