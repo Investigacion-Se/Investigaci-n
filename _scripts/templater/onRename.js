@@ -4,23 +4,36 @@ function onRename(file, oldPath) {
     if (typeof(file) === "TFolder" || !file.parent || file.parent.isRoot()) {
         return;
     }    
-    let oldName = oldPath.split("/").pop();
-
-    let cambiaNombre = file.name !== oldName;
-
-
+    
     const dv = app.plugins.plugins["dataview"].api;
     const archivo = dv.page(file.path);
-
     
+    let oldName = oldPath.split("/").pop();
+    let cambiaNombre = file.name !== oldName;
+    let esIndice = archivo.tags.includes("Índice");
 
-    /*
-    if file es archivo {
-        hay que ver
-         * Si el path actual, solo difiere en el nombre
-         * Si es indice       
+    console.log(file);
+    console.log(oldPath);
+
+    if (cambiaNombre && !esIndice) {
+        return;
     }
-    */
+
+    if (esIndice && cambiaNombre) {
+        // Se cambia de nombre el tema
+        // Modificar metadata y la de sus relativos (todos los que deberias ser afectados)
+        
+
+    } else if (esIndice && !cambiaNombre) {
+        // Se cambia de posición el tema
+        // Actualizar supertema viejo y nuevo
+        // Actualizar nivel
+
+    } else {
+        // El archivo tiene que cambiar referencia y metadata de tema e indice
+        
+
+    }
 }
 
 module.exports = onRename;
