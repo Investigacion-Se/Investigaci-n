@@ -32,7 +32,7 @@ try {
             })
             .sort(ref => -ref.numReferencia);
 
-        let opciones = referencias.map(ref => tp.user.cita().describir(tp, ref));
+        let opciones = referencias.map(ref => tp.user.cita().describir(ref));
         let valores = referencias.map(ref => ref.numReferencia);
         
         let numReferencia = await tp.system.suggester(opciones, valores,
@@ -61,7 +61,7 @@ try {
             })
             .sort(ref => -ref.numReferencia);
 
-        let opciones = referencias.map(ref => tp.user.cita().describir(tp, ref));
+        let opciones = referencias.map(ref => tp.user.cita().describir(ref));
         let valores = referencias.map(ref => ref.numReferencia);
         
         let numReferencia = await tp.system.suggester(opciones, valores,

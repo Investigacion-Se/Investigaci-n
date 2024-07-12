@@ -1,6 +1,6 @@
 {
   "command_timeout": 5,
-  "templates_folder": "_templatesol",
+  "templates_folder": "_templates",
   "templates_pairs": [
     [
       "",
@@ -12,8 +12,13 @@
   "enable_system_commands": false,
   "shell_path": "",
   "user_scripts_folder": "_scripts/templater",
-  "enable_folder_templates": false,
-  "folder_templates": [],
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {
+      "folder": "/",
+      "template": "_templates/Nota - Template.md"
+    }
+  ],
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [

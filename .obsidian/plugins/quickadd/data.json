@@ -1,34 +1,6 @@
 {
   "choices": [
     {
-      "id": "e42575a4-367e-4d4e-85ad-8adbcce7749e",
-      "name": "Nueva Nota",
-      "type": "Template",
-      "command": true,
-      "templatePath": "_templates/Nota - Template.md",
-      "fileNameFormat": {
-        "enabled": true,
-        "format": "temp"
-      },
-      "folder": {
-        "enabled": true,
-        "folders": [],
-        "chooseWhenCreatingNote": false,
-        "createInSameFolderAsActiveFile": true,
-        "chooseFromSubfolders": false
-      },
-      "appendLink": false,
-      "openFileInNewTab": {
-        "enabled": false,
-        "direction": "vertical",
-        "focus": true
-      },
-      "openFile": true,
-      "openFileInMode": "default",
-      "fileExistsMode": "Increment the file name",
-      "setFileExistsBehavior": true
-    },
-    {
       "id": "e69b4725-b385-4b48-b68c-03a8f766d800",
       "name": "Nuevo Tema",
       "type": "Template",

@@ -26,7 +26,7 @@
                 .sort(ref => parseInt(ref.numReferencia, 10));
             
             let cita = await tp.system.suggester(
-                referencias.map(ref => tp.user.cita().describir(tp, ref)), 
+                referencias.map(ref => tp.user.cita().describir(ref)), 
                 referencias.map(ref => ref.numReferencia),
                 true, "Referenciar cita (si no hay nada que referenciar, apretar ESC)", 10
             );

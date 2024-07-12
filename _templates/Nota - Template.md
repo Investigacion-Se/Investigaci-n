@@ -2,47 +2,20 @@
 	const CITA_RAPIDA = "cita rapida";
 	const NUEVA_CITA = "nueva cita";
 	const dv = app.plugins.plugins["dataview"].api;
+	const archivo = dv.page(tp.file.path(true));
 
-	let titulo = await tp.system.prompt("Nota de:");
+	let posiblesIndices = dv.pages(`"${archivo.file.folder}" and #Índice`)
+		.filter(pagina => pagina.file.folder == archivo.file.folder);
 
-	while (!tp.user.validarNombre(titulo)) {
-		const mensaje = "El nombre de la nota no puede tener los siguientes caracteres: / \\ : * ? \" < > |";
-		console.log(mensaje);
-		new Notice(mensaje);
-
-		titulo = await tp.system.prompt("Nota de:");
+	if (posiblesIndices.length == 0) {
+		return;
 	}
-
-	let sePudoRenombrar = false;
-	let contador = 1;
-	let tituloFinal = titulo;
-
-	while (!sePudoRenombrar) {
-
-		try {
-			await tp.file.rename(tituloFinal);
-			sePudoRenombrar = true;
-		} catch {
-			contador++;
-			tituloFinal = `${titulo} ${contador}`;
-		}
-	}	
 
 	tR += "---\n"; 
 
 	const dia = tp.file.creation_date("YYYY-MM-DD");
 	tR += `dia: ${dia}\n`;
 	tR += "etapa: sin-empezar\n";
-	
-	try {
-		const archivoTema = await tp.user.conseguirTema(tp, dv);
-		
-		tR += `tema: ${archivoTema.tema}\n`;
-		tR += `indice: "[[${archivoTema.file.path}|${archivoTema.tema}]]"\n`;
-	} catch (e) {
-		console.log(e);
-		return await tp.user.salir(tp, "No se ingresó un tema");
-	}	
 
 	let referencias = dv.pages('"_referencias"')
 		.flatMap(referencia => {
@@ -56,7 +29,7 @@
 		})
 		.sort(ref => -ref.numReferencia);
 
-	let opciones = ["Citar de forma rápida", "Nueva cita", ...referencias.map(ref => tp.user.cita().describir(tp, ref))];
+	let opciones = ["Citar de forma rápida", "Nueva cita", ...referencias.map(ref => tp.user.cita().describir(ref))];
 	let valores = [CITA_RAPIDA, NUEVA_CITA, ...referencias.map(ref => ref.numReferencia)];
 	
 	let citar = await tp.system.suggester(opciones, valores,
