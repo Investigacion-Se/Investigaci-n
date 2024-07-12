@@ -3,7 +3,6 @@ async function onRename(file, oldPath) {
     console.log(file);
     console.log(oldPath);
 
-    const dv = app.plugins.plugins.dataview.api;
     const cambiaNombre = file.name != oldPath.split("/").pop();
     const esCarpeta = file.children;
 
@@ -15,20 +14,13 @@ async function onRename(file, oldPath) {
         return;
     }
 
-    let carpeta = file.path.replace(`/${file.name}`, "");
-    let indices = dv.pages(`"${carpeta}" and #Índice`)
-        .filter(ind => ind.file.folder == carpeta);
-    
-    console.log(carpeta);
-    console.log(indices);
+    let esIndice = false;
+    await app.fileManager.processFrontMatter(file, (frontmatter) => {
+        console.log(frontmatter);
+        esIndice = frontmatter["tags"] && frontmatter["tags"].includes("Índice");
+    });
 
-    let indice = indices.find(ind => ind.file.name == file.basename);
-    console.log(indice);
-
-    try {
-        if (!indice.tags.includes("Índice"))
-            throw Error;
-    } catch (_) {
+    if (!esIndice) {
         console.log("No es indice");
         return;
     }
