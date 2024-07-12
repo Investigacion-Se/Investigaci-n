@@ -14,8 +14,11 @@ async function onRename(file, oldPath) {
         // Actualizar indice de esta carpeta
         console.log("Es carpeta y se cambio el nombre")
 
-        let indices = dv.pages(`"${file.path}" and #Índice`)
-            .filter(ind => ind.file.folder == file.path);
+        let indices = dv.pages(`"${oldPath}" and #Índice`)
+            .filter(ind => ind.file.folder == oldPath);
+
+        console.log(dv.pages(`"${oldPath}" and #Índice`))
+        console.log(indices);
 
         if (indices.length == 1) {
             console.log("Encontre el indice de esta carpeta y lo voy a modificar");
