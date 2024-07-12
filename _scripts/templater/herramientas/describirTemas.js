@@ -14,11 +14,17 @@ module.exports = describirTema;
 function ordenarTemas(indices) {
     let temas = indices
         .map(archivo => {
+            let nivel = archivo.file.folder.split("/").length - 1;
+            let tema = archivo.file.name;
+            let superTema = archivo.file.folder.split("/");
+            superTema.pop();
+            superTema = superTema.pop();
+
             return { 
                 archivo: archivo, 
-                nivel: archivo.nivel, 
-                tema: archivo.tema, 
-                superTema: archivo.superTema,
+                nivel: nivel, 
+                tema: tema, 
+                superTema: superTema,
                 subTemas: undefined
             }
         })

@@ -19,8 +19,6 @@
 	} catch ({ name: _, message: mensaje }) {
 		return await tp.user.salir(tp, mensaje);
 	}
-		
-	tR += `tema: ${nuevoTema}\n`;
 
 	let descripcion = tp.user.describirTemas(indices);
 	
