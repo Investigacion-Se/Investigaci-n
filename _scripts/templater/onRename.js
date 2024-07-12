@@ -1,7 +1,7 @@
 // onRename(file: TAbstractFile, oldPath: string) => any
 function onRename(file, oldPath) {
 
-    if (typeof(file) === "TFolder" || !file.parent || file.parent.isRoot()) {
+    if (typeof(file) === "TFolder") {
         return;
     }    
     
