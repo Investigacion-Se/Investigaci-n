@@ -8,11 +8,7 @@
 */
 function onRename(file, oldPath) {
 
-    console.log(typeof(file));
-
-    if (typeof(file) === "TFolder") {
-        return;
-    }    
+    let esCarpeta = file instanceof TFolder;
     
     const dv = app.plugins.plugins["dataview"].api;
     const archivo = dv.page(file.path);
@@ -35,7 +31,7 @@ function onRename(file, oldPath) {
         console.log("Es indice y cambia nombre");
 
     } else if (esIndice && !cambiaNombre) {
-        if (!file.parent || file.parent.isRoot() || )
+        if (!file.parent || file.parent.isRoot() ) {}
 
         // Se cambia de posición el tema
         // Actualizar supertema viejo y nuevo
