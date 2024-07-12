@@ -1,6 +1,6 @@
 {
   "command_timeout": 5,
-  "templates_folder": "_templates",
+  "templates_folder": "_templatesol",
   "templates_pairs": [
     [
       "",
@@ -18,8 +18,6 @@
   "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [
     "_templates/Modificar referencia.md",
-    "_templates/Cambiar nombre.md",
-    "_templates/Transformar tema.md",
     "_templates/Cambiar etapa.md",
     "_templates/Agregar cita.md",
     "_templates/Modificar alias.md"
