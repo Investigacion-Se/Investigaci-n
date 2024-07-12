@@ -21,7 +21,12 @@ async function onRename(file, oldPath) {
 
     if (!file.parent || file.parent.isRoot()) {
         console.log("Se cambio el indice al root");
-        await app.vault.rename(file, oldPath);
+        try {
+            await app.vault.rename(file, oldPath);
+        } catch (e) {
+            console.log(e);
+            console.log("Se movio al root");
+        }
 
         const mensaje = "El indice se movio al root, volviendo a su lugar anterior";
         console.log(mensaje);
@@ -51,7 +56,12 @@ async function onRename(file, oldPath) {
             await app.vault.rename(file.parent, pathNuevo);
         } catch (_) {
             // El archivo ya existe, entonces volvemos para atras
-            await app.vault.rename(file, oldPath);
+            try {
+                await app.vault.rename(file, oldPath);
+            } catch (e) {
+                console.log(e);
+                console.log("Ya existia, se vuelve como antes");
+            }
 
             const mensaje = "Ya existe ese tema, vamos a volver para atras";
             console.log(mensaje);
@@ -64,7 +74,15 @@ async function onRename(file, oldPath) {
 
         if (file.parent.children.some(archivo => archivo.path != file.path && esIndice(archivo))) {
             // Ya existe un indice en ese lugar, entonces volvemos para atras
-            await app.vault.rename(file, oldPath);
+            try {
+                await app.vault.rename(file, oldPath);
+            } catch (e) {
+                console.log(e);
+                console.log("Existen varios indices");
+                console.log(file.parent.children);
+                console.log(file.parent.children.some(archivo => archivo.path != file.path));
+                console.log(file.parent.children.some(archivo => esIndice(archivo)));
+            }
 
             const mensaje = "Ya existe un indice en ese lugar, entonces volvemos para atras";
             console.log(mensaje);
@@ -78,11 +96,10 @@ async function onRename(file, oldPath) {
             pathNuevo = pathNuevo.join("/");
             
             try {
-
                 await app.vault.rename(file, pathNuevo);
             } catch (e) {
                 console.log(e);
-                console.log(pathNuevo);
+                console.log("Cambio path, nuevo path: " + pathNuevo);
             }
         }
     }
