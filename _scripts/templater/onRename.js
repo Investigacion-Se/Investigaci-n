@@ -1,15 +1,34 @@
 // onRename(file: TAbstractFile, oldPath: string) => any
+function onRename(file, oldPath) {
+    console.log(file);
+    console.log(oldPath);
+
+    if (file instanceof TFolder) {
+        onRenameFolder(file, oldPath);
+    } else {
+        onRenameFile(file, oldPath);
+    }
+}
+
 /*
     * Cambio nombre de carpeta => Cambio nombre de tema indice, y sus carpetas para reflejarlo
     * Muevo carpeta => actualizo el nivel del indice y sus subtemas, y actualizo el superindice
+*/
+function onRenameFolder(folder, oldPath) {
+    console.log("Cambio de nombre de carpeta");
+
     
+
+}
+
+/*
     * Cambio nombre del indice => actualizo el nombre del tema, el superindice, los subtemas y la carpeta
         * Archivos actualizan el tema y el indice para estar acorde con el nuevo nombre de la carpeta  
 */
-function onRename(file, oldPath) {
-
-    let esCarpeta = file instanceof TFolder;
+function onRenameFile(file, oldPath) {
+    console.log("Cambio de nombre de archivo");
     
+    return;
     const dv = app.plugins.plugins["dataview"].api;
     const archivo = dv.page(file.path);
     
