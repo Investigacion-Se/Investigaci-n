@@ -4,8 +4,11 @@ async function onRename(file, oldPath) {
     console.log(oldPath);
 
     const dv = app.plugins.plugins.dataview.api;
-    const cambiaNombre = file.name == oldPath.split("/").pop();
+    const cambiaNombre = file.name != oldPath.split("/").pop();
     const esCarpeta = file.children;
+
+    console.log(`Es carpeta: ${esCarpeta ? "si" : "no"}`);
+    console.log(`Cambia nombre: ${cambiaNombre ? "si" : "no"}`);
 
     if (esCarpeta && cambiaNombre) {
         // Actualizar indice de esta carpeta
