@@ -1,4 +1,11 @@
 // onRename(file: TAbstractFile, oldPath: string) => any
+/*
+    * Cambio nombre de carpeta => Cambio nombre de tema indice, y sus carpetas para reflejarlo
+    * Muevo carpeta => actualizo el nivel del indice y sus subtemas, y actualizo el superindice
+    
+    * Cambio nombre del indice => actualizo el nombre del tema, el superindice, los subtemas y la carpeta
+        * Archivos actualizan el tema y el indice para estar acorde con el nuevo nombre de la carpeta  
+*/
 function onRename(file, oldPath) {
 
     console.log(typeof(file));
@@ -28,7 +35,7 @@ function onRename(file, oldPath) {
         console.log("Es indice y cambia nombre");
 
     } else if (esIndice && !cambiaNombre) {
-
+        if (!file.parent || file.parent.isRoot() || )
 
         // Se cambia de posición el tema
         // Actualizar supertema viejo y nuevo
