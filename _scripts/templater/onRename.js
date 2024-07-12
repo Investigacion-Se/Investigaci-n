@@ -10,7 +10,7 @@ async function onRename(file, oldPath) {
     console.log(`Es carpeta: ${esCarpeta ? "si" : "no"}`);
     console.log(`Cambia nombre: ${cambiaNombre ? "si" : "no"}`);
 
-    if (esCarpeta || file.basename != "index") {
+    if (esCarpeta || oldPath.split("/").pop() == "index") {
         console.log(esCarpeta ? "Es carpeta" : "Es un archivo index");
         return;
     }

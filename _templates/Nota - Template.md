@@ -2,10 +2,10 @@
 	const CITA_RAPIDA = "cita rapida";
 	const NUEVA_CITA = "nueva cita";
 	const dv = app.plugins.plugins["dataview"].api;
-	const archivo = dv.page(tp.file.path(true));
-
-	let posiblesIndices = dv.pages(`"${archivo.file.folder}" and #Índice`)
-		.filter(pagina => pagina.file.folder == archivo.file.folder);
+	
+	let carpeta = tp.file.folder(true);
+	let posiblesIndices = dv.pages(`"${carpeta}" and #Índice`)
+		.filter(pagina => pagina.file.folder == carpeta);
 
 	if (posiblesIndices.length == 0) {
 		return;
