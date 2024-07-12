@@ -10,6 +10,24 @@ async function onRename(file, oldPath) {
     console.log(`Es carpeta: ${esCarpeta ? "si" : "no"}`);
     console.log(`Cambia nombre: ${cambiaNombre ? "si" : "no"}`);
 
+    if (esCarpeta) {
+        console.log("Es carpeta");
+        return;
+    }
+}
+
+/**
+async function onRename(file, oldPath) {
+    console.log(file);
+    console.log(oldPath);
+
+    const dv = app.plugins.plugins.dataview.api;
+    const cambiaNombre = file.name != oldPath.split("/").pop();
+    const esCarpeta = file.children;
+
+    console.log(`Es carpeta: ${esCarpeta ? "si" : "no"}`);
+    console.log(`Cambia nombre: ${cambiaNombre ? "si" : "no"}`);
+
     if (esCarpeta && cambiaNombre) { 
         try {
             // Actualizar indice de esta carpeta
@@ -137,5 +155,6 @@ async function onRename(file, oldPath) {
         }
     }
 }
+ */
 
 module.exports = onRename;
