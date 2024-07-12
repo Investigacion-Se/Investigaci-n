@@ -30,7 +30,7 @@ async function onRename(file, oldPath) {
         await app.vault.rename(file, oldPath);
 
         const mensaje = "El indice se movio al root, volviendo a su lugar anterior";
-        console.log(mensjae);
+        console.log(mensaje);
         new Notice(mensaje);
 
         return;
