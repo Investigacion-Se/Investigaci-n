@@ -80,8 +80,11 @@ async function onRename(file, oldPath) {
                 console.log(e);
                 console.log("Existen varios indices");
                 console.log(file.parent.children);
-                console.log(file.parent.children.some(archivo => archivo.path != file.path));
-                console.log(file.parent.children.some(archivo => esIndice(archivo)));
+                console.log(file.parent.children.forEach(archivo => {
+                    console.log(`En el archivo ${archivo.basename}`);
+                    console.log(archivo.path != file.path);
+                    console.log(esIndice(archivo));
+                }));
             }
 
             const mensaje = "Ya existe un indice en ese lugar, entonces volvemos para atras";
