@@ -66,6 +66,10 @@ async function onRename(file, oldPath) {
         } catch (_) {
             // El archivo ya existe, entonces volvemos para atras
             await app.vault.rename(file, oldPath);
+
+            const mensaje = "Ya existe ese tema, vamos a volver para atras";
+            console.log(mensaje);
+            new Notice(mensaje);
         }
 
     } else {
