@@ -1,11 +1,10 @@
 ---
 dia: 2024-07-11
-tags:
-  - Índice
-tema: Hola
-nivel: 0
-subTemas:
-  - Chau
+tags: 
+ - Índice
+tema: Chau
+nivel: 1
+superTema: Hola
 ---
 ```dataviewjs
 await dv.view("_scripts/dataview/mostrarSuperTema", { superTema: dv.current().superTema });
