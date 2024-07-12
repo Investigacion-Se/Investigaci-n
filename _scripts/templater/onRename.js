@@ -77,7 +77,13 @@ async function onRename(file, oldPath) {
             pathNuevo.push(`${temaPadre}.md`);
             pathNuevo = pathNuevo.join("/");
             
-            await app.vault.rename(file, pathNuevo);
+            try {
+
+                await app.vault.rename(file, pathNuevo);
+            } catch (e) {
+                console.log(e);
+                console.log(pathNuevo);
+            }
         }
     }
 }
