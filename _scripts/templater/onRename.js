@@ -10,7 +10,7 @@ async function onRename(file, oldPath) {
     console.log(`Es carpeta: ${esCarpeta ? "si" : "no"}`);
     console.log(`Cambia nombre: ${cambiaNombre ? "si" : "no"}`);
 
-    if (esCarpeta || oldPath.split("/").pop() == "index") {
+    if (esCarpeta || oldPath.split("/").pop() == "index.md") {
         console.log(esCarpeta ? "Es carpeta" : "Es un archivo index");
         return;
     }
@@ -18,9 +18,17 @@ async function onRename(file, oldPath) {
     let carpeta = file.path.replace(`/${file.name}`, "");
     let indices = dv.pages(`"${carpeta}" and #Índice`)
         .filter(ind => ind.file.folder == carpeta);
-        
+    
+    console.log(carpeta);
+    console.log(indices);
+
     let indice = indices.find(ind => ind.file.name == file.basename);
-    if (!indice.tags || !indice.tags.includes("Índice")) {
+    console.log(indice);
+
+    try {
+        if (!indice.tags.includes("Índice"))
+            throw Error;
+    } catch (_) {
         console.log("No es indice");
         return;
     }
@@ -53,7 +61,12 @@ async function onRename(file, oldPath) {
         pathNuevo.push(temaActual);
         pathNuevo = pathNuevo.join("/");
 
-        await app.vault.rename(file.parent, pathNuevo);
+        try {
+            await app.vault.rename(file.parent, pathNuevo);
+        } catch (_) {
+            // El archivo ya existe, entonces volvemos para atras
+            await app.vault.rename(file, oldPath);
+        }
 
     } else {
         // Cambio el path
