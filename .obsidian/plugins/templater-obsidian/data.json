@@ -27,6 +27,8 @@
     "_templates/Agregar cita.md",
     "_templates/Modificar alias.md"
   ],
-  "startup_templates": [],
+  "startup_templates": [
+    "_templates/hook.md"
+  ],
   "enable_ribbon_icon": true
 }
