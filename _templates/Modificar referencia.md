@@ -15,14 +15,14 @@ try {
     if (modificacion == CREAR) {
 
         let numReferencia = tp.user.generarNumReferencia(dv);
-        await tp.user.generarCita(tp, numReferencia);
+        await tp.user.cita().generar(tp, numReferencia);
         await agregarReferencia(tArchivo, numReferencia);
         
     } else if (modificacion == AGREGAR) {
 
         let referencias = dv.pages('"_referencias"')
             .flatMap(referencia => {
-                let desc = tp.user.describirCita(tp, referencia);
+                let desc = tp.user.cita().metadata(tp, referencia);
                 if (!desc) {
                     console.log("El siguiente archivo tuvo un erro al describirse");
                     console.log(referencia);
@@ -32,7 +32,7 @@ try {
             })
             .sort(ref => -ref.numReferencia);
 
-        let opciones = referencias.map(ref => tp.user.descripcionTexto(ref));
+        let opciones = referencias.map(ref => tp.user.cita().describir(tp, ref));
         let valores = referencias.map(ref => ref.numReferencia);
         
         let numReferencia = await tp.system.suggester(opciones, valores,
@@ -51,7 +51,7 @@ try {
         let referencias = dv.pages('"_referencias"')
             .filter(ref => referenciasArchivo.indexOf(ref.numReferencia) >= 0)
             .flatMap(referencia => {
-                let desc = tp.user.describirCita(tp, referencia);
+                let desc = tp.user.cita().metadata(tp, referencia);
                 if (!desc) {
                     console.log("El siguiente archivo tuvo un erro al describirse");
                     console.log(referencia);
@@ -61,7 +61,7 @@ try {
             })
             .sort(ref => -ref.numReferencia);
 
-        let opciones = referencias.map(ref => tp.user.descripcionTexto(ref));
+        let opciones = referencias.map(ref => tp.user.cita().describir(tp, ref));
         let valores = referencias.map(ref => ref.numReferencia);
         
         let numReferencia = await tp.system.suggester(opciones, valores,

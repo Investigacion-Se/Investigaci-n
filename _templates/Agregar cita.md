@@ -15,7 +15,7 @@
             let referencias = dv.pages('"_referencias"')
                 .filter(ref => referenciasActuales.indexOf(ref.numReferencia) >= 0)
                 .flatMap(referencia => {
-                    let desc = tp.user.describirCita(tp, referencia);
+                    let desc = tp.user.cita().metadata(tp, referencia);
                     if (!desc) {
                         console.log("El siguiente archivo tuvo un erro al describirse");
                         console.log(referencia);
@@ -26,7 +26,7 @@
                 .sort(ref => parseInt(ref.numReferencia, 10));
             
             let cita = await tp.system.suggester(
-                referencias.map(ref => tp.user.descripcionTexto(ref)), 
+                referencias.map(ref => tp.user.cita().describir(tp, ref)), 
                 referencias.map(ref => ref.numReferencia),
                 true, "Referenciar cita (si no hay nada que referenciar, apretar ESC)", 10
             );

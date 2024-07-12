@@ -28,4 +28,13 @@ async function citarLibro(tp) {
     return tR;
 }
 
-module.exports = citarLibro;
+function describirLibro(archivo) {
+    return "Nombre de la obra, de Nombre del autor";
+}
+
+module.exports = () => {
+    return { 
+        citar: citarLibro, 
+        describir: describirLibro
+    };
+}

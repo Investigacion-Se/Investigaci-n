@@ -12,13 +12,7 @@
 	tR += `numReferencia: ${parseInt(numReferencia, 10)}\n`;
 
 	try {
-		switch (tipoCita) {
-			case "Libro": tR += await tp.user.citarLibro(tp); break;
-			case "Youtube": tR += await tp.user.citarYoutube(tp); break;
-			case "Web": tR += await tp.user.citarWeb(tp); break;
-			case "Wikipedia": tR += await tp.user.citarWiki(tp); break;
-			default: throw new Error(`El tipo de cita "${tipoCita}" no existe todavia`);
-		}
+		tR += await.tp.cita().citar(tp);
 	} catch ({ name, message }) {
 		return await tp.user.salir(tp, message);
 	}

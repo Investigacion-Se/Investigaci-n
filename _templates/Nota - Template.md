@@ -46,7 +46,7 @@
 
 	let referencias = dv.pages('"_referencias"')
 		.flatMap(referencia => {
-			let desc = tp.user.describirCita(tp, referencia);
+			let desc = tp.user.cita().metadata(tp, referencia);
 			if (!desc) {
 				console.log("El siguiente archivo tuvo un erro al describirse");
 				console.log(referencia);
@@ -56,7 +56,7 @@
 		})
 		.sort(ref => -ref.numReferencia);
 
-	let opciones = ["Citar de forma rápida", "Nueva cita", ...referencias.map(ref => tp.user.descripcionTexto(ref))];
+	let opciones = ["Citar de forma rápida", "Nueva cita", ...referencias.map(ref => tp.user.cita().describir(tp, ref))];
 	let valores = [CITA_RAPIDA, NUEVA_CITA, ...referencias.map(ref => ref.numReferencia)];
 	
 	let citar = await tp.system.suggester(opciones, valores,
@@ -77,7 +77,7 @@
 			let numReferencia = tp.user.generarNumReferencia(dv);
 			
 			try { 
-				await tp.user.generarCita(tp, numReferencia) 
+				await tp.user.cita().generar(tp, numReferencia) 
 			} catch (_) { 
 				continue; 
 			}

@@ -1,14 +1,14 @@
 async function citarWiki(tp) {
     let tR = "";  
 
-    tR += await tp.user.preguntarSimple(
+    tR += await tp.user.preguntar().simple(
         tp, 
         "nombreArticulo",
         "Nombre del artículo:",
         "No se ingresa nombre del artículo"
     )
 
-    tR += await tp.user.preguntarFecha(
+    tR += await tp.user.preguntar().fecha(
         tp, 
         "fecha",
         "Fecha del artículo:", 
@@ -16,7 +16,7 @@ async function citarWiki(tp) {
         "No se ingresó la fecha del video"
     )
 
-    tR += await tp.user.preguntarSimple(
+    tR += await tp.user.preguntar().simple(
         tp, 
         "url",
         "Ingresar el enlace permanente del artículo:",
@@ -26,4 +26,13 @@ async function citarWiki(tp) {
     return tR;
 }
 
-module.exports = citarWiki;
+function describirWiki(archivo) {
+    return `Artículo de wikipedia: ${archivo.nombreArticulo}`;
+}
+
+module.exports = () => {
+    return { 
+        citar: citarWiki, 
+        describir: describirWiki
+    };
+}

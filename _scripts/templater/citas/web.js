@@ -1,7 +1,7 @@
 async function citarWeb(tp) {
     let tR = "";  
 
-    tR += await tp.user.preguntarAutores(
+    tR += await tp.user.preguntar().autores(
         tp, 
         "nombreAutores",
         "Nombre del autor (no el apellido):",
@@ -10,7 +10,7 @@ async function citarWeb(tp) {
         "No se ingresa el apellido del autor de forma correcta"
     );
 
-    tR += await tp.user.preguntarFecha(
+    tR += await tp.user.preguntar().fecha(
         tp, 
         "fechaPublicacion",
         "Fecha de publicación de la página:", 
@@ -18,21 +18,21 @@ async function citarWeb(tp) {
         "No se ingresó la fecha de publicación de la página"
     );
 
-    tR += await tp.user.preguntarSimple(
+    tR += await tp.user.preguntar().simple(
         tp, 
         "tituloArticulo",
         "Nombre del artículo:",
         "No se ingresó nombre del articulo"
     );
 
-    tR += await tp.user.preguntarSimple(
+    tR += await tp.user.preguntar().simple(
         tp, 
         "nombrePagina",
         "Nombre de la página:",
         "No se ingresó nombre de la página"
     );   
 
-    tR += await tp.user.preguntarSimple(
+    tR += await tp.user.preguntar().simple(
         tp, 
         "url",
         "Ingresar el url del artículo:",
@@ -42,4 +42,19 @@ async function citarWeb(tp) {
     return tR;
 }
 
-module.exports = citarWeb;
+function describirWeb(archivo) {
+    let autores = "";
+    for (let {autore: autore} of archivo.nombreAutores) {
+        let [{nombre: nombre}, {apellido: apellido}] = autore;
+        autores += `${apellido}, ${nombre[0]}.`;
+    }
+
+    return `${archivo.tituloArticulo} de ${autores}, publicado en ${archivo.nombrePagina}`;
+}
+
+module.exports = () => {
+    return { 
+        citar: citarWeb, 
+        describir: describirWeb
+    };
+}
