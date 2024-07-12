@@ -22,9 +22,9 @@ async function onRename(file, oldPath) {
             console.log(indices);
 
             if (indices.length == 1 && indices[0].file.name != file.name) {
-                console.log("Encontre el indice de esta carpeta y lo voy a modificar: " + `${file.path}/${file.name}`);
+                console.log("Encontre el indice de esta carpeta y lo voy a modificar de:\n" + `${file.path}/${indices[0].file.name} a: ${file.path}/${file.name}`);
 
-                let tIndice = app.vault.getAbstractFileByPath(indices[0].file.path);
+                let tIndice = app.vault.getAbstractFileByPath(`${file.path}/${indices[0].file.name}`);
                 await app.vault.rename(tIndice, `${file.path}/${file.name}`);
 
             } else if (indices.length > 1) {
