@@ -1,6 +1,8 @@
 // onRename(file: TAbstractFile, oldPath: string) => any
 function onRename(file, oldPath) {
 
+    console.log(typeof(file));
+
     if (typeof(file) === "TFolder") {
         return;
     }    
@@ -26,6 +28,8 @@ function onRename(file, oldPath) {
         console.log("Es indice y cambia nombre");
 
     } else if (esIndice && !cambiaNombre) {
+
+
         // Se cambia de posición el tema
         // Actualizar supertema viejo y nuevo
         // Actualizar nivel
