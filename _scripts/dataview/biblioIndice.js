@@ -3,8 +3,8 @@ const citaView = require(app.vault.adapter.basePath + "/_scripts/dataview/citaVi
 const { indice } = input
 
 let paginas = dv.pages(`"${indice.file.folder}" and -#Índice`)
-    .filter(pagina => pagina.tema && pagina.referencias)
-    .filter(pagina => pagina.tema == indice.tema);
+    .filter(pagina => pagina.referencias)
+    .filter(pagina => pagina.file.folder == indice.file.folder);
 
 let referenciasTema = paginas
     .flatMap(pagina => pagina.referencias)

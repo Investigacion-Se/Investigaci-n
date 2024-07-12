@@ -1,7 +1,7 @@
 const { indice } = input;
 
 let archivos = dv.pages(`"${indice.file.folder}" and -#Índice`)
-    .filter(archivo => archivo.tema == indice.tema)
+    .filter(archivo => archivo.file.folder == indice.file.folder)
     .sort(archivo => {
         let referencias = archivo.referencias;
         if (!referencias || referencias.length == 0)
