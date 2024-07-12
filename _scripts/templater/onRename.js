@@ -88,6 +88,7 @@ async function onRename(file, oldPath) {
         console.log(carpeta);
         console.log(dv.pages(`"${carpeta}" and #Índice`))
         console.log(indices);
+        console.log(file.parent);
 
         let indice = indices.find(ind => ind.file.name == file.basename);
 
@@ -96,6 +97,8 @@ async function onRename(file, oldPath) {
 
             if (!file.parent || file.parent.isRoot()) {
                 // Movio el indice al root
+                console.log("Se movio al root");
+
                 await app.vault.rename(file, oldPath);
 
                 const mensaje = "El indice se movio al root";
@@ -106,6 +109,8 @@ async function onRename(file, oldPath) {
                 
             } else if (indices.length > 1) {
                 // Se movio a una carpeta donde ya existe uno o varios indices (de alguna forma hay varios)
+                console.log("Mas de un indice");
+
                 await app.vault.rename(file, oldPath);
 
                 const mensaje = (indices.length > 2) 
