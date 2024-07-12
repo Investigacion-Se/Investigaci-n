@@ -20,10 +20,10 @@ async function onRename(file, oldPath) {
         console.log(dv.pages(`"${file.path}" and #Índice`))
         console.log(indices);
 
-        if (indices.length == 1) {
+        if (indices.length == 1 && indices[0].file.name != file.name) {
             console.log("Encontre el indice de esta carpeta y lo voy a modificar: " + `${file.path}/${file.name}`);
 
-            let tIndice = tp.file.find_tfile(indices[0].file.path);
+            let tIndice = app.vault.getAbstractFileByPath(indices[0].file.path);
             await app.vault.rename(tIndice, `${file.path}/${file.name}`);
 
         } else if (indices.length > 1) {
@@ -39,10 +39,6 @@ async function onRename(file, oldPath) {
         let carpeta = file.path.replace(`/${file.name}`, "");
         let indices = dv.pages(`"${carpeta}" and #Índice`)
             .filter(ind => ind.file.folder == carpeta);
-        
-        console.log(carpeta);
-        console.log(dv.pages(`"${carpeta}" and #Índice`))
-        console.log(indices);
 
         let indice = indices.find(ind => ind.file.name == file.basename);
 
@@ -89,6 +85,10 @@ async function onRename(file, oldPath) {
         let indices = dv.pages(`"${carpeta}" and #Índice`)
             .filter(ind => ind.file.folder == carpeta);
 
+        console.log(carpeta);
+        console.log(dv.pages(`"${carpeta}" and #Índice`))
+        console.log(indices);
+
         let indice = indices.find(ind => ind.file.name == file.basename);
 
         if (indice.tags && indice.tags.includes("Índice")) {
@@ -101,6 +101,8 @@ async function onRename(file, oldPath) {
                 const mensaje = "El indice se movio al root";
                 console.log(mensjae);
                 new Notice(mensaje);
+                
+            } else if (indices.length == 1) {
                 
             } else if (indices.length > 1) {
                 // Se movio a una carpeta donde ya existe uno o varios indices (de alguna forma hay varios)
