@@ -1,10 +1,10 @@
 ---
-dia: 2024-07-11
+dia: 2024-07-08
 etapa: sin-empezar
 tema: Game mechanics
-indice: "[[Game mechanics/Game mechanics.md|Game mechanics]]"
-referencias: 
- - "145"
+indice: "[[Game mechanics|Game mechanics]]"
+referencias:
+  - "48"
 ---
 ```dataviewjs
 	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });
