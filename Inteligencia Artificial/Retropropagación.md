@@ -1,8 +1,11 @@
 ---
-dia: 2024-07-12
+dia: 2024-07-13
 etapa: sin-empezar
 referencias:
-  - "147"
+  - "149"
+  - "150"
+aliases:
+  - Backpropagation
 ---
 ```dataviewjs
 	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });

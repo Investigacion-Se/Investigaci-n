@@ -12,7 +12,7 @@
 	tR += `numReferencia: ${parseInt(numReferencia, 10)}\n`;
 
 	try {
-		tR += await.tp.cita().citar(tp);
+		tR += await tp.user.cita().citar(tp, tipoCita);
 	} catch ({ name, message }) {
 		return await tp.user.salir(tp, message);
 	}
