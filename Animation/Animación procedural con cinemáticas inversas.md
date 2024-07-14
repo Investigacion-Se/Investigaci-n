@@ -6,6 +6,7 @@ indice: "[[Animation/Animation.md|Animation]]"
 referencias:
   - "23"
   - "24"
+  - "154"
 aliases:
   - Animación procedural con inverse kinematics
   - Animación procedural con IK
