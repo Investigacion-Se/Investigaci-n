@@ -3,7 +3,7 @@
   "promptDelete": false,
   "alwaysUpdateLinks": true,
   "newFileLocation": "current",
-  "propertiesInDocument": "source",
+  "propertiesInDocument": "visible",
   "userIgnoreFilters": [
     "_referencias/",
     "_templates/",

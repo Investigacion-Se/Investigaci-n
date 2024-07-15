@@ -1,10 +1,10 @@
 ---
-dia: 2024-07-09
+dia: 2024-07-15
 etapa: sin-empezar
-tema: Shaders
-indice: "[[Shaders|Shaders]]"
 referencias:
-  - "140"
+  - "156"
+aliases:
+  - GDD
 ---
 ```dataviewjs
 	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });
