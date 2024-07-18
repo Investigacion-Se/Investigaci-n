@@ -1,10 +1,8 @@
 ---
-dia: 2024-07-08
+dia: 2024-07-18
 etapa: sin-empezar
-tema: Integrator
-indice: "[[Integrator/Integrator.md|Integrator]]"
-referencias: 
- - "93"
+referencias:
+  - "169"
 ---
 ```dataviewjs
 	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });

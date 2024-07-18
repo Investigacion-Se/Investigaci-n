@@ -1,8 +1,8 @@
 ---
 dia: 2024-07-08
-tags: 
- - Índice
-tema: Fractales
+tags:
+  - Índice
+tema: Continuous decomposition of a function
 nivel: 0
 ---
 ```dataviewjs
@@ -11,7 +11,7 @@ await dv.view("_scripts/dataview/mostrarSubTemas", { indice: dv.current() });
 ```
 ### ¿Qué se va a investigar?
 ---
-La intención es investigar sobre fractales y como se pueden hacer pseudo-fractales, que yo defino como estructuras repetitivas dependientes de condiciones pueden producir variaciones repetitivas o no. 
+Comprender como descomponer una función, posiblemente diferencial, de forma continua, es decir que para recrearla, se tenga que calcular a partir de una integral de su descomposición.
 
 
 #### Archivos
