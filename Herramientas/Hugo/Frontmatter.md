@@ -1,19 +1,21 @@
 ---
 dia: 2024-07-19
-etapa: ampliar
+etapa: sin-empezar
 referencias:
-  - "171"
+  - "172"
+aliases:
+  - Metadata
 ---
 ```dataviewjs
 	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });
 ```
 ### Definición
 ---
-El contenido en [[Hugo|Hugo]] se puede separar en 2 tipos de contenidos
-* [[Single Page|Single Page]]
-* [[List Page|List Page]]
+Es información sobre nuestro contenido, que se suele escribir en uno de estos 3 "lenguajes":
+* YAML
+* TOML
+* JSON
 
-También hay que notar que todo el contenido tiene [[Frontmatter|frontmatter o metadata]]
 
 
 ### Referencias
