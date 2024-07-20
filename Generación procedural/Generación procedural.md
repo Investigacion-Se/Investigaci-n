@@ -10,6 +10,8 @@ subTemas:
   - Tiles
   - Parametrización
   - Distribuciones
+aliases:
+  - Procedural generation
 ---
 ```dataviewjs
 await dv.view("_scripts/dataview/mostrarSuperTema", { indice: dv.current() });
