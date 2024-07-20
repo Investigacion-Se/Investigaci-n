@@ -13,7 +13,7 @@ Existen Hugo Themes pre existentes que se pueden descargar y usar si la necesida
 
 En el caso de descargar un theme, este se agrega en una carpeta dentro de la carpeta de `themes`.
 
-
+En el caso de que se quiera crear un theme, parte es crear un [[Templates|template]] para una [[Single Page|página de contenido]] y para un [[List Page|listado de contenido]].
 
 
 
