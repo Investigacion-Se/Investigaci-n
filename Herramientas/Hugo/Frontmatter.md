@@ -1,6 +1,6 @@
 ---
 dia: 2024-07-19
-etapa: sin-empezar
+etapa: ampliar
 referencias:
   - "172"
 aliases:
