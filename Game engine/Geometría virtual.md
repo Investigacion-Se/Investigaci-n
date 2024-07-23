@@ -7,8 +7,10 @@ referencias:
   - "40"
   - "41"
   - "142"
+  - "179"
 aliases:
   - Nanite
+  - Virtual geometry
 ---
 ```dataviewjs
 	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });
