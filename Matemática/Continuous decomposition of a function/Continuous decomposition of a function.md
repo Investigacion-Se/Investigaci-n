@@ -3,7 +3,6 @@ dia: 2024-07-08
 tags:
   - Índice
 tema: Continuous decomposition of a function
-nivel: 0
 ---
 ```dataviewjs
 await dv.view("_scripts/dataview/mostrarSuperTema", { indice: dv.current() });
