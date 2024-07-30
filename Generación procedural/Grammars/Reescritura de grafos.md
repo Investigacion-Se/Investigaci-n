@@ -2,7 +2,7 @@
 dia: 2024-07-08
 etapa: sin-empezar
 tema: Grammars
-indice: "[[Generación procedural/Grammars/Grammars.md|Grammars]]"
+indice: "[[Generación procedural/Grammars/Índice|Índice]]"
 referencias:
   - "61"
 ---

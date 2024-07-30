@@ -2,7 +2,7 @@
 dia: 2024-07-09
 etapa: sin-empezar
 tema: Data structures
-indice: "[[Data structures/Data structures.md|Data structures]]"
+indice: "[[Data structures/Índice|Índice]]"
 referencias:
   - "130"
 aliases:

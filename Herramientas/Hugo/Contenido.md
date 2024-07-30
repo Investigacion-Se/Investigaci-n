@@ -9,7 +9,7 @@ referencias:
 ```
 ### Definición
 ---
-El contenido en [[Hugo|Hugo]] se puede separar en 2 tipos de contenidos
+El contenido en [[Herramientas/Hugo/Índice|Índice]] se puede separar en 2 tipos de contenidos
 * [[Single Page|Single Page]]
 * [[List Page|List Page]]
 

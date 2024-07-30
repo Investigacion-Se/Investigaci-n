@@ -2,7 +2,7 @@
 dia: 2024-07-08
 etapa: sin-empezar
 tema: Geoficción
-indice: "[[Geoficción|Geoficción]]"
+indice: "[[Storytelling/Worldbuilding/Geoficción/Índice|Índice]]"
 referencias:
   - "50"
   - "51"

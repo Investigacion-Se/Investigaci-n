@@ -37,7 +37,7 @@
 
 	try {
 		await app.vault.createFolder(path);
-		await tp.file.move(`${path}/${nuevoTema}`);
+		await tp.file.move(`${path}/Índice`);
 	} catch (e) {
 		const mensaje = "No se pudo crear y mover el tema";
 		console.log(mensaje);

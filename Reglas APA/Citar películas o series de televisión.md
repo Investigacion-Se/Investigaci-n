@@ -2,7 +2,7 @@
 dia: 2024-07-08
 etapa: sin-empezar
 tema: Reglas APA
-indice: "[[Reglas APA/Reglas APA.md|Reglas APA]]"
+indice: "[[Reglas APA/Índice|Índice]]"
 referencias:
   - "7"
 aliases:

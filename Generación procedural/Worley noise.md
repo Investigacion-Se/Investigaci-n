@@ -2,7 +2,7 @@
 dia: 2024-07-08
 etapa: sin-empezar
 tema: Generación procedural
-indice: "[[Generación procedural/Generación procedural.md|Generación procedural]]"
+indice: "[[Generación procedural/Índice|Índice]]"
 referencias:
   - "62"
 ---

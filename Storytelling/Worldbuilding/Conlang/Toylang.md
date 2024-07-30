@@ -2,7 +2,7 @@
 dia: 2024-07-08
 etapa: sin-empezar
 tema: Conlang
-indice: "[[Conlang|Conlang]]"
+indice: "[[Storytelling/Worldbuilding/Conlang/Índice|Índice]]"
 referencias:
   - "36"
 ---

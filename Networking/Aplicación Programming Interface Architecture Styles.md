@@ -2,7 +2,7 @@
 dia: 2024-07-08
 etapa: empezado
 tema: Networking
-indice: "[[Networking/Networking.md|Networking]]"
+indice: "[[Networking/Índice|Índice]]"
 referencias:
   - "1"
 aliases:

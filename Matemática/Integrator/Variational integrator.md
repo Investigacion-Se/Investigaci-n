@@ -2,7 +2,7 @@
 dia: 2024-07-08
 etapa: sin-empezar
 tema: Integrator
-indice: "[[Integrator|Integrator]]"
+indice: "[[Matemática/Integrator/Índice|Índice]]"
 referencias:
   - "93"
 ---

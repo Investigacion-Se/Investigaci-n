@@ -2,9 +2,9 @@
 dia: 2024-07-09
 etapa: sin-empezar
 tema: Data structures
-indice: "[[Data structures/Data structures.md|Data structures]]"
-referencias: 
- - "131"
+indice: "[[Data structures/Índice|Índice]]"
+referencias:
+  - "131"
 ---
 ```dataviewjs
 	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });

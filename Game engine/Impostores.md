@@ -2,7 +2,7 @@
 dia: 2024-07-09
 etapa: sin-empezar
 tema: Game engine
-indice: "[[Game engine/Game engine.md|Game engine]]"
+indice: "[[Game engine/Índice|Índice]]"
 referencias:
   - "139"
 aliases:

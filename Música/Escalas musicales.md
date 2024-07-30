@@ -2,9 +2,9 @@
 dia: 2024-07-08
 etapa: sin-empezar
 tema: Música
-indice: "[[Música/Música.md|Música]]"
-referencias: 
- - "54"
+indice: "[[Música/Índice|Índice]]"
+referencias:
+  - "54"
 ---
 ```dataviewjs
 	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });

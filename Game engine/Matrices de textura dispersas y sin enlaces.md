@@ -2,9 +2,9 @@
 dia: 2024-07-08
 etapa: sin-empezar
 tema: Game engine
-indice: "[[Game engine/Game engine.md|Game engine]]"
-referencias: 
- - "39"
+indice: "[[Game engine/Índice|Índice]]"
+referencias:
+  - "39"
 ---
 ```dataviewjs
 	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });

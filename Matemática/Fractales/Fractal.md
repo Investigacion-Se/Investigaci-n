@@ -2,7 +2,7 @@
 dia: 2024-07-08
 etapa: ampliar
 tema: Fractales
-indice: "[[Fractales|Fractales]]"
+indice: "[[Matemática/Fractales/Índice|Índice]]"
 referencias:
   - "38"
 ---

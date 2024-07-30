@@ -2,7 +2,7 @@
 dia: 2024-07-08
 etapa: sin-empezar
 tema: Lenguaje de marcado
-indice: "[[Lenguaje de marcado/Lenguaje de marcado.md|Lenguaje de marcado]]"
+indice: "[[Lenguaje de marcado/Índice|Índice]]"
 referencias:
   - "95"
 aliases:

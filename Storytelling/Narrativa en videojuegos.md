@@ -2,7 +2,7 @@
 dia: 2024-07-08
 etapa: sin-empezar
 tema: Storytelling
-indice: "[[Storytelling/Storytelling.md|Storytelling]]"
+indice: "[[Storytelling/Índice|Índice]]"
 referencias:
   - "80"
   - "81"

@@ -2,7 +2,7 @@
 dia: 2024-07-08
 etapa: empezado
 tema: Docker
-indice: "[[Docker|Docker]]"
+indice: "[[Herramientas/Docker/Índice|Índice]]"
 referencias:
   - "37"
 ---

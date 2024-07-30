@@ -2,9 +2,9 @@
 dia: 2024-07-08
 etapa: sin-empezar
 tema: Storytelling
-indice: "[[Storytelling/Storytelling.md|Storytelling]]"
-referencias: 
- - "74"
+indice: "[[Storytelling/Índice|Índice]]"
+referencias:
+  - "74"
 ---
 ```dataviewjs
 	await dv.view("_scripts/dataview/mostarEtapa", { etapa: dv.current().etapa });

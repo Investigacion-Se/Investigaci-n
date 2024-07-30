@@ -2,7 +2,7 @@
 dia: 2024-07-08
 etapa: terminado
 tema: Reglas APA
-indice: "[[Reglas APA/Reglas APA.md|Reglas APA]]"
+indice: "[[Reglas APA/Índice|Índice]]"
 referencias:
   - "6"
 ---

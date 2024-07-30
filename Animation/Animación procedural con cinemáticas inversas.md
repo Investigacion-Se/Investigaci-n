@@ -2,7 +2,7 @@
 dia: 2024-07-08
 etapa: sin-empezar
 tema: Animation
-indice: "[[Animation/Animation.md|Animation]]"
+indice: "[[Animation/Índice|Índice]]"
 referencias:
   - "23"
   - "24"

@@ -2,7 +2,7 @@
 dia: 2024-07-09
 etapa: sin-empezar
 tema: Worldbuilding
-indice: "[[Worldbuilding|Worldbuilding]]"
+indice: "[[Storytelling/Worldbuilding/Índice|Índice]]"
 referencias:
   - "125"
   - "126"
