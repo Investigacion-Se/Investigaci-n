@@ -1,6 +1,5 @@
 //  callback: (file: TAbstractFile, oldPath: string)
 async function onRename(file, oldPath) {
-    const cambiaNombre = file.name != oldPath.split("/").pop();
     const esCarpeta = file.children;
 
     if (esCarpeta || oldPath.split("/").pop() == "index.md") {
@@ -8,10 +7,13 @@ async function onRename(file, oldPath) {
         return;
     }
 
-    if (!await esIndice(file)) {
-        console.log("No es indice");
-        return;
-    }
+    if (await esIndice(file)) {
+        await modificarIndice(file, oldPath);
+    }    
+}
+
+async function modificarIndice(file, oldPath) {
+    const cambiaNombre = file.name != oldPath.split("/").pop();
 
     if (!file.parent || file.parent.isRoot()) {
         await app.vault.rename(file, oldPath);
